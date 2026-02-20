@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>SDSダウンロード申請（入力エラー） — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* Center content area */
+    .inner {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Remove gap between header and breadcrumb */
+    .page-bg {
+      padding-top: 0;
+    }
+    /* Breadcrumb top margin */
+    .breadcrumb {
+      margin-top: 8px;
+    }
+    /* Remove underline from page title */
+    .page-title {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    /* More space between lead text and first form field */
+    .form-lead {
+      margin-bottom: 36px;
+    }
+    /* Auto-layout: form container stacks fields vertically */
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 656px;
+      margin: 0 auto;
+    }
+    /* Auto-layout: each field stacks label + input vertically */
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 0;
+    }
+    .form-label {
+      margin-bottom: 0;
+    }
+
+    /* ---- Error input ---- */
+    .form-input--error {
+      border: 1px solid #ff1a1a;
+      background: #ffefef;
+    }
+
+    /* ---- Error select ---- */
+    .form-select--error {
+      border: 1px solid #ff1a1a;
+    }
+
+    /* ---- Error checkbox row ---- */
+    .checkbox-row--error {
+      border: 1px solid #ff1a1a;
+      background: #ffefef;
+    }
+    .checkbox-row--error .checkbox-box {
+      border-color: #ff1a1a;
+    }
+
+    /* ---- Field error message ---- */
+    .field-err-msg {
+      font-size: 11px;
+      color: #ff2a29;
+      line-height: 16.5px;
+      margin-top: 0;
+    }
+
+    /* Submit button: 400px centered per Figma */
+    .form-container .btn-dark {
+      width: 400px;
+      margin: 40px auto 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Page content -->
+  <div class="page-bg">
+    <div class="inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        TOP &gt; 製品情報 &gt; QZILLA &gt; <span>SDSダウンロード申請</span>
+      </div>
+
+      <!-- Page title -->
+      <h1 class="page-title">SDSダウンロード申請</h1>
+
+      <!-- Lead text -->
+      <p class="form-lead">
+        SDS（安全データシート）の提供および改訂時のご連絡のため、以下の情報をご入力ください。
+      </p>
+
+      <!-- Form -->
+      <div class="form-container">
+
+        <!-- 会社名 ERROR -->
+        <div class="form-field">
+          <div class="form-label">会社名 <span class="badge-required">*</span></div>
+          <div class="form-input form-input--error">会社名を入力</div>
+          <div class="field-err-msg">入力されていません</div>
+        </div>
+
+        <!-- 部署名 NORMAL -->
+        <div class="form-field">
+          <div class="form-label">部署名</div>
+          <div class="form-input">部署名を入力</div>
+        </div>
+
+        <!-- 氏名 ERROR -->
+        <div class="form-field">
+          <div class="form-label">氏名 <span class="badge-required">*</span></div>
+          <div class="form-input form-input--error">氏名を入力</div>
+          <div class="field-err-msg">入力されていません</div>
+        </div>
+
+        <!-- メールアドレス ERROR -->
+        <div class="form-field">
+          <div class="form-label">メールアドレス <span class="badge-required">*</span></div>
+          <div class="form-input form-input--error">example@company.com</div>
+          <div class="field-err-msg">入力されていません</div>
+        </div>
+
+        <!-- 国・地域 ERROR -->
+        <div class="form-field">
+          <div class="form-label">国・地域 <span class="badge-required">*</span></div>
+          <div class="form-select form-select--error">選択してください <span class="form-select__arrow">▼</span></div>
+          <div class="field-err-msg">選択されていません</div>
+        </div>
+
+        <!-- 業種 NORMAL -->
+        <div class="form-field">
+          <div class="form-label">業種</div>
+          <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
+        </div>
+
+        <!-- 使用用途 NORMAL -->
+        <div class="form-field">
+          <div class="form-label">使用用途</div>
+          <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
+        </div>
+
+        <!-- 電話番号 NORMAL -->
+        <div class="form-field">
+          <div class="form-label">電話番号</div>
+          <div class="form-input">例：0575-24-3001</div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- SDS改訂通知オプトイン NORMAL -->
+        <div class="checkbox-row" style="margin-bottom:0;">
+          <div class="checkbox-box"></div>
+          <div class="checkbox-label">SDS改訂時の通知を受け取る</div>
+        </div>
+
+        <!-- 個人情報同意 ERROR -->
+        <div class="form-field" style="gap:3px;">
+          <div class="checkbox-row checkbox-row--error" style="margin-bottom:0;">
+            <div class="checkbox-box"></div>
+            <div class="checkbox-label">
+              <span class="checkbox-link">個人情報の取り扱い</span>に同意する（<span class="checkbox-link">プライバシーポリシー</span>）
+            </div>
+          </div>
+          <div class="field-err-msg">選択されていません</div>
+        </div>
+
+        <!-- 送信ボタン -->
+        <div class="btn-dark">SDSを受け取る</div>
+
+      </div><!-- /form-container -->
+    </div><!-- /inner -->
+  </div><!-- /page-bg -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>
