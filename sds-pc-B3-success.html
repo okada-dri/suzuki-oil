@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>SDS PC-B3 Success — 専用ページ（送信完了）</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="_base.css">
+  <style>
+    /* Center content area */
+    .inner {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Remove gap between header and breadcrumb */
+    .page-bg {
+      padding-top: 0;
+    }
+    /* Breadcrumb top margin */
+    .breadcrumb {
+      margin-top: 8px;
+    }
+    /* Remove underline from page title */
+    .page-title {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    /* Success content area */
+    .success-page-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 0 60px;
+      max-width: 560px;
+    }
+    /* Download button */
+    .btn-download-wrap {
+      width: 400px;
+      margin: 32px auto 0;
+    }
+    /* Back button */
+    .back-btn-wrap {
+      width: 200px;
+      margin: 20px auto 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Page content -->
+  <div class="page-bg">
+    <div class="inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        TOP &gt; 製品情報 &gt; QZILLA &gt; <span>SDSダウンロード申請</span>
+      </div>
+
+      <!-- Page title -->
+      <h1 class="page-title">SDSダウンロード申請</h1>
+
+      <!-- Success content -->
+      <div class="success-page-wrap">
+        <div class="success-block">
+
+          <!-- Checkmark icon -->
+          <div class="success-icon">✓</div>
+
+          <!-- 完了メッセージ -->
+          <p class="success-msg">
+            送信が完了しました。<br>
+            以下よりSDSをダウンロードできます。<br>
+            ご入力のメールアドレスにもダウンロードリンクを送信しました。
+          </p>
+
+          <!-- ダウンロードボタン -->
+          <div class="btn-download-wrap">
+            <div class="btn-download">⬇ SDSをダウンロード</div>
+          </div>
+
+          <!-- メール到達案内 -->
+          <p class="mail-notice">
+            メールが届かない場合は迷惑メールフォルダをご確認ください。
+          </p>
+
+          <!-- 製品ページに戻るボタン -->
+          <div class="back-btn-wrap">
+            <div class="btn-ghost">TOPに戻る</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /inner -->
+  </div><!-- /page-bg -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>

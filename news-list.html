@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>お知らせ一覧 — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="_base.css">
+  <style>
+    /* Remove gap between header and breadcrumb */
+    .page-bg {
+      padding-top: 0;
+      padding-bottom: 60px;
+    }
+    /* Breadcrumb top margin: gap-[8px] from header */
+    .breadcrumb {
+      margin-top: 8px;
+    }
+    /* Page title: gap-[20px] from breadcrumb */
+    .page-title {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      margin-top: 20px;
+    }
+
+    /* ---- News list ---- */
+    .news-section {
+      margin-top: 24px;
+    }
+    .news-list {
+      border-top: 1px solid #e8e8e8;
+    }
+    .news-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      height: 67px;
+      border-bottom: 1px solid #e8e8e8;
+      padding: 0 0 1px;
+    }
+    .news-date {
+      width: 90px;
+      flex-shrink: 0;
+      font-size: 12px;
+      color: #999;
+      line-height: 24px;
+      letter-spacing: 0.48px;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .news-title {
+      font-size: 13px;
+      color: #333;
+      line-height: 26px;
+      letter-spacing: -0.13px;
+      font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+    }
+
+    /* ---- Back to TOP ---- */
+    .back-to-top {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .back-to-top__btn {
+      width: 200px;
+      height: 44px;
+      background: #fff;
+      border: 1px solid #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 12px;
+      color: #111;
+      letter-spacing: 0.96px;
+      line-height: 24px;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    /* ---- Pagination ---- */
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 48px;
+      height: 26.5px;
+    }
+    .pagination__item {
+      font-size: 12px;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+      line-height: normal;
+      min-width: 32px;
+      height: 26.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .pagination__item--active {
+      border: 1px solid #111;
+    }
+    .pagination__item--ellipsis,
+    .pagination__item--next {
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Page content -->
+  <div class="page-bg">
+    <div class="inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        TOP &gt; <span>お知らせ</span>
+      </div>
+
+      <!-- Page title -->
+      <h1 class="page-title">お知らせ</h1>
+
+      <!-- News list -->
+      <div class="news-section">
+        <div class="news-list">
+
+          <div class="news-row">
+            <div class="news-date">2026.02.17</div>
+            <div class="news-title">enative365R取扱店舗を拡大しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2026.01.15</div>
+            <div class="news-title">QZILLA製品導入効果事例集を公開しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.12.10</div>
+            <div class="news-title">ARE SPRAY（ARPE-480S）新製品情報を公開しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.11.01</div>
+            <div class="news-title">SDS安全データシートダウンロードページを開設しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.10.15</div>
+            <div class="news-title">QZILLA工業用オイルの新容量ラインナップを追加しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.09.01</div>
+            <div class="news-title">公式サイトをリニューアルしました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.07.20</div>
+            <div class="news-title">enative365R夏季キャンペーンを開始しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.06.05</div>
+            <div class="news-title">展示会出展のお知らせ（2025年製造技術展）。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.04.01</div>
+            <div class="news-title">フォーエスインダストリー株式会社との共同開発製品を発表しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.02.10</div>
+            <div class="news-title">QZILLA製品の安全データシート（SDS）を更新しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2026.02.17</div>
+            <div class="news-title">enative365R取扱店舗を拡大しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2026.01.15</div>
+            <div class="news-title">QZILLA製品導入効果事例集を公開しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.12.10</div>
+            <div class="news-title">ARE SPRAY（ARPE-480S）新製品情報を公開しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.11.01</div>
+            <div class="news-title">SDS安全データシートダウンロードページを開設しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.10.15</div>
+            <div class="news-title">QZILLA工業用オイルの新容量ラインナップを追加しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.09.01</div>
+            <div class="news-title">公式サイトをリニューアルしました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.07.20</div>
+            <div class="news-title">enative365R夏季キャンペーンを開始しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.06.05</div>
+            <div class="news-title">展示会出展のお知らせ（2025年製造技術展）。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.04.01</div>
+            <div class="news-title">フォーエスインダストリー株式会社との共同開発製品を発表しました。</div>
+          </div>
+
+          <div class="news-row">
+            <div class="news-date">2025.02.10</div>
+            <div class="news-title">QZILLA製品の安全データシート（SDS）を更新しました。</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <span class="pagination__item pagination__item--active">1</span>
+        <span class="pagination__item">2</span>
+        <span class="pagination__item">3</span>
+        <span class="pagination__item pagination__item--ellipsis">…</span>
+        <span class="pagination__item">6</span>
+        <span class="pagination__item pagination__item--next">&gt;</span>
+      </div>
+
+      <!-- Back to TOP -->
+      <div class="back-to-top">
+        <a href="#" class="back-to-top__btn">TOP に戻る</a>
+      </div>
+
+    </div><!-- /inner -->
+  </div><!-- /page-bg -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>

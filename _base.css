@@ -1,0 +1,429 @@
+/* ================================================
+   BASE — Figma 686:179 デザイントークン準拠
+   ================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+  background: #fff;
+  color: #111;
+  width: 1440px;
+  min-height: 100vh;
+}
+
+/* ---- Site Header ---- */
+.site-header {
+  width: 1440px;
+  height: 48.5px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.site-header__title {
+  position: absolute;
+  left: 200px;
+  top: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* ---- Content container ---- */
+.inner {
+  width: 1040px;
+  margin-left: 200px;
+}
+
+/* ---- Site Footer ---- */
+.site-footer {
+  width: 1440px;
+  height: 82.398px;
+  background: #d0d0d0;
+  display: flex;
+  align-items: center;
+}
+.site-footer p {
+  margin-left: 200px;
+  font-size: 11px;
+  color: #111;
+  line-height: 26.4px;
+}
+
+/* ---- Placeholder blocks ---- */
+.ph {
+  background: #d4d4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ph__label {
+  font-size: 11px;
+  color: #888;
+  line-height: 17.6px;
+  text-align: center;
+}
+
+/* ---- Page background (behind modal) ---- */
+.page-bg {
+  padding-top: 36px;
+  padding-bottom: 56px;
+}
+
+/* ---- Modal overlay ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.18);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+  z-index: 50;
+}
+
+/* ---- Modal ---- */
+.modal {
+  width: 680px;
+  background: #fff;
+  border: 1px solid #bbb;
+}
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px 14px;
+  border-bottom: 1px solid #ddd;
+}
+.modal__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  line-height: normal;
+}
+.modal__close {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #999;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.modal__body {
+  padding: 20px 24px 24px;
+}
+
+/* ---- Form components ---- */
+.form-lead {
+  font-size: 11px;
+  color: #555;
+  line-height: 17.6px;
+  padding: 10px 12px;
+  background: #f8f8f8;
+  border-left: 3px solid #ccc;
+  margin-bottom: 20px;
+}
+.form-field {
+  margin-bottom: 18px;
+}
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 2px;
+  line-height: normal;
+}
+.badge-required {
+  font-size: 13px;
+  color: #cc0000;
+  font-weight: 700;
+  margin-left: 2px;
+}
+.badge-optional {
+  font-size: 10px;
+  color: #aaa;
+  border: 1px solid #ddd;
+  padding: 1px 4px;
+  font-weight: 400;
+}
+.form-input {
+  width: 100%;
+  height: 36px;
+  border: 1px solid #bbb;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 11px;
+  font-size: 12px;
+  color: #aaa;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+.form-input--filled {
+  color: #333;
+}
+.form-input--error {
+  border: 2px solid #666;
+  background: #f9f9f9;
+}
+.form-select {
+  width: 100%;
+  height: 36px;
+  border: 1px solid #bbb;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 11px;
+  font-size: 12px;
+  color: #333;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+.form-select__arrow { font-size: 10px; color: #999; }
+
+.field-error {
+  font-size: 10px;
+  color: #333;
+  margin-top: 4px;
+  padding-left: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 17.6px;
+}
+.field-error::before {
+  content: "!";
+  font-weight: 700;
+  color: #555;
+}
+
+/* ---- Error banner ---- */
+.error-banner {
+  border: 1px solid #888;
+  border-left: 4px solid #444;
+  background: #ebebeb;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 11px;
+  color: #222;
+  line-height: 17.6px;
+}
+.error-banner strong {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ---- Accordion ---- */
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  padding: 9px 12px;
+  background: #f8f8f8;
+  font-size: 11px;
+  color: #555;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+.accordion-trigger__icon { font-size: 13px; color: #888; }
+.accordion-closed {
+  font-size: 10px;
+  color: #aaa;
+  border: 1px dashed #ddd;
+  border-top: none;
+  padding: 6px 12px;
+  margin-bottom: 14px;
+}
+.accordion-open {
+  border: 1px solid #ddd;
+  border-top: none;
+  padding: 14px 12px;
+  background: #fcfcfc;
+  margin-bottom: 14px;
+}
+
+/* ---- Checkbox ---- */
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  border: 1px solid #bbb;
+  padding: 11px 1px 1px 13px;
+  min-height: 40px;
+  background: #fafafa;
+  margin-bottom: 18px;
+}
+.checkbox-row--error { border-color: #888; }
+.checkbox-box {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #888;
+  background: #fff;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.checkbox-label {
+  font-size: 11px;
+  color: #333;
+  line-height: 17.6px;
+}
+.checkbox-link { border-bottom: 1px solid #555; }
+
+/* ---- Buttons ---- */
+.btn-dark {
+  width: 100%;
+  height: 44px;
+  background: #111;
+  border: 1px solid #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.btn-dark--disabled {
+  background: #ccc;
+  border-color: #ccc;
+}
+.btn-download {
+  width: 100%;
+  height: 44px;
+  background: #333;
+  border: 1px solid #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 8px;
+  cursor: pointer;
+}
+.btn-ghost {
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #aaa;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* ---- Success ---- */
+.success-block {
+  text-align: center;
+  padding: 24px 0 8px;
+}
+.success-icon {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #555;
+  margin: 0 auto 16px;
+}
+.success-msg {
+  font-size: 12px;
+  color: #333;
+  line-height: 22.2px;
+  margin-bottom: 20px;
+}
+.mail-notice {
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+  line-height: 17.6px;
+  margin-top: 12px;
+}
+
+/* ---- Divider ---- */
+.divider { border: none; border-top: 1px dashed #e0e0e0; margin: 14px 0; }
+
+/* ---- Component type annotation ---- */
+.comp-type {
+  font-size: 9px;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+/* ---- Annotation number ---- */
+.ann {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #444;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  vertical-align: middle;
+  margin-left: 3px;
+}
+
+/* ---- Tag badge ---- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28.5px;
+  padding: 6px 9px;
+  border: 1px solid #555;
+  font-size: 11px;
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: normal;
+}
+
+/* ---- Breadcrumb ---- */
+.breadcrumb {
+  font-size: 11px;
+  color: #888;
+  line-height: 17.6px;
+  margin-bottom: 20px;
+}
+.breadcrumb span { color: #111; }
+
+/* ---- Page title ---- */
+.page-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+  line-height: normal;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+/* ---- Section heading ---- */
+.sec-heading {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+  line-height: normal;
+  margin-bottom: 12px;
+}

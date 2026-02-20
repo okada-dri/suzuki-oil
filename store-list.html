@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>販売店一覧 — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="_base.css">
+  <style>
+    /* Center content area */
+    .inner {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Remove gap between header and breadcrumb */
+    .page-bg {
+      padding-top: 0;
+    }
+    /* Breadcrumb top margin */
+    .breadcrumb {
+      margin-top: 8px;
+    }
+    /* Remove underline from page title */
+    .page-title {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    /* ---- Store list ---- */
+    .store-section {
+      margin-top: 32px;
+    }
+
+    /* Filter block */
+    .store-filters {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding: 16px 20px;
+      background: #f8f8f8;
+      border: 1px solid #e8e8e8;
+    }
+    .store-filter {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .store-filter__label {
+      font-size: 11px;
+      color: #999;
+      font-family: 'Helvetica Neue', sans-serif;
+      width: 52px;
+      flex-shrink: 0;
+      letter-spacing: 0.04em;
+    }
+    .store-filter__btns {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .store-filter__btn {
+      border: 1px solid #bbb;
+      padding: 5px 14px;
+      font-size: 12px;
+      color: #555;
+      line-height: normal;
+      letter-spacing: 0.04em;
+      font-family: 'Helvetica Neue', sans-serif;
+      cursor: pointer;
+    }
+    .store-filter__btn--active {
+      background: #111;
+      border-color: #111;
+      color: #fff;
+    }
+
+    /* Area heading */
+    .store-area-heading {
+      font-size: 11px;
+      font-weight: 700;
+      color: #999;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e8e8e8;
+      margin-bottom: 16px;
+      margin-top: 40px;
+    }
+    .store-area-heading:first-child {
+      margin-top: 0;
+    }
+
+    /* Grid: 3 columns */
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Store card */
+    .store-card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #fff;
+    }
+    .store-card__tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .store-tag {
+      border: 1px solid #555;
+      padding: 3px 8px;
+      font-size: 11px;
+      color: #111;
+      line-height: normal;
+      font-family: 'Helvetica Neue', sans-serif;
+      white-space: nowrap;
+    }
+    .store-card__name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.4;
+      font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+    }
+    .store-card__info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .store-card__row {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .store-card__label {
+      font-size: 11px;
+      color: #999;
+      line-height: 20px;
+      width: 52px;
+      flex-shrink: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .store-card__value {
+      font-size: 12px;
+      color: #333;
+      line-height: 20px;
+      font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+    }
+    .store-card__map {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: #111;
+      text-decoration: underline;
+      font-family: 'Helvetica Neue', sans-serif;
+      margin-top: 4px;
+    }
+
+    /* ---- Pagination ---- */
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .pagination__item {
+      font-size: 12px;
+      color: #111;
+      line-height: normal;
+      font-family: 'Helvetica Neue', sans-serif;
+      cursor: pointer;
+      min-width: 32px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pagination__item--active {
+      border: 1px solid #111;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Page content -->
+  <div class="page-bg">
+    <div class="inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        TOP &gt; <span>販売店一覧</span>
+      </div>
+
+      <!-- Page title -->
+      <h1 class="page-title">販売店一覧</h1>
+
+      <!-- Store list -->
+      <div class="store-section">
+
+        <!-- Filters: brand + area -->
+        <div class="store-filters">
+          <div class="store-filter">
+            <span class="store-filter__label">ブランド</span>
+            <div class="store-filter__btns">
+              <div class="store-filter__btn store-filter__btn--active">すべて</div>
+              <div class="store-filter__btn">QZILLA</div>
+              <div class="store-filter__btn">enative365R</div>
+            </div>
+          </div>
+          <div class="store-filter">
+            <span class="store-filter__label">エリア</span>
+            <div class="store-filter__btns">
+              <div class="store-filter__btn store-filter__btn--active">すべて</div>
+              <div class="store-filter__btn">関東</div>
+              <div class="store-filter__btn">中部</div>
+              <div class="store-filter__btn">関西</div>
+              <div class="store-filter__btn">北陸・東海</div>
+              <div class="store-filter__btn">九州・その他</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 関東 -->
+        <div class="store-area-heading">関東</div>
+        <div class="store-grid">
+          <div class="store-card">
+            <div class="store-card__tags">
+              <span class="store-tag">QZILLA</span>
+              <span class="store-tag">enative365R</span>
+            </div>
+            <div class="store-card__name">関東潤滑オイル販売株式会社</div>
+            <div class="store-card__info">
+              <div class="store-card__row">
+                <span class="store-card__label">住所</span>
+                <span class="store-card__value">東京都大田区東蒲田2-8-9</span>
+              </div>
+              <div class="store-card__row">
+                <span class="store-card__label">電話</span>
+                <span class="store-card__value">03-0000-0001</span>
+              </div>
+            </div>
+            <a class="store-card__map" href="#">▸ Googleマップで見る</a>
+          </div>
+          <div class="store-card">
+            <div class="store-card__tags">
+              <span class="store-tag">enative365R</span>
+            </div>
+            <div class="store-card__name">カーショップ アクセル 横浜店</div>
+            <div class="store-card__info">
+              <div class="store-card__row">
+                <span class="store-card__label">住所</span>
+                <span class="store-card__value">神奈川県横浜市港北区新横浜3-4-5</span>
+              </div>
+              <div class="store-card__row">
+                <span class="store-card__label">電話</span>
+                <span class="store-card__value">045-000-0002</span>
+              </div>
+            </div>
+            <a class="store-card__map" href="#">▸ Googleマップで見る</a>
+          </div>
+        </div>
+
+        <!-- 中部 -->
+        <div class="store-area-heading">中部</div>
+        <div class="store-grid">
+          <div class="store-card">
+            <div class="store-card__tags">
+              <span class="store-tag">QZILLA</span>
+              <span class="store-tag">enative365R</span>
+            </div>
+            <div class="store-card__name">山田機械工具株式会社</div>
+            <div class="store-card__info">
+              <div class="store-card__row">
+                <span class="store-card__label">住所</span>
+                <span class="store-card__value">岐阜県関市旭ヶ丘1-1-1</span>
+              </div>
+              <div class="store-card__row">
+                <span class="store-card__label">電話</span>
+                <span class="store-card__value">0575-00-0003</span>
+              </div>
+            </div>
+            <a class="store-card__map" href="#">▸ Googleマップで見る</a>
+          </div>
+          <div class="store-card">
+            <div class="store-card__tags">
+              <span class="store-tag">QZILLA</span>
+            </div>
+            <div class="store-card__name">東海オイル商事株式会社</div>
+            <div class="store-card__info">
+              <div class="store-card__row">
+                <span class="store-card__label">住所</span>
+                <span class="store-card__value">愛知県名古屋市中区栄2-3-4</span>
+              </div>
+              <div class="store-card__row">
+                <span class="store-card__label">電話</span>
+                <span class="store-card__value">052-000-0004</span>
+              </div>
+            </div>
+            <a class="store-card__map" href="#">▸ Googleマップで見る</a>
+          </div>
+          <div class="store-card">
+            <div class="store-card__tags">
+              <span class="store-tag">enative365R</span>
+            </div>
+            <div class="store-card__name">カーショップ フォース 名古屋北店</div>
+            <div class="store-card__info">
+              <div class="store-card__row">
+                <span class="store-card__label">住所</span>
+                <span class="store-card__value">愛知県名古屋市北区楠1-5-6</span>
+              </div>
+              <div class="store-card__row">
+                <span class="store-card__label">電話</span>
+                <span class="store-card__value">052-000-0005</span>
+              </div>
+            </div>
+            <a class="store-card__map" href="#">▸ Googleマップで見る</a>
+          </div>
+          <div class="store-card">
+            <div class="store-card__tags">
+              <span class="store-tag">QZILLA</span>
+            </div>
+            <div class="store-card__name">中部産業機械株式会社</div>
+            <div class="store-card__info">
+              <div class="store-card__row">
+                <span class="store-card__label">住所</span>
+                <span class="store-card__value">三重県四日市市諏訪栄町4-5-6</span>
+              </div>
+              <div class="store-card__row">
+                <span class="store-card__label">電話</span>
+                <span class="store-card__value">059-000-0006</span>
+              </div>
+            </div>
+            <a class="store-card__map" href="#">▸ Googleマップで見る</a>
+          </div>
+        </div>
+
+        <!-- 関西 -->
+        <div class="store-area-heading">関西</div>
+        <div class="store-grid">
+          <div class="store-card">
+            <div class="store-card__tags">
+              <span class="store-tag">QZILLA</span>
+              <span class="store-tag">enative365R</span>
+            </div>
+            <div class="store-card__name">大阪工業用品センター</div>
+            <div class="store-card__info">
+              <div class="store-card__row">
+                <span class="store-card__label">住所</span>
+                <span class="store-card__value">大阪府大阪市西区立売堀3-7-8</span>
+              </div>
+              <div class="store-card__row">
+                <span class="store-card__label">電話</span>
+                <span class="store-card__value">06-0000-0007</span>
+              </div>
+            </div>
+            <a class="store-card__map" href="#">▸ Googleマップで見る</a>
+          </div>
+          <div class="store-card">
+            <div class="store-card__tags">
+              <span class="store-tag">enative365R</span>
+            </div>
+            <div class="store-card__name">オートバックス 神戸垂水店</div>
+            <div class="store-card__info">
+              <div class="store-card__row">
+                <span class="store-card__label">住所</span>
+                <span class="store-card__value">兵庫県神戸市垂水区日向1-2-3</span>
+              </div>
+              <div class="store-card__row">
+                <span class="store-card__label">電話</span>
+                <span class="store-card__value">078-000-0008</span>
+              </div>
+            </div>
+            <a class="store-card__map" href="#">▸ Googleマップで見る</a>
+          </div>
+        </div>
+
+        <!-- 北陸・東海 -->
+        <div class="store-area-heading">北陸・東海</div>
+        <div class="store-grid">
+          <div class="store-card">
+            <div class="store-card__tags">
+              <span class="store-tag">QZILLA</span>
+            </div>
+            <div class="store-card__name">北陸機械工具商会</div>
+            <div class="store-card__info">
+              <div class="store-card__row">
+                <span class="store-card__label">住所</span>
+                <span class="store-card__value">石川県金沢市武蔵町3-12-13</span>
+              </div>
+              <div class="store-card__row">
+                <span class="store-card__label">電話</span>
+                <span class="store-card__value">076-000-0009</span>
+              </div>
+            </div>
+            <a class="store-card__map" href="#">▸ Googleマップで見る</a>
+          </div>
+        </div>
+
+        <!-- 九州・その他 -->
+        <div class="store-area-heading">九州・その他</div>
+        <div class="store-grid">
+          <div class="store-card">
+            <div class="store-card__tags">
+              <span class="store-tag">enative365R</span>
+            </div>
+            <div class="store-card__name">ガレージ ファクトリー 福岡博多店</div>
+            <div class="store-card__info">
+              <div class="store-card__row">
+                <span class="store-card__label">住所</span>
+                <span class="store-card__value">福岡県福岡市博多区中洲5-10-11</span>
+              </div>
+              <div class="store-card__row">
+                <span class="store-card__label">電話</span>
+                <span class="store-card__value">092-000-0010</span>
+              </div>
+            </div>
+            <a class="store-card__map" href="#">▸ Googleマップで見る</a>
+          </div>
+        </div>
+      </div><!-- /store-section -->
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <div class="pagination__item pagination__item--active">1</div>
+        <div class="pagination__item">2</div>
+        <div class="pagination__item">3</div>
+        <div class="pagination__item">…</div>
+        <div class="pagination__item">6</div>
+        <div class="pagination__item">&gt;</div>
+      </div>
+
+      <!-- Back to TOP -->
+      <div style="margin-top: 48px; display: flex; justify-content: center;">
+        <div class="btn-ghost" style="width: 200px;">TOPに戻る</div>
+      </div>
+
+    </div><!-- /inner -->
+  </div><!-- /page-bg -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>
