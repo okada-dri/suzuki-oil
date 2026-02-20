@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>enative365R — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ---- Header (index.htmlと同じ) ---- */
+    .site-header {
+      height: 80px;
+    }
+    .site-header__title {
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.26px;
+    }
+
+    /* ---- Hero placeholders (full 1440px) ---- */
+    .hero-main {
+      width: 1440px;
+      height: 440px;
+      background: #d9d9d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      line-height: 20px;
+    }
+    .hero-lineup {
+      width: 1440px;
+      height: 200px;
+      background: #d4d4d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    /* ---- Content area ---- */
+    .content-area {
+      width: 1040px;
+      margin-left: 200px;
+      padding-top: 48px;
+      padding-bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+
+    /* ---- Intro block ---- */
+    .intro-block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .lead-text {
+      font-size: 13px;
+      color: #333;
+      line-height: 26px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .intro-cols {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .checklist-item {
+      display: flex;
+      gap: 8px;
+      font-size: 13px;
+      color: #111;
+      line-height: 26.4px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .checklist-item__mark {
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+    .btn-sds {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border: 1px solid #111;
+      background: #fff;
+      padding: 15px 0;
+      width: 240px;
+      font-size: 12px;
+      color: #111;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      flex-shrink: 0;
+      align-self: flex-end;
+    }
+
+    /* ---- Section heading ---- */
+    .sec-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+      margin-bottom: 20px;
+    }
+
+    /* ---- 利用シーン: 2-col ---- */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .scene-item {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .scene-ph {
+      width: 100%;
+      height: 200px;
+      background: #d4d4d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      line-height: 17.6px;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .scene-desc {
+      font-size: 13px;
+      color: #333;
+      line-height: 22px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    /* ---- お客様の声: 4-col ---- */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .voice-card {
+      border: 1px solid #e0e0e0;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .voice-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #d4d4d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #888;
+      flex-shrink: 0;
+    }
+    .voice-text {
+      font-size: 12px;
+      color: #333;
+      line-height: 20px;
+      font-family: 'Noto Sans JP', sans-serif;
+      text-align: left;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Hero: メインビジュアル -->
+  <div class="hero-main">
+    【enative365Rメインビジュアル 1440px全幅】<br>
+    スポーツカー・バイクの写真、またはエンジン内部イメージ<br>
+    100% chlorine free &amp; solid lubrication free
+  </div>
+
+  <!-- Hero: ラインナップ -->
+  <div class="hero-lineup">
+    【enative365Rラインナップ 1440px全幅】<br>
+    VG220（4L / 1L / 240ml / 120ml）　VG68（4L / 1L）<br>
+    PFASフリー・ハロゲンフリー　極圧性能強化型潤滑オイル
+  </div>
+
+  <!-- Content area -->
+  <div class="content-area">
+
+    <!-- Intro -->
+    <div class="intro-block">
+      <p class="lead-text">enative365Rは、エンジン内部の摩擦を極限まで抑え、パフォーマンスを最大限に引き出すために開発された、PFASフリー・ハロゲンフリーの極圧性能強化型潤滑オイルです。その圧倒的な低摩擦係数（0.055〜0.085）により、走行中の摩擦や焼付き（カジリ）を大幅に軽減。燃費の向上とエンジンの長寿命化を同時に実現します。</p>
+      <div class="intro-cols">
+        <div class="checklist">
+          <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>摩擦係数0.055〜0.085の圧倒的低摩擦を実現</span></div>
+          <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>燃費向上とエンジン長寿命化を同時に実現</span></div>
+          <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>ナノスケールの潤滑成分が金属表面に強力に密着</span></div>
+          <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>錆・腐食・焼付きから大切な機械構造品を確実に守る</span></div>
+          <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>PFASフリー・REACH適合・RoHS3適合・PRTR非該当</span></div>
+        </div>
+        <a href="sds-download.html" class="btn-sds">SDS 安全データシート　↓</a>
+      </div>
+    </div>
+
+    <!-- 利用シーン -->
+    <div>
+      <p class="sec-title">利用シーン</p>
+      <div class="scene-grid">
+        <div class="scene-item">
+          <div class="scene-ph">車にenativeを利用している写真【エンジンオイル注入シーン】</div>
+          <p class="scene-desc">乗用車・スポーツカーのエンジンオイルに添加。摩擦を極限まで低減し、燃費向上とエンジン保護を一般乗用車まで対応します。</p>
+        </div>
+        <div class="scene-item">
+          <div class="scene-ph">バイクにenativeを利用している写真【エンジン整備シーン】</div>
+          <p class="scene-desc">バイク・自転車のエンジンやギヤ部への添加使用。産業用機械や特殊車両まで、あらゆるモビリティの性能を最大限に引き出します。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- お客様の声 -->
+    <div>
+      <p class="sec-title">お客様の声</p>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-photo">写真</div>
+          <p class="voice-text">エンジンの回転がスムーズになりました。燃費も体感できるほど向上しています。レスポンスの向上にも驚いています。（乗用車ユーザー）</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-photo">写真</div>
+          <p class="voice-text">バイクのエンジン音が静かになり、シフトチェンジもスムーズになりました。ツーリング後もエンジンが熱くなりにくくなりました。（バイクユーザー）</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-photo">写真</div>
+          <p class="voice-text">産業機械に添加したところ、異音が消えて設備が安定稼働するようになりました。メンテナンス頻度も下がり助かっています。（工場管理者）</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-photo">写真</div>
+          <p class="voice-text">フッ素・塩素フリーという環境配慮が決め手でした。性能も申し分なく、安心して使い続けています。（整備士）</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content-area -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>
