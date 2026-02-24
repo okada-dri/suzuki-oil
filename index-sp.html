@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>SP TOP — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ===== SP TOP (400px幅) ===== */
+
+    body {
+      width: 400px;
+      margin: 0;
+    }
+
+    /* === Header === */
+    .site-header {
+      width: 400px;
+      height: 56px;
+      position: relative;
+    }
+    .site-header__title {
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.24px;
+    }
+
+    /* === Hero === */
+    .hero {
+      width: 400px;
+      height: 240px;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero__label {
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 0.22px;
+      line-height: 19.8px;
+      text-align: center;
+    }
+
+    /* === About === */
+    .about-section {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      padding: 48px 24px 0;
+      box-sizing: border-box;
+      margin-top: 0;
+      height: auto;
+    }
+    .about-text {
+      width: 352px;
+      position: static;
+      height: auto;
+    }
+    .about-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      position: static;
+      margin-bottom: 16px;
+    }
+    .about-heading__en {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: -0.4px;
+      line-height: 20px;
+    }
+    .about-heading__ja {
+      font-size: 12px;
+      font-weight: 400;
+      color: #999;
+      letter-spacing: 0.24px;
+      line-height: 24px;
+    }
+    .about-body {
+      position: static;
+      width: 352px;
+      font-size: 13px;
+      font-weight: 400;
+      color: #444;
+      letter-spacing: -0.13px;
+      line-height: 26px;
+      margin-bottom: 24px;
+    }
+    .about-link {
+      position: static;
+      display: inline-flex;
+      width: 120px;
+      height: 40px;
+      background: #111;
+      border: 1px solid #111;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      margin-bottom: 24px;
+    }
+    .about-link span {
+      font-size: 11px;
+      color: #fff;
+      letter-spacing: 0.88px;
+      line-height: 22px;
+    }
+    .about-image {
+      width: 352px;
+      height: 200px;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+    }
+    .about-image__label {
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 0.22px;
+      line-height: 19.8px;
+      text-align: center;
+    }
+
+    /* === Separator === */
+    .section-divider {
+      width: 400px;
+      height: 1px;
+      background: #e0e0e0;
+      margin-top: 48px;
+    }
+
+    /* === Product section === */
+    .product-section {
+      width: 400px;
+      padding: 48px 24px 0;
+      box-sizing: border-box;
+    }
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .section-heading__en {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: -0.4px;
+      line-height: 20px;
+    }
+    .section-heading__ja {
+      font-size: 12px;
+      font-weight: 400;
+      color: #999;
+      letter-spacing: 0.24px;
+      line-height: 24px;
+    }
+
+    /* Product category label */
+    .product-category {
+      font-size: 11px;
+      font-weight: 700;
+      color: #999;
+      letter-spacing: 0.88px;
+      text-transform: uppercase;
+      line-height: 22px;
+      margin-bottom: 16px;
+    }
+
+    /* Product card — 縦積み */
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      width: 352px;
+      margin-bottom: 60px;
+    }
+    .product-card__image {
+      width: 352px;
+      height: 240px;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+    .product-card__logo-img {
+      display: block;
+      max-width: 180px;
+      width: 55%;
+      height: auto;
+    }
+    .product-card__info {
+      width: 352px;
+      position: static;
+    }
+    .product-card__tagline {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: -0.15px;
+      line-height: 24px;
+      margin-bottom: 12px;
+    }
+    .product-card__desc {
+      font-size: 13px;
+      font-weight: 400;
+      color: #444;
+      letter-spacing: -0.13px;
+      line-height: 26px;
+      margin-bottom: 12px;
+      width: 352px;
+    }
+    .product-card__list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .product-card__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: #333;
+      letter-spacing: -0.13px;
+      line-height: 26px;
+    }
+    .product-card__list li::before {
+      content: "✅";
+      flex-shrink: 0;
+    }
+    .product-card__btn-primary {
+      display: flex;
+      width: 352px;
+      height: 44px;
+      background: #111;
+      border: 1px solid #111;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      margin-bottom: 8px;
+    }
+    .product-card__btn-primary span {
+      font-size: 12px;
+      color: #fff;
+      letter-spacing: 0.96px;
+      line-height: 24px;
+    }
+    .product-card__btn-secondary {
+      display: flex;
+      width: 352px;
+      height: 44px;
+      background: #fff;
+      border: 1px solid #111;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .product-card__btn-secondary span {
+      font-size: 12px;
+      color: #111;
+      letter-spacing: 0.96px;
+      line-height: 24px;
+    }
+
+    /* === ARE SPRAY Banner === */
+    .are-spray-banner {
+      width: 400px;
+      height: 120px;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0;
+    }
+    .are-spray-banner__label {
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 0.22px;
+      line-height: 19.8px;
+      text-align: center;
+    }
+
+    /* === News section === */
+    .news-section {
+      width: 400px;
+      padding: 48px 24px 0;
+      box-sizing: border-box;
+    }
+    .news-list {
+      border-top: 1px solid #e8e8e8;
+      margin-bottom: 28px;
+    }
+    .news-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 14px 0;
+      border-bottom: 1px solid #e8e8e8;
+      height: auto;
+    }
+    .news-item__date {
+      font-size: 11px;
+      font-weight: 400;
+      color: #999;
+      letter-spacing: 0.44px;
+      line-height: 22px;
+      white-space: nowrap;
+      width: auto;
+    }
+    .news-item__title {
+      font-size: 13px;
+      font-weight: 400;
+      color: #333;
+      letter-spacing: -0.13px;
+      line-height: 26px;
+    }
+    .news-more {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 60px;
+    }
+    .news-more__btn {
+      width: 180px;
+      height: 44px;
+      background: #111;
+      border: 1px solid #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .news-more__btn span {
+      font-size: 12px;
+      color: #fff;
+      letter-spacing: 0.96px;
+      line-height: 24px;
+    }
+
+    /* === Contact Banner === */
+    .contact-banner {
+      width: 400px;
+      height: 100px;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-banner__label {
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 0.22px;
+      line-height: 19.8px;
+      text-align: center;
+    }
+
+    /* === Footer === */
+    .site-footer {
+      background: #e8e8e8;
+      width: 400px;
+      height: auto;
+      padding: 20px 0;
+      box-sizing: border-box;
+    }
+    .site-footer__nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-left: 0;
+      padding: 0 24px;
+      align-items: center;
+    }
+    .site-footer__nav a {
+      font-size: 12px;
+      color: #555;
+      letter-spacing: 0.24px;
+      line-height: 24px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- ===== Hero (メインビジュアル 動画) ===== -->
+  <div class="hero">
+    <p class="hero__label">【メインビジュアル 動画 400px全幅】<br>高性能潤滑オイルが機械に流れ込むイメージ映像</p>
+  </div>
+
+  <!-- ===== About ===== -->
+  <section class="about-section">
+    <div class="about-text">
+      <div class="about-heading">
+        <span class="about-heading__en">About</span>
+        <span class="about-heading__ja">私たちについて</span>
+      </div>
+      <p class="about-body">
+        鈴木刃物工業株式会社は岐阜県関市で1960年創業。フォーエスインダストリー株式会社とともに、産業・車用の高性能極圧潤滑オイルを開発・販売しています。塩素系・固体潤滑不使用の製品ラインナップで、工場設備から一般車両まで幅広い現場の課題を解決します。
+      </p>
+      <a href="#" class="about-link"><span>VIEW MORE</span></a>
+    </div>
+    <div class="about-image">
+      <span class="about-image__label">会社・ブランドイメージ写真</span>
+    </div>
+  </section>
+
+  <!-- ===== Separator ===== -->
+  <div class="section-divider"></div>
+
+  <!-- ===== Product ===== -->
+  <section class="product-section">
+    <div class="section-heading">
+      <span class="section-heading__en">Product</span>
+      <span class="section-heading__ja">製品情報</span>
+    </div>
+
+    <!-- 工業用 -->
+    <p class="product-category">工業用</p>
+    <div class="product-card">
+      <div class="product-card__image">
+        <img src="images/qzilla.png" alt="QZILLA" class="product-card__logo-img">
+      </div>
+      <div class="product-card__info">
+        <p class="product-card__tagline">圧倒的な極圧性と信頼の潤滑力！</p>
+        <p class="product-card__desc">
+          最新技術で環境と安全面に配慮し開発された、高性能の極圧性潤滑オイルのフラッグシップモデル。塩素系・固体潤滑不使用の微臭タイプです。
+        </p>
+        <ul class="product-card__list">
+          <li>摩擦抵抗が低く、省エネ・稼働効率を向上</li>
+          <li>高荷重条件でも優れた極圧性を維持</li>
+          <li>高い耐摩耗性で部品の劣化を防止</li>
+          <li>優れた防錆・耐水性で過酷環境にも対応</li>
+          <li>ゴム・樹脂にも優しい塩素・固体潤滑剤フリー設計</li>
+        </ul>
+        <a href="#" class="product-card__btn-primary"><span>詳しくはこちら →</span></a>
+        <a href="#" class="product-card__btn-secondary"><span>販売事例を見る</span></a>
+      </div>
+    </div>
+
+    <!-- 車用 -->
+    <p class="product-category">車用</p>
+    <div class="product-card">
+      <div class="product-card__image">
+        <img src="images/enative365r_logo.png" alt="enative365R" class="product-card__logo-img">
+      </div>
+      <div class="product-card__info">
+        <p class="product-card__tagline">クセになる極圧性能。限界を超える潤滑力。</p>
+        <p class="product-card__desc">
+          エンジン内部の摩擦を極限まで抑え、パフォーマンスを最大限に引き出すために開発された、PFASフリー・ハロゲンフリーの極圧性能強化型潤滑オイルです。
+        </p>
+        <ul class="product-card__list">
+          <li>摩擦係数0.055〜0.085の圧倒的低摩擦を実現</li>
+          <li>燃費向上とエンジン長寿命化を同時に実現</li>
+          <li>ナノスケールの潤滑成分が金属表面に密着</li>
+          <li>錆・腐食・焼付きから大切な機構部品を保護</li>
+          <li>100% chlorine free &amp; solid lubrication free</li>
+        </ul>
+        <a href="#" class="product-card__btn-primary"><span>詳しくはこちら →</span></a>
+        <a href="#" class="product-card__btn-secondary"><span>販売事例を見る</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARE SPRAY Banner ===== -->
+  <div class="are-spray-banner">
+    <p class="are-spray-banner__label">
+      【AREスプレーバナー 400px全幅】<br>
+      ARE SPRAY ARPE-480S 「極圧×浸透」あなたの相棒に<br>
+      塩素系・固体潤滑不使用の次世代型浸透潤滑スプレー
+    </p>
+  </div>
+
+  <!-- ===== News ===== -->
+  <section class="news-section">
+    <div class="section-heading">
+      <span class="section-heading__en">News</span>
+      <span class="section-heading__ja">お知らせ</span>
+    </div>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="news-item__date">2026.02.17</span>
+        <span class="news-item__title">enative365R取扱店舗を拡大しました。</span>
+      </div>
+      <div class="news-item">
+        <span class="news-item__date">2026.01.15</span>
+        <span class="news-item__title">QZILLA製品導入効果事例集を公開しました。</span>
+      </div>
+      <div class="news-item">
+        <span class="news-item__date">2025.10.19</span>
+        <span class="news-item__title">ARE SPRAY（ARPE-480S）新製品情報を公開しました。</span>
+      </div>
+      <div class="news-item">
+        <span class="news-item__date">2025.11.07</span>
+        <span class="news-item__title">SDS安全データシートダウンロードページを開設しました。</span>
+      </div>
+    </div>
+    <div class="news-more">
+      <a href="#" class="news-more__btn"><span>VIEW MORE</span></a>
+    </div>
+  </section>
+
+  <!-- ===== Contact Banner ===== -->
+  <div class="contact-banner">
+    <p class="contact-banner__label">
+      【お問い合わせバナー 400px全幅】<br>
+      製品・OEMについて / 販売店様のご紹介<br>
+      オイル濃度・金属組成についてのご相談・ご質問
+    </p>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <nav class="site-footer__nav">
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">ECサイト</a>
+      <a href="#">運営会社</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
