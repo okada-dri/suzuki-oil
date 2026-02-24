@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>SP QZILLA SPRAY SERIES — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ===== SP QZILLA SPRAY SERIES (400px幅) ===== */
+
+    body {
+      width: 400px;
+      margin: 0;
+    }
+
+    /* === Header === */
+    .site-header {
+      width: 400px;
+      height: 56px;
+    }
+    .site-header__title {
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.24px;
+    }
+
+    /* === Page heading === */
+    .page-heading {
+      width: 352px;
+      margin: 32px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .page-heading__main {
+      font-size: 20px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+      letter-spacing: 0.01em;
+    }
+    .page-heading__sub {
+      font-size: 13px;
+      color: #888;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: normal;
+    }
+
+    /* === Content area === */
+    .content-area {
+      width: 352px;
+      margin: 0 auto;
+      margin-top: 24px;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    /* === Intro: stacked === */
+    .intro-grid {
+      flex-direction: column;
+      gap: 24px;
+      display: flex;
+    }
+    .intro-text {
+      width: 352px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .lead-text {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.55;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .feature-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .feature-heading {
+      font-size: 15px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .checklist {
+      display: flex;
+      flex-direction: column;
+    }
+    .checklist-item {
+      display: flex;
+      gap: 6px;
+      font-size: 13px;
+      color: #111;
+      line-height: 26.4px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .checklist-item__mark {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .btn-sds {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border: 1px solid #111;
+      background: #fff;
+      padding: 15px 0;
+      width: 352px;
+      font-size: 12px;
+      color: #111;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .intro-image {
+      width: 352px;
+      height: 280px;
+      object-fit: contain;
+      background: #f0f0f0;
+    }
+
+    /* === Lineup: 2-col === */
+    .sec-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+      margin-bottom: 16px;
+    }
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .lineup-item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .lineup-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: #f0f0f0;
+    }
+    .lineup-name {
+      font-size: 13px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .lineup-price {
+      font-size: 11px;
+      color: #666;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .btn-purchase {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      border: 1px solid #111;
+      color: #fff;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      padding: 15px 0;
+      margin-top: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      width: 100%;
+    }
+
+    /* === Case studies: stacked === */
+    .case-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .case-item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .case-ph {
+      width: 352px;
+      height: 160px;
+      background: #d4d4d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .case-content {
+      width: 352px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+    .tag {
+      border: 1px solid #555;
+      padding: 5px 8px;
+      font-size: 11px;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .case-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+      margin-bottom: 10px;
+    }
+    .case-desc {
+      font-size: 12px;
+      color: #333;
+      line-height: 22.2px;
+      font-family: 'Noto Sans JP', sans-serif;
+      margin-bottom: 16px;
+    }
+    .btn-view-more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 152px;
+      height: 36px;
+      background: #111;
+      border: 1px solid #111;
+      color: #fff;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+    }
+
+    /* === Footer === */
+    .site-footer {
+      width: 400px;
+      background: #e8e8e8;
+      padding: 20px 24px;
+      box-sizing: border-box;
+      height: auto;
+    }
+    .site-footer p {
+      font-size: 12px;
+      color: #555;
+      margin-left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Page heading -->
+  <div class="page-heading">
+    <span class="page-heading__main">QZIILA SPRAY SERIES</span>
+    <span class="page-heading__sub">クジラスプレーシリーズ</span>
+  </div>
+
+  <!-- Content area -->
+  <div class="content-area">
+
+    <!-- Intro: text + image (stacked) -->
+    <div class="intro-grid">
+      <div class="intro-text">
+        <p class="lead-text">極圧を制するプロ仕様の滑りで、あらゆる摺動領域を軽やかに。<br>
+          極圧性・耐摩耗性・潤滑性を高次元で融合した<br>
+          極圧性潤滑スプレーのフラッグシップモデル。<br>
+          塩素系・固体潤滑不使用の微臭タイプです。</p>
+        <div class="feature-block">
+          <p class="feature-heading">QZILLAスプレーの特徴</p>
+          <div class="checklist">
+            <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>EPオイル性能をそのままに手軽さを重視したスプレータイプ</span></div>
+            <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>耐摩耗・長時間潤滑で部品の損傷や焼付きを防止</span></div>
+            <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>スプレーならではの優れた浸透力で細部や狭所にも対応</span></div>
+            <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>工具不要、持ち運び・作業性に優れた保守・点検時に重宝</span></div>
+            <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>塩素系・固体潤滑不使用の微臭タイプ、環境・素材を選ばない</span></div>
+          </div>
+        </div>
+        <a href="sds-download.html" class="btn-sds">SDS 安全データシート　↓</a>
+      </div>
+      <img src="images/480s.jpg" alt="QZEP-480S" class="intro-image">
+    </div>
+
+    <!-- Lineup -->
+    <div>
+      <p class="sec-title">ラインナップ</p>
+      <div class="lineup-grid">
+        <div class="lineup-item">
+          <img src="images/480s.jpg" alt="QZEP-480S（480ml）" class="lineup-img">
+          <div>
+            <p class="lineup-name">QZEP-480S（480ml）</p>
+            <p class="lineup-price">¥オープン価格</p>
+          </div>
+        </div>
+        <div class="lineup-item">
+          <img src="images/arpe480s.jpg" alt="ARE / ARPE-480S（480ml）" class="lineup-img">
+          <div>
+            <p class="lineup-name">ARE / ARPE-480S（480ml）</p>
+            <p class="lineup-price">¥オープン価格</p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; margin-top: 24px;">
+        <a href="#" class="btn-purchase" style="width: 352px;">ご購入はこちらから</a>
+      </div>
+    </div>
+
+    <!-- Case studies -->
+    <div>
+      <p class="sec-title">事業事例</p>
+      <div class="case-list">
+
+        <!-- 事例1 -->
+        <div class="case-item">
+          <div class="case-ph">設備保全事例イメージ写真（チェーン・スプロケット）</div>
+          <div class="case-content">
+            <div class="tags">
+              <span class="tag">保全</span>
+              <span class="tag">QZEP-60</span>
+              <span class="tag">QZEP-200</span>
+            </div>
+            <p class="case-title">搬送装置チェーン部の焼付き・異音対策</p>
+            <p class="case-desc">チェーン・ピン部の焼付き・摩耗を抑制。運転低減と安定した連続稼働を長期間実現。</p>
+            <a href="#" class="btn-view-more">VIEW MORE</a>
+          </div>
+        </div>
+
+        <!-- 事例2 -->
+        <div class="case-item">
+          <div class="case-ph">公共設備事例イメージ写真（立体駐車場・チェーン）</div>
+          <div class="case-content">
+            <div class="tags">
+              <span class="tag">保全</span>
+              <span class="tag">QZEP-60</span>
+              <span class="tag">QZEP-200</span>
+            </div>
+            <p class="case-title">立体駐車場チェーン駆動部の摩耗・異音対策</p>
+            <p class="case-desc">摩耗・錆によるきしみ音を抑制。潤滑・防錆効果で静音化と寿命延長を実現。メンテナンス頻度も軽減。</p>
+            <a href="#" class="btn-view-more">VIEW MORE</a>
+          </div>
+        </div>
+
+        <!-- 事例3 -->
+        <div class="case-item">
+          <div class="case-ph">加工事例イメージ写真（ハンドタップ・工具）</div>
+          <div class="case-content">
+            <div class="tags">
+              <span class="tag">加工</span>
+              <span class="tag">QZEP-60</span>
+              <span class="tag">QZEP-200</span>
+            </div>
+            <p class="case-title">ハンドタップの戻り時の引っ掛かり改善</p>
+            <p class="case-desc">極圧効果と浸透性によりタップの戻りがスムーズに。折損トラブルの発生を抑制し作業効率が向上。</p>
+            <a href="#" class="btn-view-more">VIEW MORE</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /content-area -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>

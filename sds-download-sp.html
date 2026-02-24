@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>SP SDSダウンロード申請 — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ===== SP SDSダウンロード申請 (400px幅) ===== */
+
+    body {
+      width: 400px;
+      margin: 0;
+    }
+
+    /* === Header === */
+    .site-header {
+      width: 400px;
+      height: 56px;
+    }
+    .site-header__title {
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.24px;
+    }
+
+    /* === Inner override === */
+    .inner {
+      width: 352px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      box-sizing: border-box;
+    }
+
+    /* === Page BG === */
+    .page-bg {
+      padding-top: 0;
+    }
+
+    .breadcrumb {
+      margin-top: 8px;
+    }
+
+    .page-title {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .form-lead {
+      margin-bottom: 24px;
+    }
+
+    /* === Form container === */
+    .form-container {
+      width: 352px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 0;
+    }
+
+    .form-label {
+      margin-bottom: 0;
+    }
+
+    /* Submit button */
+    .form-container .btn-dark {
+      width: 352px;
+      margin: 24px auto;
+    }
+
+    /* === Footer === */
+    .site-footer {
+      width: 400px;
+      background: #e8e8e8;
+      padding: 20px 24px;
+      box-sizing: border-box;
+      height: auto;
+    }
+    .site-footer p {
+      font-size: 12px;
+      color: #555;
+      margin-left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Page content -->
+  <div class="page-bg">
+    <div class="inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        TOP &gt; 製品情報 &gt; QZILLA &gt; <span>SDSダウンロード申請</span>
+      </div>
+
+      <!-- Page title -->
+      <h1 class="page-title">SDSダウンロード申請</h1>
+
+      <!-- Lead text -->
+      <p class="form-lead">
+        SDS（安全データシート）の提供および改訂時のご連絡のため、以下の情報をご入力ください。
+      </p>
+
+      <!-- Form -->
+      <div class="form-container">
+
+        <!-- 会社名 -->
+        <div class="form-field">
+          <div class="form-label">会社名 <span class="badge-required">*</span></div>
+          <div class="form-input">会社名を入力</div>
+        </div>
+
+        <!-- 部署名 -->
+        <div class="form-field">
+          <div class="form-label">部署名</div>
+          <div class="form-input">部署名を入力</div>
+        </div>
+
+        <!-- 氏名 -->
+        <div class="form-field">
+          <div class="form-label">氏名 <span class="badge-required">*</span></div>
+          <div class="form-input">氏名を入力</div>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="form-field">
+          <div class="form-label">メールアドレス <span class="badge-required">*</span></div>
+          <div class="form-input">example@company.com</div>
+        </div>
+
+        <!-- 国・地域 -->
+        <div class="form-field">
+          <div class="form-label">国・地域 <span class="badge-required">*</span></div>
+          <div class="form-select">Japan <span class="form-select__arrow">▼</span></div>
+        </div>
+
+        <!-- 業種 -->
+        <div class="form-field">
+          <div class="form-label">業種</div>
+          <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
+        </div>
+
+        <!-- 使用用途 -->
+        <div class="form-field">
+          <div class="form-label">使用用途</div>
+          <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="form-field">
+          <div class="form-label">電話番号</div>
+          <div class="form-input">例：0575-24-3001</div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- SDS改訂通知オプトイン -->
+        <div class="checkbox-row" style="margin-bottom:20px;">
+          <div class="checkbox-box"></div>
+          <div class="checkbox-label">SDS改訂時の通知を受け取る</div>
+        </div>
+
+        <!-- 個人情報同意 -->
+        <div class="checkbox-row">
+          <div class="checkbox-box"></div>
+          <div class="checkbox-label">
+            <span class="checkbox-link">個人情報の取り扱い</span>に同意する（<span class="checkbox-link">プライバシーポリシー</span>）
+          </div>
+        </div>
+
+        <!-- 送信ボタン -->
+        <div class="btn-dark">SDSを受け取る</div>
+
+      </div><!-- /form-container -->
+    </div><!-- /inner -->
+  </div><!-- /page-bg -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>

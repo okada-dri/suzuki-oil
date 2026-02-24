@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>SP QZILLA OIL SERIES — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ===== SP QZILLA OIL SERIES (400px幅) ===== */
+
+    body {
+      width: 400px;
+      margin: 0;
+    }
+
+    /* === Header === */
+    .site-header {
+      width: 400px;
+      height: 56px;
+    }
+    .site-header__title {
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.24px;
+    }
+
+    /* === Page heading === */
+    .page-heading {
+      width: 352px;
+      margin: 32px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .page-heading__main {
+      font-size: 20px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+      letter-spacing: 0.01em;
+    }
+    .page-heading__sub {
+      font-size: 13px;
+      color: #888;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: normal;
+    }
+
+    /* === Content area === */
+    .content-area {
+      width: 352px;
+      margin: 0 auto;
+      margin-top: 24px;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    /* === Intro: stacked === */
+    .intro-grid {
+      flex-direction: column;
+      gap: 24px;
+      display: flex;
+    }
+    .intro-text {
+      width: 352px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .lead-text {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.55;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .feature-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .feature-heading {
+      font-size: 15px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .checklist {
+      display: flex;
+      flex-direction: column;
+    }
+    .checklist-item {
+      display: flex;
+      gap: 6px;
+      font-size: 13px;
+      color: #111;
+      line-height: 26.4px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .checklist-item__mark {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .btn-sds {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border: 1px solid #111;
+      background: #fff;
+      padding: 15px 0;
+      width: 352px;
+      font-size: 12px;
+      color: #111;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .intro-image {
+      width: 352px;
+      height: 280px;
+      object-fit: contain;
+    }
+
+    /* === Lineup: 2-col === */
+    .sec-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+      margin-bottom: 16px;
+    }
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .lineup-item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .lineup-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .lineup-name {
+      font-size: 13px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .lineup-price {
+      font-size: 11px;
+      color: #666;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .btn-purchase {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      border: 1px solid #111;
+      color: #fff;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      padding: 15px 0;
+      margin-top: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      width: 100%;
+    }
+
+    /* === Case studies: stacked === */
+    .case-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .case-item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .case-ph {
+      width: 352px;
+      height: 160px;
+      background: #d4d4d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .case-content {
+      width: 352px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+    .tag {
+      border: 1px solid #555;
+      padding: 5px 8px;
+      font-size: 11px;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .case-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+      margin-bottom: 10px;
+    }
+    .case-desc {
+      font-size: 12px;
+      color: #333;
+      line-height: 22.2px;
+      font-family: 'Noto Sans JP', sans-serif;
+      margin-bottom: 16px;
+    }
+    .btn-view-more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 152px;
+      height: 36px;
+      background: #111;
+      border: 1px solid #111;
+      color: #fff;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+    }
+
+    /* === Footer === */
+    .site-footer {
+      width: 400px;
+      background: #e8e8e8;
+      padding: 20px 24px;
+      box-sizing: border-box;
+      height: auto;
+    }
+    .site-footer p {
+      font-size: 12px;
+      color: #555;
+      margin-left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Page heading -->
+  <div class="page-heading">
+    <span class="page-heading__main">QZIILA OIL SERIES</span>
+    <span class="page-heading__sub">クジラ原液シリーズ</span>
+  </div>
+
+  <!-- Content area -->
+  <div class="content-area">
+
+    <!-- Intro: text + image (stacked) -->
+    <div class="intro-grid">
+      <div class="intro-text">
+        <p class="lead-text">塩素系・固体潤滑不使用で、微臭タイプの高性能潤滑剤。<br>
+          最新技術で環境と安全面に配慮し開発された、<br>
+          高性能の極圧性潤滑オイルのフラッグシップモデルです。</p>
+        <div class="feature-block">
+          <p class="feature-heading">QZILLAオイルの特徴</p>
+          <div class="checklist">
+            <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>摩擦抵抗が低く、エネルギー損失を抑え稼働効率と省エネ性を向上</span></div>
+            <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>高荷重条件でも潤滑性能を維持する優れた極圧性</span></div>
+            <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>高い耐摩耗性を備え、摩耗による部品の劣化を防止</span></div>
+            <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>優れた防錆性と耐水性で過酷な環境にも対応</span></div>
+            <div class="checklist-item"><span class="checklist-item__mark">✅</span><span>ゴム・樹脂にも優しい塩素・固体潤滑剤フリー設計</span></div>
+          </div>
+        </div>
+        <a href="sds-download.html" class="btn-sds">SDS 安全データシート　↓</a>
+      </div>
+      <img src="images/qzilla-all.jpg" alt="QZILLA 製品ラインナップ" class="intro-image">
+    </div>
+
+    <!-- Lineup -->
+    <div>
+      <p class="sec-title">ラインナップ</p>
+      <div class="lineup-grid">
+        <div class="lineup-item">
+          <img src="images/60-1l-1.jpg" alt="QZEP-60（1L）" class="lineup-img">
+          <div>
+            <p class="lineup-name">QZEP-60（1L）</p>
+            <p class="lineup-price">¥オープン価格</p>
+          </div>
+        </div>
+        <div class="lineup-item">
+          <img src="images/60-4l-1.jpg" alt="QZEP-60（4L）" class="lineup-img">
+          <div>
+            <p class="lineup-name">QZEP-60（4L）</p>
+            <p class="lineup-price">¥オープン価格</p>
+          </div>
+        </div>
+        <div class="lineup-item">
+          <img src="images/200-4l-1.jpg" alt="QZEP-200（4L）" class="lineup-img">
+          <div>
+            <p class="lineup-name">QZEP-200（4L）</p>
+            <p class="lineup-price">¥オープン価格</p>
+          </div>
+        </div>
+        <div class="lineup-item">
+          <img src="images/200-1l-1.jpg" alt="QZEP-200（1L）" class="lineup-img">
+          <div>
+            <p class="lineup-name">QZEP-200（1L）</p>
+            <p class="lineup-price">¥オープン価格</p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; margin-top: 24px;">
+        <a href="#" class="btn-purchase" style="width: 352px;">ご購入はこちらから</a>
+      </div>
+    </div>
+
+    <!-- Case studies -->
+    <div>
+      <p class="sec-title">事業事例</p>
+      <div class="case-list">
+
+        <!-- 事例1 -->
+        <div class="case-item">
+          <div class="case-ph">保全事例イメージ写真（設備・ギヤ・ベアリング）</div>
+          <div class="case-content">
+            <div class="tags">
+              <span class="tag">保全</span>
+              <span class="tag">QZEP-60</span>
+              <span class="tag">QZEP-200</span>
+            </div>
+            <p class="case-title">減速機ギヤの異常摩耗と異音を解消</p>
+            <p class="case-desc">騒音78dB→64dBに低減。突発停止件数が年間2〜3回からゼロへ。ギヤ摩耗量（500時間後）が0.25mm→0.05mmに大幅低減。</p>
+            <a href="#" class="btn-view-more">VIEW MORE</a>
+          </div>
+        </div>
+
+        <!-- 事例2 -->
+        <div class="case-item">
+          <div class="case-ph">保全事例2イメージ写真（ボールねじ）</div>
+          <div class="case-content">
+            <div class="tags">
+              <span class="tag">保全</span>
+              <span class="tag">QZEP-60</span>
+              <span class="tag">QZEP-200</span>
+            </div>
+            <p class="case-title">ボールねじの摩耗抑制と寿命延伸</p>
+            <p class="case-desc">ボールねじ寿命が1.5〜2倍に延長。バックラッシュ・位置ズレを防止し設備の突発停止リスクを大幅に低減。</p>
+            <a href="#" class="btn-view-more">VIEW MORE</a>
+          </div>
+        </div>
+
+        <!-- 事例3 -->
+        <div class="case-item">
+          <div class="case-ph">加工事例イメージ写真（プレス金型・切削工具）</div>
+          <div class="case-content">
+            <div class="tags">
+              <span class="tag">保全</span>
+              <span class="tag">QZEP-60</span>
+              <span class="tag">QZEP-200</span>
+            </div>
+            <p class="case-title">プレス金型の焼付き・溶着抑制と成形安定性向上</p>
+            <p class="case-desc">金型寿命が3万ショットから10万ショットへ延長。寸法不良・表面不良率が4.2%→1.1%に低下。</p>
+            <a href="#" class="btn-view-more">VIEW MORE</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /content-area -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>

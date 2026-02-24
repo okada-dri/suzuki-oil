@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>SP 減速機ギヤの異常摩耗と異音の解消 — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ===== SP QZILLA事例詳細 (400px幅) ===== */
+
+    body {
+      width: 400px;
+      margin: 0;
+    }
+
+    /* === Header === */
+    .site-header {
+      width: 400px;
+      height: 56px;
+    }
+    .site-header__title {
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.24px;
+    }
+
+    /* === Inner override === */
+    .inner {
+      width: 352px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      box-sizing: border-box;
+    }
+
+    .page-bg { padding-top: 0; padding-bottom: 0; }
+    .breadcrumb { margin-top: 16px; }
+
+    /* === Category tags === */
+    .cat-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+    .cat-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 26px;
+      padding: 0 10px;
+      font-size: 11px;
+      font-family: 'Helvetica Neue', sans-serif;
+      border: 1px solid #555;
+      color: #111;
+    }
+    .cat-tag--filled {
+      background: #111;
+      border-color: #111;
+      color: #fff;
+    }
+
+    /* === Page title block === */
+    .case-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .case-subtitle {
+      font-size: 13px;
+      color: #555;
+      font-family: 'Noto Sans JP', sans-serif;
+      margin-bottom: 24px;
+    }
+
+    /* === Info row: 1-col === */
+    .info-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      border: 1px solid #ddd;
+      margin-bottom: 40px;
+    }
+    .info-col {
+      padding: 14px 16px;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .info-col:last-child { border-bottom: none; }
+    .info-label {
+      font-size: 11px;
+      color: #888;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .info-value {
+      font-size: 13px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    /* === Section heading with left bar === */
+    .sec-bar {
+      font-size: 15px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+      border-left: 3px solid #111;
+      padding-left: 10px;
+      margin-bottom: 16px;
+    }
+
+    .content-section { margin-bottom: 40px; }
+
+    /* === Product box === */
+    .product-box {
+      border: 1px solid #ddd;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .product-box__text { flex: 1; }
+    .product-box__name {
+      font-size: 13px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+      margin-bottom: 10px;
+    }
+    .product-box__body {
+      font-size: 12px;
+      color: #444;
+      line-height: 20px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .product-box__images {
+      display: flex;
+      gap: 8px;
+    }
+    .product-img-ph {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+
+    /* === Before / After: 1-col === */
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      border: 1px solid #ddd;
+    }
+    .ba-col { padding: 16px; }
+    .ba-col--before {
+      background: #f5f5f5;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+    }
+    .ba-col--after { background: #fff; }
+    .ba-heading {
+      font-size: 12px;
+      font-weight: bold;
+      color: #555;
+      font-family: 'Helvetica Neue', sans-serif;
+      margin-bottom: 14px;
+    }
+    .ba-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .ba-item {
+      display: flex;
+      gap: 8px;
+      font-size: 12px;
+      color: #333;
+      line-height: 19px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .ba-item__mark { flex-shrink: 0; font-size: 12px; }
+
+    /* === Comparison table (scrollable) === */
+    .cmp-wrap {
+      overflow-x: auto;
+    }
+    .cmp-table {
+      width: 100%;
+      min-width: 320px;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    .cmp-table thead tr {
+      background: #111;
+      color: #fff;
+    }
+    .cmp-table thead th {
+      padding: 8px 10px;
+      font-weight: bold;
+      font-family: 'Noto Sans JP', sans-serif;
+      text-align: left;
+    }
+    .cmp-table tbody tr { border-bottom: 1px solid #e8e8e8; }
+    .cmp-table tbody td {
+      padding: 10px;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #555;
+      vertical-align: middle;
+    }
+    .cmp-table tbody td:first-child { color: #333; }
+    .cmp-table tbody td:last-child {
+      font-weight: bold;
+      color: #111;
+    }
+
+    /* === KPI metrics: 1-col === */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border: 1px solid #ddd;
+    }
+    .kpi-box {
+      padding: 20px;
+      text-align: center;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .kpi-box:last-child { border-bottom: none; }
+    .kpi-label {
+      font-size: 11px;
+      color: #888;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .kpi-before {
+      font-size: 11px;
+      color: #aaa;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .kpi-value {
+      font-size: 40px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+      line-height: 1;
+      margin: 4px 0;
+    }
+    .kpi-value sup {
+      font-size: 18px;
+      font-weight: bold;
+      vertical-align: baseline;
+    }
+    .kpi-note {
+      font-size: 11px;
+      color: #555;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    /* === CTA block === */
+    .cta-block {
+      background: #f5f5f5;
+      padding: 24px 16px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .cta-block__text {
+      font-size: 13px;
+      color: #333;
+      font-family: 'Noto Sans JP', sans-serif;
+      text-align: center;
+    }
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+      width: 100%;
+    }
+    .btn-cta-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 44px;
+      border: 1px solid #111;
+      background: #fff;
+      font-size: 12px;
+      color: #111;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-cta-dark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 44px;
+      border: 1px solid #111;
+      background: #111;
+      font-size: 12px;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* === Related cases: 1-col === */
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .related-card { display: flex; flex-direction: column; }
+    .related-ph {
+      width: 100%;
+      height: 120px;
+      background: #d4d4d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      line-height: 17.6px;
+    }
+    .related-body {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-top: none;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .related-tag {
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      padding: 0 7px;
+      border: 1px solid #555;
+      font-size: 10px;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+      align-self: flex-start;
+    }
+    .related-title {
+      font-size: 12px;
+      font-weight: bold;
+      color: #111;
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 18px;
+    }
+    .related-desc {
+      font-size: 11px;
+      color: #888;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    /* === Back button === */
+    .back-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 8px 0 48px;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      padding: 0 32px;
+      border: 1px solid #111;
+      background: #fff;
+      font-size: 12px;
+      color: #111;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+    }
+
+    /* === Footer === */
+    .site-footer {
+      width: 400px;
+      background: #e8e8e8;
+      padding: 20px 24px;
+      box-sizing: border-box;
+      height: auto;
+    }
+    .site-footer p {
+      font-size: 12px;
+      color: #555;
+      margin-left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Page content -->
+  <div class="page-bg">
+    <div class="inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        TOP &gt; 製品情報 &gt; QZILLA &gt; 事業事例（保全） &gt; <span>減速機ギヤの異常摩耗と異音の解消</span>
+      </div>
+
+      <!-- Category tags -->
+      <div class="cat-tags">
+        <span class="cat-tag cat-tag--filled">保全</span>
+        <span class="cat-tag">設備機械</span>
+        <span class="cat-tag">減速機</span>
+      </div>
+
+      <!-- Page title -->
+      <h1 class="case-title">減速機ギヤの異常摩耗と異音の解消</h1>
+      <p class="case-subtitle">騒音78dB→64dBに低減。突発停止件数が年間ゼロへ</p>
+
+      <!-- Info row -->
+      <div class="info-row">
+        <div class="info-col">
+          <span class="info-label">導入部門</span>
+          <span class="info-value">装置保全部門／生産技術部門</span>
+        </div>
+        <div class="info-col">
+          <span class="info-label">適用設備</span>
+          <span class="info-value">搬送・攪拌・巻き取り装置の減速機ユニット</span>
+        </div>
+        <div class="info-col">
+          <span class="info-label">使用環境</span>
+          <span class="info-value">連続稼働ライン（高荷重・高温雰囲気）</span>
+        </div>
+      </div>
+
+      <!-- 使用製品・使用方法 -->
+      <div class="content-section">
+        <p class="sec-bar">使用製品・使用方法</p>
+        <div class="product-box">
+          <div class="product-box__text">
+            <p class="product-box__name">QZILLA EXTREME PRESSURE OIL QZEP-60 / QZEP-200</p>
+            <p class="product-box__body">
+              使用方法：ギヤオイルへ所定割合で添加使用<br>
+              既存設備・油槽を変更せずそのまま導入可能。循環潤滑系統への添加でギヤ全体に極圧潤滑被膜を形成します。
+            </p>
+          </div>
+          <div class="product-box__images">
+            <img src="images/60-1l-1.jpg" alt="QZEP-60" class="product-img-ph">
+            <img src="images/200-1l-1.jpg" alt="QZEP-200" class="product-img-ph">
+          </div>
+        </div>
+      </div>
+
+      <!-- 導入前後の変化 -->
+      <div class="content-section">
+        <p class="sec-bar">導入前後の変化</p>
+        <div class="ba-grid">
+          <div class="ba-col ba-col--before">
+            <p class="ba-heading">BEFORE — 導入前の課題</p>
+            <div class="ba-list">
+              <div class="ba-item"><span class="ba-item__mark">✕</span><span>長期間使用した減速機でギヤの異常摩耗が頻発</span></div>
+              <div class="ba-item"><span class="ba-item__mark">✕</span><span>運転中のうなり音・振動が年々増加し、作業者から不安の声</span></div>
+              <div class="ba-item"><span class="ba-item__mark">✕</span><span>ギヤ交換・オーバーホールに高額コストと長時間を要する</span></div>
+              <div class="ba-item"><span class="ba-item__mark">✕</span><span>突発的な設備停止が年間2〜3回発生</span></div>
+            </div>
+          </div>
+          <div class="ba-col ba-col--after">
+            <p class="ba-heading">AFTER — 導入後の効果</p>
+            <div class="ba-list">
+              <div class="ba-item"><span class="ba-item__mark">✓</span><span>ギヤの摩耗・焼付きが顕著に低減</span></div>
+              <div class="ba-item"><span class="ba-item__mark">✓</span><span>運転時の異音・振動が大幅に減少し静音運転を実現</span></div>
+              <div class="ba-item"><span class="ba-item__mark">✓</span><span>突発的な設備停止がゼロに</span></div>
+              <div class="ba-item"><span class="ba-item__mark">✓</span><span>生産性向上とメンテナンスコスト削減を同時に達成</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 導入効果の比較 -->
+      <div class="content-section">
+        <p class="sec-bar">導入効果の比較</p>
+        <div class="cmp-wrap">
+          <table class="cmp-table">
+            <thead>
+              <tr>
+                <th>比較項目</th>
+                <th>導入前</th>
+                <th>導入後</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ギヤ摩耗量（500時間後）</td>
+                <td>約0.25mm</td>
+                <td>約0.05mm</td>
+              </tr>
+              <tr>
+                <td>騒音レベル</td>
+                <td>78dB</td>
+                <td>64dB</td>
+              </tr>
+              <tr>
+                <td>突発停止件数（年間）</td>
+                <td>2〜3回</td>
+                <td>0回</td>
+              </tr>
+              <tr>
+                <td>潤滑状態</td>
+                <td>油膜切れ・摩耗進行</td>
+                <td>油膜安定・摩耗抑制</td>
+              </tr>
+              <tr>
+                <td>保守・運用負担</td>
+                <td>交換・点検頻度が高い</td>
+                <td>保守頻度低減</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 数値で見る改善効果 -->
+      <div class="content-section">
+        <p class="sec-bar">数値で見る改善効果</p>
+        <div class="kpi-grid">
+          <div class="kpi-box">
+            <span class="kpi-label">ギヤ摩耗量（500時間後）</span>
+            <span class="kpi-before">導入前：約0.25mm</span>
+            <div class="kpi-value">0.05<sup>mm</sup></div>
+            <span class="kpi-note">約 80% 削減</span>
+          </div>
+          <div class="kpi-box">
+            <span class="kpi-label">騒音レベル</span>
+            <span class="kpi-before">導入前：78dB</span>
+            <div class="kpi-value">64<sup>dB</sup></div>
+            <span class="kpi-note">14dB 低減</span>
+          </div>
+          <div class="kpi-box">
+            <span class="kpi-label">突発停止件数（年間）</span>
+            <span class="kpi-before">導入前：2〜3回</span>
+            <div class="kpi-value">0<sup>回</sup></div>
+            <span class="kpi-note">突発停止 ゼロ を実現</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA block -->
+      <div class="cta-block">
+        <p class="cta-block__text">製品の詳細・導入のご相談はお気軽にお問い合わせください</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn-cta-outline">製品ページを見る</a>
+          <a href="sds-download.html" class="btn-cta-outline">SDS 安全データシート　↓</a>
+          <a href="#" class="btn-cta-dark">お問い合わせはこちら</a>
+        </div>
+      </div>
+
+      <!-- 関連事例 -->
+      <div class="content-section">
+        <p class="sec-bar">関連事例</p>
+        <div class="related-grid">
+          <div class="related-card">
+            <div class="related-ph">製品・設備のイメージ写真（共通素材を使用）</div>
+            <div class="related-body">
+              <span class="related-tag">保全</span>
+              <p class="related-title">ボールねじの摩耗抑制と寿命延伸</p>
+              <p class="related-desc">寿命1.5〜2倍に延長／精度安定</p>
+            </div>
+          </div>
+          <div class="related-card">
+            <div class="related-ph">製品・設備のイメージ写真（共通素材を使用）</div>
+            <div class="related-body">
+              <span class="related-tag">保全</span>
+              <p class="related-title">設備機械のベアリングの摩耗・寿命改善</p>
+              <p class="related-desc">温度上昇抑制／交換頻度低減</p>
+            </div>
+          </div>
+          <div class="related-card">
+            <div class="related-ph">製品・設備のイメージ写真（共通素材を使用）</div>
+            <div class="related-body">
+              <span class="related-tag">保全</span>
+              <p class="related-title">搬送チェーン部の焼付き・異音対策</p>
+              <p class="related-desc">騒音低減／安定稼働を長期間実現</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back button -->
+      <div class="back-wrap">
+        <a href="qzilla-case-list01.html" class="btn-back">← 事例一覧へ戻る</a>
+      </div>
+
+    </div><!-- /inner -->
+  </div><!-- /page-bg -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>
