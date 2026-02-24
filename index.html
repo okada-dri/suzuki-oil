@@ -177,21 +177,6 @@
       flex-shrink: 0;
       position: relative;
     }
-    .product-card__logo {
-      width: 216px;
-      height: 52px;
-      background: #e0e0e0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .product-card__logo span {
-      font-size: 11px;
-      color: #999;
-      letter-spacing: 0.22px;
-      line-height: 19.8px;
-    }
     .product-card__tagline {
       font-size: 16px;
       font-weight: 700;
@@ -266,7 +251,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-left: 60px;
+      margin-right: 60px;
     }
     .product-card__image span {
       font-size: 11px;
@@ -274,6 +259,12 @@
       letter-spacing: 0.22px;
       line-height: 19.8px;
       text-align: center;
+    }
+    .product-card__logo-img {
+      display: block;
+      max-height: 40px;
+      width: auto;
+      margin-bottom: 16px;
     }
 
     /* === ARE SPRAY Banner === */
@@ -428,8 +419,11 @@
     <!-- 工業用 -->
     <p class="product-category">工業用</p>
     <div class="product-card">
+      <div class="product-card__image">
+        <span>QZILLAオイル・スプレー製品イメージ写真</span>
+      </div>
       <div class="product-card__info">
-        <div class="product-card__logo"><span>QZILLAロゴ</span></div>
+        <img src="images/qzilla.png" alt="QZILLA" class="product-card__logo-img">
         <p class="product-card__tagline">圧倒的な極圧性と信頼の潤滑力！</p>
         <p class="product-card__desc">
           最新技術で環境と安全面に配慮し開発された、高性能の極圧性潤滑オイルのフラッグシップモデル。塩素系・固体潤滑不使用の微臭タイプです。
@@ -444,16 +438,16 @@
         <a href="#" class="product-card__btn-primary"><span>詳しくはこちら →</span></a>
         <a href="#" class="product-card__btn-secondary"><span>販売事例を見る</span></a>
       </div>
-      <div class="product-card__image">
-        <span>QZILLAオイル・スプレー製品イメージ写真</span>
-      </div>
     </div>
 
     <!-- 車用 -->
     <p class="product-category">車用</p>
     <div class="product-card">
+      <div class="product-card__image">
+        <span>enative365R製品・車のイメージ写真</span>
+      </div>
       <div class="product-card__info">
-        <div class="product-card__logo"><span>enative365Rロゴ</span></div>
+        <img src="images/enative365r_logo.png" alt="enative365R" class="product-card__logo-img">
         <p class="product-card__tagline">クセになる極圧性能。限界を超える潤滑力。</p>
         <p class="product-card__desc">
           エンジン内部の摩擦を極限まで抑え、パフォーマンスを最大限に引き出すために開発された、PFASフリー・ハロゲンフリーの極圧性能強化型潤滑オイルです。
@@ -467,9 +461,6 @@
         </ul>
         <a href="#" class="product-card__btn-primary"><span>詳しくはこちら →</span></a>
         <a href="#" class="product-card__btn-secondary"><span>販売事例を見る</span></a>
-      </div>
-      <div class="product-card__image">
-        <span>enative365R製品・車のイメージ写真</span>
       </div>
     </div>
   </section>
@@ -499,11 +490,11 @@
         <span class="news-item__title">QZILLA製品導入効果事例集を公開しました。</span>
       </div>
       <div class="news-item">
-        <span class="news-item__date">2025.12.10</span>
+        <span class="news-item__date">2025.10.19</span>
         <span class="news-item__title">ARE SPRAY（ARPE-480S）新製品情報を公開しました。</span>
       </div>
       <div class="news-item">
-        <span class="news-item__date">2025.11.01</span>
+        <span class="news-item__date">2025.11.07</span>
         <span class="news-item__title">SDS安全データシートダウンロードページを開設しました。</span>
       </div>
     </div>
