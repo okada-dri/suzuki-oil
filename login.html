@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>認証 — 鈴木刃物工業オリジナルオイルサイト</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .login-wrap {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 48px 40px;
+      width: 360px;
+    }
+    .login-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #111;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .login-label {
+      font-size: 12px;
+      color: #555;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .login-input {
+      width: 100%;
+      height: 44px;
+      border: 1px solid #ccc;
+      padding: 0 12px;
+      font-size: 14px;
+      margin-bottom: 16px;
+      outline: none;
+    }
+    .login-input:focus {
+      border-color: #111;
+    }
+    .login-btn {
+      width: 100%;
+      height: 44px;
+      background: #111;
+      color: #fff;
+      border: none;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .login-error {
+      font-size: 12px;
+      color: #c00;
+      margin-top: 12px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-wrap">
+    <p class="login-title">鈴木刃物工業オリジナルオイルサイト</p>
+    <form id="loginForm">
+      <label class="login-label" for="passInput">パスワード</label>
+      <input type="password" id="passInput" class="login-input" autocomplete="current-password">
+      <button type="submit" class="login-btn">入室する</button>
+      <p class="login-error" id="loginError">パスワードが正しくありません</p>
+    </form>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = document.getElementById('passInput').value;
+      if (input === atob('MzJiZmNoZQ==')) {
+        sessionStorage.setItem('suzuki_oil_auth', '1');
+        var params = new URLSearchParams(location.search);
+        var r = params.get('r');
+        location.replace(r && r.indexOf('login.html') === -1 ? r : 'index.html');
+      } else {
+        document.getElementById('loginError').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
