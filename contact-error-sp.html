@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>SP お問い合わせ（入力エラー） — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ===== SP お問い合わせ（入力エラー） (400px幅) ===== */
+
+    body {
+      width: 400px;
+      margin: 0;
+    }
+
+    /* === Header === */
+    .site-header {
+      width: 400px;
+      height: 56px;
+    }
+    .site-header__title {
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.24px;
+    }
+
+    /* === Inner override === */
+    .inner {
+      width: 352px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      box-sizing: border-box;
+    }
+
+    /* === Page BG === */
+    .page-bg {
+      padding-top: 0;
+    }
+
+    .breadcrumb {
+      margin-top: 8px;
+    }
+
+    .page-title {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .form-lead {
+      margin-bottom: 24px;
+    }
+
+    /* === Form container === */
+    .form-container {
+      width: 352px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 0;
+    }
+
+    .form-label {
+      margin-bottom: 0;
+    }
+
+    .form-textarea {
+      width: 100%;
+      height: 160px;
+      border: 1px solid #bbb;
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: -0.13px;
+      line-height: 26px;
+      box-sizing: border-box;
+      resize: vertical;
+      font-family: inherit;
+    }
+    .form-textarea--error {
+      border: 1px solid #ff1a1a;
+      background: #ffefef;
+    }
+
+    /* === Error input === */
+    .form-input--error {
+      border: 1px solid #ff1a1a;
+      background: #ffefef;
+    }
+
+    /* === Error select === */
+    .form-select--error {
+      border: 1px solid #ff1a1a;
+    }
+
+    /* === Error checkbox row === */
+    .checkbox-row--error {
+      border: 1px solid #ff1a1a;
+      background: #ffefef;
+    }
+    .checkbox-row--error .checkbox-box {
+      border-color: #ff1a1a;
+    }
+
+    /* === Field error message === */
+    .field-err-msg {
+      font-size: 11px;
+      color: #ff2a29;
+      line-height: 16.5px;
+      margin-top: 0;
+    }
+
+    /* Submit button */
+    .form-container .btn-dark {
+      width: 352px;
+      margin: 24px auto;
+    }
+
+    /* 法人/個人 切り替え */
+    .customer-type {
+      display: flex;
+      gap: 0;
+    }
+    .customer-type__btn {
+      flex: 1;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      letter-spacing: 0.26px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #999;
+      user-select: none;
+    }
+    .customer-type__btn:first-child {
+      border-right: none;
+    }
+    .customer-type__btn.is-active {
+      background: #111;
+      border-color: #111;
+      color: #fff;
+    }
+
+    /* === Footer === */
+    .site-footer {
+      width: 400px;
+      background: #e8e8e8;
+      padding: 20px 24px;
+      box-sizing: border-box;
+      height: auto;
+    }
+    .site-footer p {
+      font-size: 12px;
+      color: #555;
+      margin-left: 0;
+    }
+  </style>
+  <script src="auth.js"></script>
+  <script>
+    function setType(type) {
+      var isCorporate = type === 'corporate';
+      document.getElementById('btn-corporate').classList.toggle('is-active', isCorporate);
+      document.getElementById('btn-individual').classList.toggle('is-active', !isCorporate);
+      document.getElementById('field-company').style.display = isCorporate ? '' : 'none';
+      document.getElementById('field-department').style.display = isCorporate ? '' : 'none';
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Page content -->
+  <div class="page-bg">
+    <div class="inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        TOP &gt; <span>お問い合わせ</span>
+      </div>
+
+      <!-- Page title -->
+      <h1 class="page-title">お問い合わせ</h1>
+
+      <!-- Lead text -->
+      <p class="form-lead">
+        製品・OEM・販売店など、お気軽にお問い合わせください。内容を確認のうえ、担当者よりご連絡いたします。
+      </p>
+
+      <!-- Form -->
+      <div class="form-container">
+
+        <!-- 法人 / 個人 切り替え -->
+        <div class="customer-type">
+          <div class="customer-type__btn is-active" id="btn-corporate" onclick="setType('corporate')">法人</div>
+          <div class="customer-type__btn" id="btn-individual" onclick="setType('individual')">個人</div>
+        </div>
+
+        <!-- お問い合わせ種別 ERROR -->
+        <div class="form-field">
+          <div class="form-label">お問い合わせ種別 <span class="badge-required">*</span></div>
+          <div class="form-select form-select--error">選択してください <span class="form-select__arrow">▼</span></div>
+          <div class="field-err-msg">選択されていません</div>
+        </div>
+
+        <!-- 会社名 ERROR（法人のみ） -->
+        <div class="form-field" id="field-company">
+          <div class="form-label">会社名 <span class="badge-required">*</span></div>
+          <div class="form-input form-input--error">会社名を入力</div>
+          <div class="field-err-msg">入力されていません</div>
+        </div>
+
+        <!-- 部署名 NORMAL（法人のみ） -->
+        <div class="form-field" id="field-department">
+          <div class="form-label">部署名</div>
+          <div class="form-input">部署名を入力</div>
+        </div>
+
+        <!-- 氏名 ERROR -->
+        <div class="form-field">
+          <div class="form-label">氏名 <span class="badge-required">*</span></div>
+          <div class="form-input form-input--error">氏名を入力</div>
+          <div class="field-err-msg">入力されていません</div>
+        </div>
+
+        <!-- メールアドレス ERROR -->
+        <div class="form-field">
+          <div class="form-label">メールアドレス <span class="badge-required">*</span></div>
+          <div class="form-input form-input--error">example@company.com</div>
+          <div class="field-err-msg">入力されていません</div>
+        </div>
+
+        <!-- 電話番号 NORMAL -->
+        <div class="form-field">
+          <div class="form-label">電話番号</div>
+          <div class="form-input">例：0575-24-3001</div>
+        </div>
+
+        <!-- お問い合わせ内容 ERROR -->
+        <div class="form-field">
+          <div class="form-label">お問い合わせ内容 <span class="badge-required">*</span></div>
+          <textarea class="form-textarea form-textarea--error">お問い合わせ内容を入力してください</textarea>
+          <div class="field-err-msg">入力されていません</div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 個人情報同意 ERROR -->
+        <div class="form-field" style="gap: 3px;">
+          <div class="checkbox-row checkbox-row--error" style="margin-bottom: 0;">
+            <div class="checkbox-box"></div>
+            <div class="checkbox-label">
+              <span class="checkbox-link">個人情報の取り扱い</span>に同意する（<span class="checkbox-link">プライバシーポリシー</span>）
+            </div>
+          </div>
+          <div class="field-err-msg">選択されていません</div>
+        </div>
+
+        <!-- 送信ボタン -->
+        <a href="#" class="btn-dark" style="text-decoration: none;">送信する</a>
+
+      </div><!-- /form-container -->
+    </div><!-- /inner -->
+  </div><!-- /page-bg -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>
