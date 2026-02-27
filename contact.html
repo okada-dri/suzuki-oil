@@ -73,8 +73,6 @@
     .customer-type {
       display: flex;
       gap: 0;
-      width: 656px;
-      margin: 0 auto 8px;
     }
     .customer-type__btn {
       flex: 1;
@@ -134,14 +132,14 @@
         製品・OEM・販売店など、お気軽にお問い合わせください。内容を確認のうえ、担当者よりご連絡いたします。
       </p>
 
-      <!-- 法人 / 個人 切り替え -->
-      <div class="customer-type">
-        <div class="customer-type__btn is-active" id="btn-corporate" onclick="setType('corporate')">法人</div>
-        <div class="customer-type__btn" id="btn-individual" onclick="setType('individual')">個人</div>
-      </div>
-
       <!-- Form -->
       <div class="form-container">
+
+        <!-- 法人 / 個人 切り替え -->
+        <div class="customer-type">
+          <div class="customer-type__btn is-active" id="btn-corporate" onclick="setType('corporate')">法人</div>
+          <div class="customer-type__btn" id="btn-individual" onclick="setType('individual')">個人</div>
+        </div>
 
         <!-- お問い合わせ種別 -->
         <div class="form-field">
