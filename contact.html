@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>PC お問い合わせ — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ---- Header (top.htmlと同じ) ---- */
+    .site-header {
+      height: 80px;
+    }
+    .site-header__title {
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.26px;
+    }
+    .inner {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .page-bg {
+      padding-top: 0;
+    }
+    .breadcrumb {
+      margin-top: 8px;
+    }
+    .page-title {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .form-lead {
+      margin-bottom: 36px;
+    }
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 656px;
+      margin: 0 auto;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 0;
+    }
+    .form-label {
+      margin-bottom: 0;
+    }
+    .form-textarea {
+      width: 100%;
+      height: 160px;
+      border: 1px solid #ccc;
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: -0.13px;
+      line-height: 26px;
+      box-sizing: border-box;
+      resize: vertical;
+      font-family: inherit;
+    }
+    .form-container .btn-dark {
+      width: 400px;
+      margin: 40px auto 32px;
+    }
+
+    /* 法人/個人 切り替え */
+    .customer-type {
+      display: flex;
+      gap: 0;
+      width: 656px;
+      margin: 0 auto 8px;
+    }
+    .customer-type__btn {
+      flex: 1;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      letter-spacing: 0.26px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #999;
+      user-select: none;
+    }
+    .customer-type__btn:first-child {
+      border-right: none;
+    }
+    .customer-type__btn.is-active {
+      background: #111;
+      border-color: #111;
+      color: #fff;
+    }
+  </style>
+  <script src="auth.js"></script>
+  <script>
+    function setType(type) {
+      var isCorporate = type === 'corporate';
+      document.getElementById('btn-corporate').classList.toggle('is-active', isCorporate);
+      document.getElementById('btn-individual').classList.toggle('is-active', !isCorporate);
+      document.getElementById('field-company').style.display = isCorporate ? '' : 'none';
+      document.getElementById('field-department').style.display = isCorporate ? '' : 'none';
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+  </header>
+
+  <!-- Page content -->
+  <div class="page-bg">
+    <div class="inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        TOP &gt; <span>お問い合わせ</span>
+      </div>
+
+      <!-- Page title -->
+      <h1 class="page-title">お問い合わせ</h1>
+
+      <!-- Lead text -->
+      <p class="form-lead">
+        製品・OEM・販売店など、お気軽にお問い合わせください。内容を確認のうえ、担当者よりご連絡いたします。
+      </p>
+
+      <!-- 法人 / 個人 切り替え -->
+      <div class="customer-type">
+        <div class="customer-type__btn is-active" id="btn-corporate" onclick="setType('corporate')">法人</div>
+        <div class="customer-type__btn" id="btn-individual" onclick="setType('individual')">個人</div>
+      </div>
+
+      <!-- Form -->
+      <div class="form-container">
+
+        <!-- お問い合わせ種別 -->
+        <div class="form-field">
+          <div class="form-label">お問い合わせ種別 <span class="badge-required">*</span></div>
+          <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
+          <!-- 選択肢：製品についてのお問い合わせ / 価格・見積もりについて / OEM・受託開発について / 販売店・取扱店について / その他 -->
+        </div>
+
+        <!-- 会社名（法人のみ） -->
+        <div class="form-field" id="field-company">
+          <div class="form-label">会社名 <span class="badge-required">*</span></div>
+          <div class="form-input">会社名を入力</div>
+        </div>
+
+        <!-- 部署名（法人のみ） -->
+        <div class="form-field" id="field-department">
+          <div class="form-label">部署名</div>
+          <div class="form-input">部署名を入力</div>
+        </div>
+
+        <!-- 氏名 -->
+        <div class="form-field">
+          <div class="form-label">氏名 <span class="badge-required">*</span></div>
+          <div class="form-input">氏名を入力</div>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="form-field">
+          <div class="form-label">メールアドレス <span class="badge-required">*</span></div>
+          <div class="form-input">example@company.com</div>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="form-field">
+          <div class="form-label">電話番号</div>
+          <div class="form-input">例：0575-24-3001</div>
+        </div>
+
+        <!-- お問い合わせ内容 -->
+        <div class="form-field">
+          <div class="form-label">お問い合わせ内容 <span class="badge-required">*</span></div>
+          <textarea class="form-textarea">お問い合わせ内容を入力してください</textarea>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 個人情報同意 -->
+        <div class="checkbox-row">
+          <div class="checkbox-box"></div>
+          <div class="checkbox-label">
+            <span class="checkbox-link">個人情報の取り扱い</span>に同意する（<span class="checkbox-link">プライバシーポリシー</span>）
+          </div>
+        </div>
+
+        <!-- 送信ボタン -->
+        <a href="#" class="btn-dark" style="text-decoration: none;">送信する</a>
+
+      </div><!-- /form-container -->
+    </div><!-- /inner -->
+  </div><!-- /page-bg -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>
