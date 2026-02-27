@@ -8,18 +8,6 @@
   <style>
     /* ===== PC TOP 固有スタイル ===== */
 
-    /* Header override: Figmaは80px */
-    .site-header {
-      height: 80px;
-    }
-    .site-header__title {
-      left: 40px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.26px;
-    }
 
     /* === Hero (動画プレースホルダー) === */
     .hero {
@@ -369,7 +357,13 @@
 
   <!-- ===== Header ===== -->
   <header class="site-header">
-    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+    <a href="top.html" class="site-header__logo">鈴木刃物工業オリジナルオイルサイト</a>
+    <nav class="site-nav">
+      <a href="top.html" class="site-nav__item">TOP</a>
+      <a href="qzilla.html" class="site-nav__item">製品情報</a>
+      <a href="news-list.html" class="site-nav__item">ニュース</a>
+      <a href="contact.html" class="site-nav__item">お問い合わせ</a>
+    </nav>
   </header>
 
   <!-- ===== Hero (メインビジュアル 動画) ===== -->

@@ -19,14 +19,6 @@
       width: 400px;
       height: 56px;
     }
-    .site-header__title {
-      left: 24px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.24px;
-    }
 
     /* === Page heading === */
     .page-heading {
@@ -171,13 +163,29 @@
     }
   </style>
   <script src="auth.js"></script>
+  <script>
+  function toggleDrawer() {
+    document.getElementById('drawer').classList.toggle('is-open');
+  }
+  </script>
 </head>
 <body>
 
   <!-- Header -->
   <header class="site-header">
-    <p class="site-header__title">鈴木刃物工業オリジナルオイルサイト</p>
+    <a href="top-sp.html" class="site-header__logo">鈴木刃物工業オリジナルオイルサイト</a>
+    <div class="hamburger" id="hamburger-btn" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </div>
   </header>
+  <div class="drawer" id="drawer">
+    <nav class="drawer-nav">
+      <a href="top-sp.html" class="drawer-nav__item">TOP</a>
+      <a href="qzilla-sp.html" class="drawer-nav__item">製品情報</a>
+      <a href="news-list-sp.html" class="drawer-nav__item">ニュース</a>
+      <a href="contact-sp.html" class="drawer-nav__item">お問い合わせ</a>
+    </nav>
+  </div>
 
   <!-- Page heading -->
   <div class="page-heading">
