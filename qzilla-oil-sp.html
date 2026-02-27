@@ -256,6 +256,9 @@
   </style>
   <script src="auth.js"></script>
   <script>
+    function toggleSubnav(el) {
+    el.nextElementSibling.classList.toggle('is-open');
+  }
   function toggleDrawer() {
     document.getElementById('drawer').classList.toggle('is-open');
   }
@@ -274,7 +277,11 @@
     <nav class="drawer-nav">
       <a href="top-sp.html" class="drawer-nav__item">TOP</a>
       <a href="about-sp.html" class="drawer-nav__item">ABOUT</a>
-      <a href="qzilla-sp.html" class="drawer-nav__item">製品情報</a>
+      <div class="drawer-nav__item drawer-nav__item--parent" onclick="toggleSubnav(this)">製品情報 ▾</div>
+      <div class="drawer-nav__subnav">
+        <a href="qzilla-sp.html" class="drawer-nav__subitem">QZILLA</a>
+        <a href="enative365r-sp.html" class="drawer-nav__subitem">enative365R</a>
+      </div>
       <a href="news-list-sp.html" class="drawer-nav__item">ニュース</a>
       <a href="contact-sp.html" class="drawer-nav__item">お問い合わせ</a>
     </nav>
