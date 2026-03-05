@@ -14,28 +14,41 @@
     /* ---- Category tags ---- */
     .cat-tags {
       display: flex;
-      gap: 6px;
-      margin-top: 20px;
+      flex-wrap: wrap;
+      gap: 5px;
       margin-bottom: 12px;
     }
     .cat-tag {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 26px;
-      padding: 0 10px;
-      font-size: 11px;
-      font-family: 'Helvetica Neue', sans-serif;
       border: 1px solid #555;
+      padding: 2px 7px;
+      font-size: 11px;
       color: #111;
-    }
-    .cat-tag--filled {
-      background: #111;
-      border-color: #111;
-      color: #fff;
+      font-family: 'Helvetica Neue', sans-serif;
+      white-space: nowrap;
     }
 
     /* ---- Page title block ---- */
+    .title-block {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .title-block__thumb {
+      width: 320px;
+      height: 220px;
+      object-fit: cover;
+      background: #d4d4d4;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #888;
+      font-family: 'Helvetica Neue', sans-serif;
+      text-align: center;
+    }
+    .title-block__text { flex: 1; }
     .case-title {
       font-size: 26px;
       font-weight: bold;
@@ -48,7 +61,7 @@
       font-size: 13px;
       color: #555;
       font-family: 'Noto Sans JP', sans-serif;
-      margin-bottom: 28px;
+      margin-bottom: 0;
     }
 
     /* ---- Info 3-col ---- */
@@ -90,40 +103,44 @@
     }
 
     /* ---- Content sections spacing ---- */
-    .content-section { margin-bottom: 48px; }
+    .content-section { margin-bottom: 68px; }
 
-    /* ---- Product box ---- */
-    .product-box {
-      border: 1px solid #ddd;
-      padding: 20px 24px;
+    /* ---- Product lineup (使用製品) ---- */
+    .product-lineup {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 24px;
+      gap: 32px;
     }
-    .product-box__text { flex: 1; }
-    .product-box__name {
+    .product-lineup__item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 200px;
+    }
+    .product-lineup__img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      background: #f0f0f0;
+    }
+    .product-lineup__name {
       font-size: 13px;
       font-weight: bold;
       color: #111;
       font-family: 'Helvetica Neue', sans-serif;
-      margin-bottom: 10px;
     }
-    .product-box__body {
+    .product-lineup__body {
       font-size: 12px;
       color: #444;
-      line-height: 20px;
+      line-height: 1.7;
       font-family: 'Noto Sans JP', sans-serif;
     }
-    .product-box__images {
-      display: flex;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-    .product-img-ph {
-      width: 72px;
-      height: 72px;
-      object-fit: contain;
+
+    /* ---- product-box__body (使用方法テキスト) ---- */
+    .product-box__body {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.7;
+      font-family: 'Noto Sans JP', sans-serif;
     }
 
     /* ---- Before / After ---- */
@@ -136,26 +153,18 @@
     .ba-col--before { background: #f5f5f5; border-right: 1px solid #ddd; }
     .ba-col--after { background: #fff; }
     .ba-heading {
-      font-size: 12px;
+      font-size: 18px;
       font-weight: bold;
       color: #555;
       font-family: 'Helvetica Neue', sans-serif;
       margin-bottom: 14px;
     }
-    .ba-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .ba-item {
-      display: flex;
-      gap: 8px;
-      font-size: 12px;
+    .ba-text {
+      font-size: 13px;
       color: #333;
-      line-height: 19px;
+      line-height: 1.8;
       font-family: 'Noto Sans JP', sans-serif;
     }
-    .ba-item__mark { flex-shrink: 0; font-size: 12px; }
 
     /* ---- Comparison table ---- */
     .cmp-table {
@@ -236,7 +245,7 @@
     .cta-block {
       background: #f5f5f5;
       padding: 32px 40px;
-      margin-bottom: 48px;
+      margin-bottom: 90px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -313,16 +322,18 @@
       flex-direction: column;
       gap: 6px;
     }
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
     .related-tag {
-      display: inline-flex;
-      align-items: center;
-      height: 20px;
-      padding: 0 7px;
       border: 1px solid #555;
-      font-size: 10px;
+      padding: 2px 7px;
+      font-size: 11px;
       color: #111;
       font-family: 'Helvetica Neue', sans-serif;
-      align-self: flex-start;
+      white-space: nowrap;
     }
     .related-title {
       font-size: 12px;
@@ -396,49 +407,52 @@
         TOP &gt; 製品情報 &gt; QZILLA &gt; 事業事例（保全） &gt; <span>減速機ギヤの異常摩耗と異音の解消</span>
       </div>
 
-      <!-- Category tags -->
-      <div class="cat-tags">
-        <span class="cat-tag cat-tag--filled">保全</span>
-        <span class="cat-tag">設備機械</span>
-        <span class="cat-tag">減速機</span>
-      </div>
-
       <!-- Page title -->
-      <h1 class="case-title">減速機ギヤの異常摩耗と異音の解消</h1>
-      <p class="case-subtitle">騒音78dB→64dBに低減。突発停止件数が年間ゼロへ</p>
-
-      <!-- Info row -->
-      <div class="info-row">
-        <div class="info-col">
-          <span class="info-label">導入部門</span>
-          <span class="info-value">装置保全部門／生産技術部門</span>
-        </div>
-        <div class="info-col">
-          <span class="info-label">適用設備</span>
-          <span class="info-value">搬送・攪拌・巻き取り装置の減速機ユニット</span>
-        </div>
-        <div class="info-col">
-          <span class="info-label">使用環境</span>
-          <span class="info-value">連続稼働ライン（高荷重・高温雰囲気）</span>
+      <div class="title-block">
+        <div class="title-block__thumb">減速機ギヤ・ベアリングの写真</div>
+        <div class="title-block__text">
+          <div class="cat-tags">
+            <span class="cat-tag">保全</span>
+            <span class="cat-tag">QZEP-60</span>
+            <span class="cat-tag">QZEP-200</span>
+          </div>
+          <h1 class="case-title">減速機ギヤの異常摩耗と異音の解消</h1>
+          <p class="case-subtitle">騒音78dB→64dBに低減。突発停止件数が年間ゼロへ</p>
         </div>
       </div>
 
-      <!-- 使用製品・使用方法 -->
+
+      <!-- 使用製品 -->
       <div class="content-section">
-        <p class="sec-bar">使用製品・使用方法</p>
-        <div class="product-box">
-          <div class="product-box__text">
-            <p class="product-box__name">QZILLA EXTREME PRESSURE OIL QZEP-60 / QZEP-200</p>
-            <p class="product-box__body">
-              使用方法：ギヤオイルへ所定割合で添加使用<br>
-              既存設備・油槽を変更せずそのまま導入可能。循環潤滑系統への添加でギヤ全体に極圧潤滑被膜を形成します。
-            </p>
+        <p class="sec-bar">使用製品</p>
+        <div class="product-lineup">
+          <div class="product-lineup__item">
+            <img src="images/60-1l-1.jpg" alt="QZEP-60" class="product-lineup__img">
+            <p class="product-lineup__name">QZEP-60</p>
+            <p class="product-lineup__body">極圧性・耐摩耗性に優れた60番粘度グレード。高荷重・高温環境下での潤滑保護に対応。</p>
           </div>
-          <div class="product-box__images">
-            <img src="images/60-1l-1.jpg" alt="QZEP-60" class="product-img-ph">
-            <img src="images/200-1l-1.jpg" alt="QZEP-200" class="product-img-ph">
+          <div class="product-lineup__item">
+            <img src="images/200-1l-1.jpg" alt="QZEP-200" class="product-lineup__img">
+            <p class="product-lineup__name">QZEP-200</p>
+            <p class="product-lineup__body">200番粘度グレードの高粘度タイプ。低速・高荷重ギヤや開放型歯車など、より過酷な使用条件に適応。</p>
           </div>
         </div>
+      </div>
+
+      <!-- 適用設備 -->
+      <div class="content-section">
+        <p class="sec-bar">適用設備</p>
+        <p class="product-box__body">
+          搬送・攪拌・巻き取り装置の減速機ユニット
+        </p>
+      </div>
+
+      <!-- 使用方法 -->
+      <div class="content-section">
+        <p class="sec-bar">使用方法</p>
+        <p class="product-box__body">
+          ギヤオイルへ所定割合で添加使用。既存設備・油槽を変更せずそのまま導入可能。循環潤滑系統への添加でギヤ全体に極圧潤滑被膜を形成します。
+        </p>
       </div>
 
       <!-- 導入前後の変化 -->
@@ -447,27 +461,17 @@
         <div class="ba-grid">
           <div class="ba-col ba-col--before">
             <p class="ba-heading">BEFORE — 導入前の課題</p>
-            <div class="ba-list">
-              <div class="ba-item"><span class="ba-item__mark">✕</span><span>長期間使用した減速機でギヤの異常摩耗が頻発</span></div>
-              <div class="ba-item"><span class="ba-item__mark">✕</span><span>運転中のうなり音・振動が年々増加し、作業者から不安の声</span></div>
-              <div class="ba-item"><span class="ba-item__mark">✕</span><span>ギヤ交換・オーバーホールに高額コストと長時間を要する</span></div>
-              <div class="ba-item"><span class="ba-item__mark">✕</span><span>突発的な設備停止が年間2〜3回発生</span></div>
-            </div>
+            <p class="ba-text">長期間使用した減速機でギヤの異常摩耗が頻発。運転中のうなり音・振動が年々増加し、作業者から不安の声が上がっていた。ギヤ交換・オーバーホールに高額コストと長時間を要し、突発的な設備停止が年間2〜3回発生していた。</p>
           </div>
           <div class="ba-col ba-col--after">
             <p class="ba-heading">AFTER — 導入後の効果</p>
-            <div class="ba-list">
-              <div class="ba-item"><span class="ba-item__mark">✓</span><span>ギヤの摩耗・焼付きが顕著に低減</span></div>
-              <div class="ba-item"><span class="ba-item__mark">✓</span><span>運転時の異音・振動が大幅に減少し静音運転を実現</span></div>
-              <div class="ba-item"><span class="ba-item__mark">✓</span><span>突発的な設備停止がゼロに</span></div>
-              <div class="ba-item"><span class="ba-item__mark">✓</span><span>生産性向上とメンテナンスコスト削減を同時に達成</span></div>
-            </div>
+            <p class="ba-text">ギヤの摩耗・焼付きが顕著に低減し、運転時の異音・振動が大幅に減少して静音運転を実現。突発的な設備停止がゼロになり、生産性向上とメンテナンスコスト削減を同時に達成した。</p>
           </div>
         </div>
       </div>
 
       <!-- 導入効果の比較 -->
-      <div class="content-section">
+      <div class="content-section" style="margin-bottom: 68px;">
         <p class="sec-bar">導入効果の比較</p>
         <table class="cmp-table">
           <thead>
@@ -507,31 +511,6 @@
         </table>
       </div>
 
-      <!-- 数値で見る改善効果 -->
-      <div class="content-section">
-        <p class="sec-bar">数値で見る改善効果</p>
-        <div class="kpi-grid">
-          <div class="kpi-box">
-            <span class="kpi-label">ギヤ摩耗量（500時間後）</span>
-            <span class="kpi-before">導入前：約0.25mm</span>
-            <div class="kpi-value">0.05<sup>mm</sup></div>
-            <span class="kpi-note">約 80% 削減</span>
-          </div>
-          <div class="kpi-box">
-            <span class="kpi-label">騒音レベル</span>
-            <span class="kpi-before">導入前：78dB</span>
-            <div class="kpi-value">64<sup>dB</sup></div>
-            <span class="kpi-note">14dB 低減</span>
-          </div>
-          <div class="kpi-box">
-            <span class="kpi-label">突発停止件数（年間）</span>
-            <span class="kpi-before">導入前：2〜3回</span>
-            <div class="kpi-value">0<sup>回</sup></div>
-            <span class="kpi-note">突発停止 ゼロ を実現</span>
-          </div>
-        </div>
-      </div>
-
       <!-- CTA block -->
       <div class="cta-block">
         <p class="cta-block__text">製品の詳細・導入のご相談はお気軽にお問い合わせください</p>
@@ -549,7 +528,11 @@
           <div class="related-card">
             <div class="related-ph">製品・設備のイメージ写真<br>（共通素材を使用）</div>
             <div class="related-body">
-              <span class="related-tag">保全</span>
+              <div class="related-tags">
+                <span class="related-tag">保全</span>
+                <span class="related-tag">QZEP-60</span>
+                <span class="related-tag">QZEP-200</span>
+              </div>
               <p class="related-title">ボールねじの摩耗抑制と寿命延伸</p>
               <p class="related-desc">寿命1.5〜2倍に延長／精度安定</p>
             </div>
@@ -557,7 +540,11 @@
           <div class="related-card">
             <div class="related-ph">製品・設備のイメージ写真<br>（共通素材を使用）</div>
             <div class="related-body">
-              <span class="related-tag">保全</span>
+              <div class="related-tags">
+                <span class="related-tag">保全</span>
+                <span class="related-tag">QZEP-60</span>
+                <span class="related-tag">QZEP-200</span>
+              </div>
               <p class="related-title">設備機械のベアリングの摩耗・寿命改善</p>
               <p class="related-desc">温度上昇抑制／交換頻度低減</p>
             </div>
@@ -565,7 +552,10 @@
           <div class="related-card">
             <div class="related-ph">製品・設備のイメージ写真<br>（共通素材を使用）</div>
             <div class="related-body">
-              <span class="related-tag">保全</span>
+              <div class="related-tags">
+                <span class="related-tag">保全</span>
+                <span class="related-tag">QZEP-480S</span>
+              </div>
               <p class="related-title">搬送チェーン部の焼付き・異音対策</p>
               <p class="related-desc">騒音低減／安定稼働を長期間実現</p>
             </div>
