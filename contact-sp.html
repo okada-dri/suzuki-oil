@@ -86,6 +86,56 @@
       margin: 24px auto;
     }
 
+    /* カスタムドロップダウン */
+    .custom-select {
+      position: relative;
+    }
+    .custom-select__trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      padding: 0 12px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-size: 13px;
+      color: #999;
+      cursor: pointer;
+      user-select: none;
+    }
+    .custom-select__trigger.is-selected {
+      color: #111;
+    }
+    .custom-select__menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      border: 1px solid #ccc;
+      border-top: none;
+      background: #fff;
+      z-index: 100;
+    }
+    .custom-select.is-open .custom-select__menu {
+      display: block;
+    }
+    .custom-select.is-open .custom-select__arrow {
+      transform: rotate(180deg);
+    }
+    .custom-select__option {
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #111;
+      cursor: pointer;
+    }
+    .custom-select__option:hover {
+      background: #f5f5f5;
+    }
+    .custom-select__option + .custom-select__option {
+      border-top: 1px solid #eee;
+    }
+
     /* 法人/個人 切り替え */
     .customer-type {
       display: flex;
@@ -130,6 +180,22 @@
   </style>
   <script src="auth.js"></script>
   <script>
+    function toggleSelect(id) {
+      var el = document.getElementById(id);
+      el.classList.toggle('is-open');
+    }
+    function selectOption(id, value) {
+      var el = document.getElementById(id);
+      el.querySelector('[id$="Selected"]').textContent = value;
+      el.querySelector('.custom-select__trigger').classList.add('is-selected');
+      el.classList.remove('is-open');
+    }
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('.custom-select.is-open').forEach(function(el) {
+        if (!el.contains(e.target)) el.classList.remove('is-open');
+      });
+    });
+
     function setType(type) {
       var isCorporate = type === 'corporate';
       document.getElementById('btn-corporate').classList.toggle('is-active', isCorporate);
@@ -206,8 +272,18 @@
         <!-- お問い合わせ種別 -->
         <div class="form-field">
           <div class="form-label">お問い合わせ種別 <span class="badge-required">*</span></div>
-          <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
-          <!-- 選択肢：製品・OEMについて / 販売店様のご紹介 / オイル潤滑・金属摺動についてのご相談・ご質問 / その他 -->
+          <div class="custom-select" id="inquirySelect">
+            <div class="custom-select__trigger" onclick="toggleSelect('inquirySelect')">
+              <span id="inquirySelected">選択してください</span>
+              <span class="custom-select__arrow">▼</span>
+            </div>
+            <div class="custom-select__menu">
+              <div class="custom-select__option" onclick="selectOption('inquirySelect', '製品・OEMについて')">製品・OEMについて</div>
+              <div class="custom-select__option" onclick="selectOption('inquirySelect', '販売店様のご紹介')">販売店様のご紹介</div>
+              <div class="custom-select__option" onclick="selectOption('inquirySelect', 'オイル潤滑・金属摺動についてのご相談・ご質問')">オイル潤滑・金属摺動についてのご相談・ご質問</div>
+              <div class="custom-select__option" onclick="selectOption('inquirySelect', 'その他')">その他</div>
+            </div>
+          </div>
         </div>
 
         <!-- 会社名（法人のみ） -->
