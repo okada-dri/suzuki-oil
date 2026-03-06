@@ -136,10 +136,21 @@
       color: #111;
       font-family: 'Helvetica Neue', sans-serif;
     }
-    .lineup-price {
-      font-size: 11px;
-      color: #666;
+    .lineup-volume {
+      font-size: 12px;
+      color: #555;
       font-family: 'Helvetica Neue', sans-serif;
+      display: inline;
+    }
+    .lineup-volume::after {
+      content: " /";
+      margin: 0 3px;
+    }
+    .lineup-price {
+      font-size: 12px;
+      color: #555;
+      font-family: 'Helvetica Neue', sans-serif;
+      display: inline;
     }
     .btn-purchase {
       display: flex;
@@ -298,31 +309,35 @@
       <p class="sec-title">ラインナップ</p>
       <div class="lineup-grid">
         <div class="lineup-item">
-          <img src="images/60-1l-1.jpg" alt="QZEP-60（1L）" class="lineup-img">
+          <img src="images/60-1l-1.jpg" alt="QZEP-60 1L" class="lineup-img">
           <div>
-            <p class="lineup-name">QZEP-60（1L）</p>
-            <p class="lineup-price">¥オープン価格</p>
+            <p class="lineup-name">QZEP-60</p>
+            <p class="lineup-volume">1L</p>
+            <p class="lineup-price">0,000円</p>
           </div>
         </div>
         <div class="lineup-item">
-          <img src="images/60-4l-1.jpg" alt="QZEP-60（4L）" class="lineup-img">
+          <img src="images/60-4l-1.jpg" alt="QZEP-60 4L" class="lineup-img">
           <div>
-            <p class="lineup-name">QZEP-60（4L）</p>
-            <p class="lineup-price">¥オープン価格</p>
+            <p class="lineup-name">QZEP-60</p>
+            <p class="lineup-volume">4L</p>
+            <p class="lineup-price">0,000円</p>
           </div>
         </div>
         <div class="lineup-item">
-          <img src="images/200-4l-1.jpg" alt="QZEP-200（4L）" class="lineup-img">
+          <img src="images/200-4l-1.jpg" alt="QZEP-200 4L" class="lineup-img">
           <div>
-            <p class="lineup-name">QZEP-200（4L）</p>
-            <p class="lineup-price">¥オープン価格</p>
+            <p class="lineup-name">QZEP-200</p>
+            <p class="lineup-volume">4L</p>
+            <p class="lineup-price">0,000円</p>
           </div>
         </div>
         <div class="lineup-item">
-          <img src="images/200-1l-1.jpg" alt="QZEP-200（1L）" class="lineup-img">
+          <img src="images/200-1l-1.jpg" alt="QZEP-200 1L" class="lineup-img">
           <div>
-            <p class="lineup-name">QZEP-200（1L）</p>
-            <p class="lineup-price">¥オープン価格</p>
+            <p class="lineup-name">QZEP-200</p>
+            <p class="lineup-volume">1L</p>
+            <p class="lineup-price">0,000円</p>
           </div>
         </div>
       </div>

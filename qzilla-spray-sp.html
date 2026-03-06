@@ -151,10 +151,21 @@
       color: #111;
       font-family: 'Helvetica Neue', sans-serif;
     }
-    .lineup-price {
-      font-size: 11px;
-      color: #666;
+    .lineup-volume {
+      font-size: 12px;
+      color: #555;
       font-family: 'Helvetica Neue', sans-serif;
+      display: inline;
+    }
+    .lineup-volume::after {
+      content: " /";
+      margin: 0 3px;
+    }
+    .lineup-price {
+      font-size: 12px;
+      color: #555;
+      font-family: 'Helvetica Neue', sans-serif;
+      display: inline;
     }
     .btn-purchase {
       display: flex;
@@ -336,17 +347,19 @@
       <p class="sec-title">ラインナップ</p>
       <div class="lineup-grid">
         <div class="lineup-item">
-          <img src="images/480s.jpg" alt="QZEP-480S（480ml）" class="lineup-img">
+          <img src="images/480s.jpg" alt="QZEP-480S 480ml" class="lineup-img">
           <div>
-            <p class="lineup-name">QZEP-480S（480ml）</p>
-            <p class="lineup-price">¥オープン価格</p>
+            <p class="lineup-name">QZEP-480S</p>
+            <p class="lineup-volume">480ml</p>
+            <p class="lineup-price">0,000円</p>
           </div>
         </div>
         <div class="lineup-item">
-          <img src="images/arpe480s.jpg" alt="ARE / ARPE-480S（480ml）" class="lineup-img">
+          <img src="images/arpe480s.jpg" alt="ARE / ARPE-480S 480ml" class="lineup-img">
           <div>
-            <p class="lineup-name">ARE / ARPE-480S（480ml）</p>
-            <p class="lineup-price">¥オープン価格</p>
+            <p class="lineup-name">ARE / ARPE-480S</p>
+            <p class="lineup-volume">480ml</p>
+            <p class="lineup-price">0,000円</p>
           </div>
         </div>
       </div>
