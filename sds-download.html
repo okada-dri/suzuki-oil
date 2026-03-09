@@ -2,54 +2,101 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>SDS PC-B1 Idle — 専用ページ（入力状態）</title>
+  <title>SDSダウンロード申請（送信完了） — 鈴木刃物工業オリジナルオイルサイト</title>
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   <link rel="stylesheet" href="base.css">
   <style>
-    /* Center content area */
-    .inner {
-      margin-left: auto;
-      margin-right: auto;
-    }
     /* Remove gap between header and breadcrumb */
     .page-bg {
       padding-top: 0;
+      padding-bottom: 56px;
     }
-    /* Breadcrumb top margin */
+    /* Breadcrumb top margin: gap-[8px] from header */
     .breadcrumb {
       margin-top: 8px;
     }
-    /* Remove underline from page title */
+    /* Page title: gap-[20px] from breadcrumb */
     .page-title {
       border-bottom: none;
       padding-bottom: 0;
-    }
-    /* More space between lead text and first form field */
-    .form-lead {
-      margin-bottom: 36px;
-    }
-    /* Auto-layout: form container stacks fields vertically */
-    .form-container {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      width: 656px;
-      margin: 0 auto;
-    }
-    /* Auto-layout: each field stacks label + input vertically */
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
       margin-bottom: 0;
+      margin-top: 20px;
     }
-    .form-label {
-      margin-bottom: 0;
-    }
-    /* Submit button: 400px centered per Figma 686:3269 */
-    .form-container .btn-dark {
+
+    /* ---- Success content area ---- */
+    .success-wrap {
       width: 400px;
-      margin: 40px auto 32px;
+      margin: 0 auto;
+      padding-top: 48px;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ---- Check icon ---- */
+    .check-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #555;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ---- Success message ---- */
+    .success-msg {
+      font-size: 12px;
+      color: #333;
+      line-height: 22.2px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    /* ---- Download button ---- */
+    .btn-download {
+      display: flex;
+      width: 400px;
+      height: 44px;
+      background: #333;
+      border: 1px solid #333;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: 'Helvetica Neue', sans-serif;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+
+    /* ---- Mail notice ---- */
+    .mail-notice {
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      line-height: 17.6px;
+      margin-bottom: 20px;
+    }
+
+    /* ---- TOPに戻る button ---- */
+    .btn-back-top {
+      display: flex;
+      width: 200px;
+      height: 40px;
+      background: #fff;
+      border: 1px solid #aaa;
+      color: #333;
+      font-size: 12px;
+      font-family: 'Helvetica Neue', sans-serif;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
     }
   </style>
   <script src="auth.js"></script>
@@ -73,11 +120,11 @@
       <div class="site-nav__dropdown">
         <span class="site-nav__item" style="cursor:default;">導入事例 ▾</span>
         <div class="site-nav__dropdown-menu">
-          <a href="qzilla-case-list01.html" class="site-nav__dropdown-item">QZILLA（保全）</a>
-          <a href="qzilla-case-list02.html" class="site-nav__dropdown-item">QZILLA（加工）</a>
+          <a href="qzilla-cases-maintenance.html" class="site-nav__dropdown-item">QZILLA（保全）</a>
+          <a href="qzilla-cases-processing.html" class="site-nav__dropdown-item">QZILLA（加工）</a>
         </div>
       </div>
-      <a href="news-list.html" class="site-nav__item">お知らせ</a>
+      <a href="news.html" class="site-nav__item">お知らせ</a>
       <a href="contact.html" class="site-nav__item">お問い合わせ</a>
       <a href="#" class="site-nav__btn">ONLINE SHOP</a>
     </nav>
@@ -90,89 +137,35 @@
       <!-- Breadcrumb -->
       <div class="breadcrumb">
         TOP &gt; 製品情報 &gt; QZILLA &gt; <span>SDSダウンロード申請</span>
-       
       </div>
 
       <!-- Page title -->
       <h1 class="page-title">SDSダウンロード申請</h1>
 
-      <!-- Lead text -->
-      <p class="form-lead">
-        SDS（安全データシート）の提供および改訂時のご連絡のため、以下の情報をご入力ください。
-      </p>
+      <!-- Success content -->
+      <div class="success-wrap">
 
-      <!-- Form -->
-      <div class="form-container">
+        <!-- Check icon -->
+        <div class="check-icon">✓</div>
 
-        <!-- 会社名 -->
-        <div class="form-field">
-          <div class="form-label">会社名 <span class="badge-required">*</span></div>
-          <div class="form-input">会社名を入力</div>
-        </div>
+        <!-- Message -->
+        <p class="success-msg">
+          送信が完了しました。<br>
+          以下よりSDSをダウンロードできます。<br>
+          ご入力のメールアドレスにもダウンロードリンクを送信しました。
+        </p>
 
-        <!-- 部署名 -->
-        <div class="form-field">
-          <div class="form-label">部署名</div>
-          <div class="form-input">部署名を入力</div>
-        </div>
+        <!-- Download button -->
+        <a href="#" class="btn-download">SDSをダウンロード</a>
 
-        <!-- 氏名 -->
-        <div class="form-field">
-          <div class="form-label">氏名 <span class="badge-required">*</span></div>
-          <div class="form-input">氏名を入力</div>
-        </div>
+        <!-- Mail notice -->
+        <p class="mail-notice">メールが届かない場合は迷惑メールフォルダをご確認ください。</p>
 
-        <!-- メールアドレス -->
-        <div class="form-field">
-          <div class="form-label">メールアドレス <span class="badge-required">*</span></div>
-          <div class="form-input">example@company.com</div>
-        </div>
+        <!-- Back to TOP -->
+        <a href="top.html" class="btn-back-top">TOPに戻る</a>
 
-        <!-- 国・地域 -->
-        <div class="form-field">
-          <div class="form-label">国・地域 <span class="badge-required">*</span></div>
-          <div class="form-select">Japan <span class="form-select__arrow">▼</span></div>
-        </div>
+      </div>
 
-        <!-- 業種 -->
-        <div class="form-field">
-          <div class="form-label">業種</div>
-          <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
-        </div>
-
-        <!-- 使用用途 -->
-        <div class="form-field">
-          <div class="form-label">使用用途</div>
-          <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
-        </div>
-
-        <!-- 電話番号 -->
-        <div class="form-field">
-          <div class="form-label">電話番号</div>
-          <div class="form-input">例：0575-24-3001</div>
-        </div>
-
-        <hr class="divider">
-
-        <!-- SDS改訂通知オプトイン -->
-        <div class="checkbox-row" style="margin-bottom:20px;">
-          <div class="checkbox-box"></div>
-          <div class="checkbox-label">SDS改訂時の通知を受け取る</div>
-        </div>
-
-        <!-- 個人情報同意 -->
-        <div class="checkbox-row">
-          <div class="checkbox-box"></div>
-          <div class="checkbox-label">
-            <span class="checkbox-link">個人情報の取り扱い</span>に同意する（<span class="checkbox-link">プライバシーポリシー</span>）
-           
-          </div>
-        </div>
-
-        <!-- 送信ボタン -->
-        <a href="sds-download-error.html" class="btn-dark" style="text-decoration: none;">SDSを受け取る</a>
-
-      </div><!-- /form-container -->
     </div><!-- /inner -->
   </div><!-- /page-bg -->
 

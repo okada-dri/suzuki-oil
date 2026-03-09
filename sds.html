@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>SDSダウンロード申請（入力エラー） — 鈴木刃物工業オリジナルオイルサイト</title>
+  <title>SDS PC-B1 Idle — 専用ページ（入力状態）</title>
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   <link rel="stylesheet" href="base.css">
   <style>
@@ -46,36 +46,7 @@
     .form-label {
       margin-bottom: 0;
     }
-
-    /* ---- Error input ---- */
-    .form-input--error {
-      border: 1px solid #ff1a1a;
-      background: #ffefef;
-    }
-
-    /* ---- Error select ---- */
-    .form-select--error {
-      border: 1px solid #ff1a1a;
-    }
-
-    /* ---- Error checkbox row ---- */
-    .checkbox-row--error {
-      border: 1px solid #ff1a1a;
-      background: #ffefef;
-    }
-    .checkbox-row--error .checkbox-box {
-      border-color: #ff1a1a;
-    }
-
-    /* ---- Field error message ---- */
-    .field-err-msg {
-      font-size: 11px;
-      color: #ff2a29;
-      line-height: 16.5px;
-      margin-top: 0;
-    }
-
-    /* Submit button: 400px centered per Figma */
+    /* Submit button: 400px centered per Figma 686:3269 */
     .form-container .btn-dark {
       width: 400px;
       margin: 40px auto 32px;
@@ -119,6 +90,7 @@
       <!-- Breadcrumb -->
       <div class="breadcrumb">
         TOP &gt; 製品情報 &gt; QZILLA &gt; <span>SDSダウンロード申請</span>
+       
       </div>
 
       <!-- Page title -->
@@ -132,53 +104,49 @@
       <!-- Form -->
       <div class="form-container">
 
-        <!-- 会社名 ERROR -->
+        <!-- 会社名 -->
         <div class="form-field">
           <div class="form-label">会社名 <span class="badge-required">*</span></div>
-          <div class="form-input form-input--error">会社名を入力</div>
-          <div class="field-err-msg">入力されていません</div>
+          <div class="form-input">会社名を入力</div>
         </div>
 
-        <!-- 部署名 NORMAL -->
+        <!-- 部署名 -->
         <div class="form-field">
           <div class="form-label">部署名</div>
           <div class="form-input">部署名を入力</div>
         </div>
 
-        <!-- 氏名 ERROR -->
+        <!-- 氏名 -->
         <div class="form-field">
           <div class="form-label">氏名 <span class="badge-required">*</span></div>
-          <div class="form-input form-input--error">氏名を入力</div>
-          <div class="field-err-msg">入力されていません</div>
+          <div class="form-input">氏名を入力</div>
         </div>
 
-        <!-- メールアドレス ERROR -->
+        <!-- メールアドレス -->
         <div class="form-field">
           <div class="form-label">メールアドレス <span class="badge-required">*</span></div>
-          <div class="form-input form-input--error">example@company.com</div>
-          <div class="field-err-msg">入力されていません</div>
+          <div class="form-input">example@company.com</div>
         </div>
 
-        <!-- 国・地域 ERROR -->
+        <!-- 国・地域 -->
         <div class="form-field">
           <div class="form-label">国・地域 <span class="badge-required">*</span></div>
-          <div class="form-select form-select--error">選択してください <span class="form-select__arrow">▼</span></div>
-          <div class="field-err-msg">選択されていません</div>
+          <div class="form-select">Japan <span class="form-select__arrow">▼</span></div>
         </div>
 
-        <!-- 業種 NORMAL -->
+        <!-- 業種 -->
         <div class="form-field">
           <div class="form-label">業種</div>
           <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
         </div>
 
-        <!-- 使用用途 NORMAL -->
+        <!-- 使用用途 -->
         <div class="form-field">
           <div class="form-label">使用用途</div>
           <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
         </div>
 
-        <!-- 電話番号 NORMAL -->
+        <!-- 電話番号 -->
         <div class="form-field">
           <div class="form-label">電話番号</div>
           <div class="form-input">例：0575-24-3001</div>
@@ -186,25 +154,23 @@
 
         <hr class="divider">
 
-        <!-- SDS改訂通知オプトイン NORMAL -->
-        <div class="checkbox-row" style="margin-bottom:0;">
+        <!-- SDS改訂通知オプトイン -->
+        <div class="checkbox-row" style="margin-bottom:20px;">
           <div class="checkbox-box"></div>
           <div class="checkbox-label">SDS改訂時の通知を受け取る</div>
         </div>
 
-        <!-- 個人情報同意 ERROR -->
-        <div class="form-field" style="gap:3px;">
-          <div class="checkbox-row checkbox-row--error" style="margin-bottom:0;">
-            <div class="checkbox-box"></div>
-            <div class="checkbox-label">
-              <span class="checkbox-link">個人情報の取り扱い</span>に同意する（<span class="checkbox-link">プライバシーポリシー</span>）
-            </div>
+        <!-- 個人情報同意 -->
+        <div class="checkbox-row">
+          <div class="checkbox-box"></div>
+          <div class="checkbox-label">
+            <span class="checkbox-link">個人情報の取り扱い</span>に同意する（<span class="checkbox-link">プライバシーポリシー</span>）
+           
           </div>
-          <div class="field-err-msg">選択されていません</div>
         </div>
 
         <!-- 送信ボタン -->
-        <a href="sds-download.html" class="btn-dark" style="text-decoration: none;">SDSを受け取る</a>
+        <a href="sds-download-error.html" class="btn-dark" style="text-decoration: none;">SDSを受け取る</a>
 
       </div><!-- /form-container -->
     </div><!-- /inner -->
