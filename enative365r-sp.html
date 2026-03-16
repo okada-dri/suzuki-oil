@@ -3,438 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=400">
-  <title>SP enative365R — 鈴木刃物工業オリジナルオイルサイト</title>
+  <title>enative365R SP — 極圧性能強化型潤滑オイル</title>
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   <link rel="stylesheet" href="base.css">
   <style>
-    /* ===== SP enative365R (400px幅) ===== */
+    body { width: 400px; margin: 0; }
 
-    body {
-      width: 400px;
-      margin: 0;
+    /* ---- enative365R SP ヘッダー ---- */
+    .enative-header {
+      width: 400px; height: 56px; background: #000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 16px; box-sizing: border-box; position: relative;
     }
+    .enative-header__logo img { height: 16px; display: block; }
+    .enative-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+    .enative-hamburger span { display: block; width: 22px; height: 2px; background: #fff; }
 
-    /* === Header === */
-    .site-header {
-      width: 400px;
-      height: 56px;
+    /* ---- Drawer ---- */
+    .enative-drawer {
+      display: none; position: fixed; top: 0; left: 0;
+      width: 400px; height: 100%; background: #000;
+      z-index: 100; padding: 56px 0 0; box-sizing: border-box;
     }
-
-    /* === Hero KV === */
-    .hero-kv {
-      width: 400px;
-      display: block;
-      line-height: 0;
+    .enative-drawer.is-open { display: block; }
+    .enative-drawer-nav { display: flex; flex-direction: column; }
+    .enative-drawer-nav__item {
+      font-size: 13px; color: #fff; text-decoration: none;
+      letter-spacing: 0.26px; line-height: 24px;
+      padding: 16px 24px; border-bottom: 1px solid #333;
     }
-    .hero-kv img {
-      width: 400px;
-      display: block;
-    }
-
-    /* === Hero bar === */
-    .hero-bar {
-      width: 400px;
-      background: #000;
-    }
-    .hero-bar__inner {
-      width: 352px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 24px 0;
-    }
-    .hero-bar__checklist {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .hero-bar__check-item {
-      display: flex;
-      gap: 8px;
-      font-size: 13px;
-      color: #ddd;
-      line-height: 26px;
-      font-family: 'Noto Sans JP', sans-serif;
-    }
-    .hero-bar__buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .btn-hero-sds {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      border: 1px solid #fff;
-      background: transparent;
-      padding: 14px 0;
-      width: 100%;
-      box-sizing: border-box;
-      font-size: 12px;
-      color: #fff;
-      font-family: 'Noto Sans JP', Arial, sans-serif;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .btn-hero-purchase {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #fff;
-      background: #fff;
-      padding: 14px 0;
-      width: 100%;
-      box-sizing: border-box;
-      font-size: 12px;
-      color: #111;
-      font-family: 'Noto Sans JP', sans-serif;
-      cursor: pointer;
-      text-decoration: none;
+    .enative-drawer-nav__btn {
+      font-size: 12px; color: #fff; text-decoration: none;
+      letter-spacing: 0.24px; line-height: 24px;
+      padding: 16px 24px; border: 1px solid #fff;
+      margin: 24px; text-align: center; display: block;
     }
 
-    /* === Content area === */
+    /* ---- Hero ---- */
+    .hero {
+      width: 400px; height: 240px; background: #e0e0e0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero__label { font-size: 14px; color: #999; letter-spacing: 0.22px; }
+
+    /* ---- Content area ---- */
     .content-area {
-      width: 352px;
-      margin: 0 auto;
-      padding-top: 48px;
-      padding-bottom: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 56px;
+      width: 400px; padding: 40px 24px 0;
+      box-sizing: border-box; display: flex; flex-direction: column; gap: 48px;
     }
 
-    /* === キャッチコピー === */
-    .catchcopy {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+    /* ---- Catch copy ---- */
+    .catch-section {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
     }
-    .catchcopy__heading {
-      font-size: 18px;
-      font-weight: bold;
-      color: #111;
-      font-family: 'Noto Sans JP', sans-serif;
-      text-align: center;
+    .catch-heading {
+      font-size: 16px; font-weight: 400; color: #111;
+      line-height: 24px; text-align: center; letter-spacing: -0.12px;
     }
-    .catchcopy__body {
-      font-size: 13px;
-      color: #333;
-      line-height: 28px;
-      font-family: 'Noto Sans JP', sans-serif;
-      text-align: center;
+    .catch-body {
+      font-size: 12px; color: #333; line-height: 22px; text-align: center;
     }
 
-    /* === 利用シーン: 1-col === */
-    .scene-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      width: 100%;
-      margin-top: 8px;
+    /* ---- Section heading ---- */
+    .sec-heading {
+      font-size: 16px; font-weight: 400; color: #000;
+      line-height: 22.2px; margin-bottom: 16px;
     }
-    .scene-item {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .scene-ph {
-      width: 100%;
-      height: 200px;
-      background: #d4d4d4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: #888;
-      text-align: center;
-      line-height: 17.6px;
-      font-family: 'Helvetica Neue', sans-serif;
-    }
-    .scene-desc {
-      font-size: 13px;
-      color: #333;
-      line-height: 22px;
-      font-family: 'Noto Sans JP', sans-serif;
+    .sec-body {
+      font-size: 12px; color: #333; line-height: 22px; margin-bottom: 24px;
     }
 
-    /* === Section heading === */
-    .sec-title {
-      font-size: 20px;
-      font-weight: bold;
-      color: #111;
-      font-family: 'Noto Sans JP', sans-serif;
-      margin-bottom: 20px;
+    /* ---- ABOUT ---- */
+    .about-img {
+      width: 352px; height: 200px; background: #d9d9d9;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: #999; margin-bottom: 16px;
+    }
+    .about-text { display: flex; flex-direction: column; gap: 16px; }
+    .about-text__body { font-size: 12px; color: #333; line-height: 22px; }
+    .btn-outline {
+      width: 100%; height: 44px; background: #fff; border: 1px solid #111;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 12px; color: #000;
+      letter-spacing: 0.96px; box-sizing: border-box;
     }
 
-    /* === ラインナップ: 2-col === */
-    .lineup-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+    /* ---- FEATURE ---- */
+    .feature-video {
+      width: 352px; height: 200px; background: #e0e0e0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: #999; margin-bottom: 24px;
     }
-    .lineup-card {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .feature-items { display: flex; flex-direction: column; gap: 24px; }
+    .feature-item__title {
+      font-size: 14px; color: #111; line-height: normal; margin-bottom: 8px;
     }
-    .lineup-ph {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      display: block;
-    }
-    .lineup-name {
-      font-size: 13px;
-      color: #111;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-weight: bold;
-    }
-    .lineup-volume {
-      font-size: 12px;
-      color: #555;
-      font-family: 'Helvetica Neue', sans-serif;
-      display: inline;
-    }
-    .lineup-volume::after {
-      content: " /";
-      margin: 0 3px;
-    }
-    .lineup-price {
-      font-size: 12px;
-      color: #555;
-      font-family: 'Helvetica Neue', sans-serif;
-      display: inline;
-    }
-    .lineup-btn-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 24px;
-    }
-    .btn-purchase-dark {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #333;
-      color: #fff;
-      font-size: 13px;
-      font-family: 'Noto Sans JP', sans-serif;
-      padding: 14px 40px;
-      text-decoration: none;
-      cursor: pointer;
-    }
+    .feature-item__body { font-size: 12px; color: #444; line-height: 22px; }
 
-    /* === お客様の声: 2-col === */
-    .voice-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
+    /* ---- VOICES ---- */
+    .voice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .voice-card {
-      border: 1px solid #e0e0e0;
-      padding: 16px 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
+      border: 1px solid #e0e0e0; padding: 16px 8px;
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
     }
     .voice-photo {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #d4d4d4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: #888;
-      flex-shrink: 0;
+      width: 48px; height: 48px; border-radius: 50%; background: #d4d4d4;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; color: #888; flex-shrink: 0;
     }
-    .voice-text {
-      font-size: 11px;
-      color: #333;
-      line-height: 18px;
-      font-family: 'Noto Sans JP', sans-serif;
-      text-align: left;
-      width: 100%;
+    .voice-text { font-size: 11px; color: #333; line-height: 18px; width: 100%; }
+
+    /* ---- PRODUCTS ---- */
+    .lineup-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .lineup-card { display: flex; flex-direction: column; gap: 8px; }
+    .lineup-img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .lineup-name { font-size: 13px; color: #111; font-weight: bold; }
+    .lineup-meta { font-size: 12px; color: #555; }
+    .lineup-btn-wrap { display: flex; justify-content: center; margin-top: 24px; }
+    .btn-fill {
+      width: 100%; height: 44px; background: #000; border: 1px solid #111;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 12px; color: #fff;
+      letter-spacing: 0.96px; box-sizing: border-box;
     }
 
-    /* === Back to top === */
-    .back-to-top {
-      width: 352px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      padding-bottom: 48px;
+    /* ---- NEWS ---- */
+    .news-list { border-top: 1px solid #e8e8e8; }
+    .news-item {
+      display: flex; flex-direction: column; gap: 2px;
+      padding: 12px 0; border-bottom: 1px solid #e8e8e8;
     }
-    .back-to-top__btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 160px;
-      height: 40px;
-      border: 1px solid #111;
-      font-size: 13px;
-      color: #111;
-      font-family: 'Noto Sans JP', sans-serif;
+    .news-item__date { font-size: 11px; color: #999; letter-spacing: 0.48px; }
+    .news-item__title { font-size: 12px; color: #333; line-height: 20px; }
+    .news-more { display: flex; justify-content: center; margin-top: 24px; }
+
+    /* ---- Contact Banner ---- */
+    .contact-wrapper {
+      width: 400px; display: flex; justify-content: center;
+      padding: 48px 24px; box-sizing: border-box;
+    }
+    .contact-banner {
+      width: 100%; background: #000;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 12px; padding: 40px 0;
       text-decoration: none;
-      cursor: pointer;
-      background: #fff;
     }
+    .contact-banner__title { font-size: 14px; color: #fff; letter-spacing: 0.22px; }
+    .contact-banner__sub { font-size: 11px; color: #ccc; text-align: center; line-height: 20px; }
 
-    /* === Footer === */
-    .site-footer {
-      width: 400px;
-      background: #e8e8e8;
-      padding: 20px 24px;
-      box-sizing: border-box;
-      height: auto;
-    }
-    .site-footer p {
-      font-size: 12px;
-      color: #555;
-      margin-left: 0;
-    }
+    /* ---- Footer ---- */
+    .site-footer { background: #111; width: 400px; padding: 20px 0; box-sizing: border-box; }
+    .site-footer__nav { display: flex; flex-wrap: wrap; gap: 16px; padding: 0 24px; align-items: center; }
+    .site-footer__nav a { font-size: 12px; color: #aaa; letter-spacing: 0.24px; line-height: 24px; text-decoration: none; }
   </style>
   <script src="auth.js"></script>
   <script>
-    function toggleSubnav(el) {
-    el.nextElementSibling.classList.toggle('is-open');
-  }
-  function toggleDrawer() {
-    document.getElementById('drawer').classList.toggle('is-open');
-  }
+    function toggleDrawer() {
+      document.getElementById('enative-drawer').classList.toggle('is-open');
+    }
   </script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <a href="top-sp.html" class="site-header__logo">鈴木刃物工業オリジナルオイルサイト</a>
-    <div class="hamburger" id="hamburger-btn" onclick="toggleDrawer()">
+  <header class="enative-header">
+    <a href="enative365r-sp.html" class="enative-header__logo">
+      <img src="images/enative365r.png" alt="enative365R">
+    </a>
+    <div class="enative-hamburger" onclick="toggleDrawer()">
       <span></span><span></span><span></span>
     </div>
   </header>
-  <div class="drawer" id="drawer">
-    <nav class="drawer-nav">
-      <a href="top-sp.html" class="drawer-nav__item">TOP</a>
-      <a href="story-sp.html" class="drawer-nav__item">ABOUT</a>
-      <div class="drawer-nav__item drawer-nav__item--parent" onclick="toggleSubnav(this)">製品情報 ▾</div>
-      <div class="drawer-nav__subnav">
-        <a href="qzilla-sp.html" class="drawer-nav__subitem">QZILLA</a>
-        <a href="enative365r-sp.html" class="drawer-nav__subitem">enative365R</a>
-        <a href="#" class="drawer-nav__subitem">ARE</a>
-      </div>
-      <div class="drawer-nav__item drawer-nav__item--parent" onclick="toggleSubnav(this)">導入事例 ▾</div>
-      <div class="drawer-nav__subnav">
-        <a href="qzilla-cases-maintenance-sp.html" class="drawer-nav__subitem">QZILLA（保全）</a>
-        <a href="qzilla-cases-processing-sp.html" class="drawer-nav__subitem">QZILLA（加工）</a>
-      </div>
-      <a href="news-sp.html" class="drawer-nav__item">お知らせ</a>
-      <a href="contact-sp.html" class="drawer-nav__item">お問い合わせ</a>
-      <a href="#" class="drawer-nav__btn">ONLINE SHOP</a>
+  <div class="enative-drawer" id="enative-drawer">
+    <nav class="enative-drawer-nav">
+      <a href="enative365r-sp.html" class="enative-drawer-nav__item">TOP</a>
+      <a href="enative365r-about-sp.html" class="enative-drawer-nav__item">ABOUT</a>
+      <a href="news-sp.html" class="enative-drawer-nav__item">ニュース</a>
+      <a href="enative365r-shop-sp.html" class="enative-drawer-nav__item">店舗情報</a>
+      <a href="enative365r-contact-sp.html" class="enative-drawer-nav__item">お問い合わせ</a>
+      <a href="enative365r-sds-sp.html" class="enative-drawer-nav__item">SDSダウンロード</a>
+      <a href="#" class="enative-drawer-nav__btn">ONLINE SHOP</a>
     </nav>
   </div>
 
-  <!-- Breadcrumb -->
-  <div style="width: 352px; margin: 0 auto; padding-top: 8px;">
-    <div class="breadcrumb">TOP &gt; 製品情報 &gt; <span>enative365R</span></div>
-  </div>
-
-  <!-- Hero KV -->
-  <div class="hero-kv">
-    <img src="images/enative365R_KV.jpg" alt="enative365R">
-  </div>
-
-  <!-- Hero bar -->
-  <div class="hero-bar">
-    <div class="hero-bar__inner">
-      <div class="hero-bar__checklist">
-        <div class="hero-bar__check-item"><span>✅</span><span>摩擦係数0.055〜0.085の圧倒的低摩擦を実現</span></div>
-        <div class="hero-bar__check-item"><span>✅</span><span>燃費向上とエンジン長寿命化を同時に実現</span></div>
-        <div class="hero-bar__check-item"><span>✅</span><span>ナノスケールの潤滑成分が金属表面に強力に密着</span></div>
-        <div class="hero-bar__check-item"><span>✅</span><span>錆・腐食・焼付きから大切な機械構造品を確実に守る</span></div>
-        <div class="hero-bar__check-item"><span>✅</span><span>PFASフリー・REACH適合・RoHS3適合・PRTR非該当</span></div>
-      </div>
-      <div class="hero-bar__buttons">
-        <a href="sds-sp.html" class="btn-hero-sds">SDS 安全データシート　↓</a>
-        <a href="#" class="btn-hero-purchase">ご購入はこちらから</a>
-      </div>
-    </div>
+  <!-- Hero -->
+  <div class="hero">
+    <p class="hero__label">メインビジュアル</p>
   </div>
 
   <!-- Content area -->
   <div class="content-area">
 
-    <!-- キャッチコピー + 利用シーン -->
-    <div class="catchcopy">
-      <h2 class="catchcopy__heading">クセになる極圧性能。限界を超える潤滑力。</h2>
-      <p class="catchcopy__body">
-        enative365Rは、エンジン内部の摩擦を極限まで抑え、<br>
-        パフォーマンスを最大限に引き出すために開発された、<br>
-        PFASフリー・ハロゲンフリーの極圧性能強化型潤滑オイルです。<br>
-        その圧倒的な低摩擦係数（0.055〜0.085）により、走行中の摩擦や焼付き（カジリ）を大幅に軽減。<br>
-        燃費の向上とエンジンの長寿命化を同時に実現します。
-      </p>
-      <div class="scene-grid">
-        <div class="scene-item">
-          <div class="scene-ph">車にenativeを利用している写真【エンジンオイル注入シーン】</div>
-          <p class="scene-desc">乗用車・スポーツカーのエンジンオイルに添加。摩擦を極限まで低減し、燃費向上とエンジン保護を実現。レーシングカーから一般乗用車まで対応します。</p>
+    <!-- Catch copy -->
+    <div class="catch-section">
+      <p class="catch-heading">クセになる極圧性能。<br>限界を超える潤滑力。</p>
+      <p class="catch-body">enative365Rは、エンジン内部の摩擦を極限まで抑え、パフォーマンスを最大限に引き出すために開発された、PFASフリー・ハロゲンフリーの極圧性能強化型潤滑オイルです。その圧倒的な低摩擦係数（0.055〜0.085）により、走行中の摩擦や焼付き（カジリ）を大幅に軽減。燃費の向上とエンジンの長寿命化を同時に実現します。</p>
+    </div>
+
+    <!-- ABOUT -->
+    <div>
+      <p class="sec-heading">ABOUT / enative365Rについて</p>
+      <div class="about-img">写真（オイル商品）</div>
+      <div class="about-text">
+        <p class="about-text__body">QZILLAは、刃物メーカーである鈴木刃物工業株式会社が生み出しました。「切れ味」と「信頼」を追求し続け、今日まで歩み続けた鈴木刃物工業株式会社がどのようにしてenative365Rを生み出したのか。ここではenative365R完成までの開発ストーリーをご紹介します。</p>
+        <a href="enative365r-about-sp.html" class="btn-outline">enative365Rについて知る</a>
+      </div>
+    </div>
+
+    <!-- FEATURE -->
+    <div>
+      <p class="sec-heading">FEATURE / オイルの特徴</p>
+      <p class="sec-body">QZILLAは、最新技術で環境と安全面に配慮し開発された高性能極圧潤滑オイルです。塩素系・固体潤滑不使用の微臭タイプで、工業設備から産業機械まであらゆる用途に対応。PRTR法・RoHS3指令・PFAS規則・REACH規則等に対応した環境・安全面クリア製品です。</p>
+      <div class="feature-video">動画（製品使用シーン）</div>
+      <div class="feature-items">
+        <div>
+          <p class="feature-item__title">摩擦係数0.055〜0.085の圧倒的低摩擦を実現</p>
+          <p class="feature-item__body">不純物を徹底排除することで、金属表面への均一な浸透を実現し、長期間にわたる防錆効果を発揮します。</p>
         </div>
-        <div class="scene-item">
-          <div class="scene-ph">バイクにenativeを利用している写真【エンジン整備シーン】</div>
-          <p class="scene-desc">バイク・自転車のエンジンやギヤ部への添加使用。産業用機械や特殊車両まで、あらゆるモビリティの性能を最大限に引き出します。</p>
+        <div>
+          <p class="feature-item__title">燃費向上とエンジン長寿命化を同時に実現</p>
+          <p class="feature-item__body">機械的な大量生産ではなく、品質を重視した丁寧な製法を守り続けています。</p>
+        </div>
+        <div>
+          <p class="feature-item__title">燃費向上とエンジン長寿命化を同時に実現</p>
+          <p class="feature-item__body">機械的な大量生産ではなく、品質を重視した丁寧な製法を守り続けています。</p>
         </div>
       </div>
     </div>
 
-    <!-- ラインナップ -->
+    <!-- VOICES -->
     <div>
-      <p class="sec-title">ラインナップ</p>
-      <div class="lineup-grid">
-        <div class="lineup-card">
-          <img src="images/220-m4l-1.jpg" alt="AEP-220-M4L 4L" class="lineup-ph">
-          <div>
-            <p class="lineup-name">AEP-220-M4L</p>
-            <p class="lineup-volume">4L</p>
-            <p class="lineup-price">63,800円</p>
-          </div>
-        </div>
-        <div class="lineup-card">
-          <img src="images/220-m1l-1.jpg" alt="AEP-220-M1L 1L" class="lineup-ph">
-          <div>
-            <p class="lineup-name">AEP-220-M1L</p>
-            <p class="lineup-volume">1L</p>
-            <p class="lineup-price">19,800円</p>
-          </div>
-        </div>
-        <div class="lineup-card">
-          <img src="images/220-m240-1.jpg" alt="AEP-220-M240 240ml" class="lineup-ph">
-          <div>
-            <p class="lineup-name">AEP-220-M240</p>
-            <p class="lineup-volume">240ml</p>
-            <p class="lineup-price">6,760円</p>
-          </div>
-        </div>
-        <div class="lineup-card">
-          <img src="images/220-m120-1.jpg" alt="AEP-220-M120 120ml" class="lineup-ph">
-          <div>
-            <p class="lineup-name">AEP-220-M120</p>
-            <p class="lineup-volume">120ml</p>
-            <p class="lineup-price">4,180円</p>
-          </div>
-        </div>
-      </div>
-      <div class="lineup-btn-wrap">
-        <a href="#" class="btn-purchase-dark">ご購入はこちらから</a>
-      </div>
-    </div>
-
-    <!-- お客様の声 -->
-    <div>
-      <p class="sec-title">お客様の声</p>
+      <p class="sec-heading">VOICES/お客様の声</p>
       <div class="voice-grid">
         <div class="voice-card">
           <div class="voice-photo">写真</div>
@@ -455,16 +253,78 @@
       </div>
     </div>
 
+    <!-- PRODUCTS -->
+    <div>
+      <p class="sec-heading">PRODUCTS / 商品</p>
+      <div class="lineup-grid">
+        <div class="lineup-card">
+          <img src="images/220-m4l-1.jpg" alt="AEP-220-M4L" class="lineup-img">
+          <p class="lineup-name">AEP-220-M4L</p>
+          <p class="lineup-meta">4L　63,800円</p>
+        </div>
+        <div class="lineup-card">
+          <img src="images/220-m1l-1.jpg" alt="AEP-220-M1L" class="lineup-img">
+          <p class="lineup-name">AEP-220-M1L</p>
+          <p class="lineup-meta">1L　19,800円</p>
+        </div>
+        <div class="lineup-card">
+          <img src="images/220-m240-1.jpg" alt="AEP-220-M240" class="lineup-img">
+          <p class="lineup-name">AEP-220-M240</p>
+          <p class="lineup-meta">240ml　6,760円</p>
+        </div>
+        <div class="lineup-card">
+          <img src="images/220-m120-1.jpg" alt="AEP-220-M120" class="lineup-img">
+          <p class="lineup-name">AEP-220-M120</p>
+          <p class="lineup-meta">120ml　4,180円</p>
+        </div>
+      </div>
+      <div class="lineup-btn-wrap">
+        <a href="#" class="btn-fill">ご購入はこちら</a>
+      </div>
+    </div>
+
+    <!-- NEWS -->
+    <div style="padding-bottom: 48px;">
+      <p class="sec-heading">NEWS / お知らせ</p>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-item__date">2026.02.17</span>
+          <span class="news-item__title">QZILLA新製品「QZ-SP500」を発売しました。</span>
+        </div>
+        <div class="news-item">
+          <span class="news-item__date">2026.01.15</span>
+          <span class="news-item__title">QZILLA製品導入効果事例集を公開しました。</span>
+        </div>
+        <div class="news-item">
+          <span class="news-item__date">2025.11.07</span>
+          <span class="news-item__title">SDS安全データシートダウンロードページを開設しました。</span>
+        </div>
+        <div class="news-item">
+          <span class="news-item__date">2025.10.19</span>
+          <span class="news-item__title">QZILLA公式サイトをリニューアルしました。</span>
+        </div>
+      </div>
+      <div class="news-more">
+        <a href="news-sp.html" class="btn-outline">お知らせ一覧へ</a>
+      </div>
+    </div>
+
   </div><!-- /content-area -->
 
-  <!-- Back to top -->
-  <div class="back-to-top">
-    <a href="top-sp.html" class="back-to-top__btn">TOPに戻る</a>
+  <!-- Contact Banner -->
+  <div class="contact-wrapper">
+    <a href="enative365r-contact-sp.html" class="contact-banner">
+      <p class="contact-banner__title">お問い合わせ</p>
+      <p class="contact-banner__sub">製品・OEMについて / 販売店様からのご相談 /<br>オイル濃度・金属組成についてのご相談・ご質問</p>
+    </a>
   </div>
 
-  <!-- Footer -->
   <footer class="site-footer">
-    <p>プライバシーポリシー　ECサイト　運営会社</p>
+    <nav class="site-footer__nav">
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">ECサイト</a>
+      <a href="#">運営会社</a>
+    </nav>
   </footer>
 
 </body>

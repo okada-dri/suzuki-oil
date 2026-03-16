@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ABOUT — enative365R</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+
+    /* ---- enative365R ブランドヘッダー ---- */
+    .enative-header {
+      width: 1440px;
+      height: 80px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .enative-header__logo img {
+      height: 16px;
+      display: block;
+    }
+    .enative-nav {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .enative-nav__item {
+      font-size: 12px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.24px;
+      line-height: 32px;
+      padding: 0 16px;
+      white-space: nowrap;
+    }
+    .enative-nav__item:first-child { padding-left: 0; }
+    .enative-nav__btn {
+      font-size: 11px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.22px;
+      line-height: 30px;
+      padding: 0 15px;
+      border: 1px solid #fff;
+      margin-left: 16px;
+      white-space: nowrap;
+    }
+
+    /* ---- Page intro ---- */
+    .page-intro {
+      width: 1440px;
+      height: 134px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .breadcrumb {
+      position: absolute;
+      top: 8px;
+      left: 101px;
+      font-size: 11px;
+      color: #888;
+      line-height: 17.6px;
+    }
+    .breadcrumb span { color: #111; }
+    .page-title {
+      font-size: 23px;
+      font-weight: 400;
+      color: #111;
+      line-height: 25.6px;
+      letter-spacing: -0.16px;
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      width: 1440px;
+      height: 480px;
+      background: #e0e0e0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero__ph { font-size: 20px; color: #999; letter-spacing: 0.22px; line-height: 19.8px; }
+    .hero__catchcopy {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 23px;
+      color: #111;
+      line-height: 25.6px;
+      letter-spacing: -0.16px;
+      white-space: nowrap;
+    }
+
+    /* ---- Story section ---- */
+    .story-section {
+      width: 1440px;
+      padding-top: 67px;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    /* Row 1: text left (205px), image right (783px) */
+    .story-row1 { position: relative; height: 324px; }
+    .story-row1 .story-img {
+      position: absolute; right: 0; top: 0;
+      width: 783px; height: 324px;
+      background: #d4d4d4;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; color: #999; overflow: hidden;
+    }
+    .story-row1 .story-text {
+      position: absolute; left: 205px; top: 50%; transform: translateY(-50%);
+      width: 405px; font-size: 12px; color: #333; line-height: 24px;
+    }
+
+    /* Row 2: image left (783px), text right */
+    .story-row2 { display: flex; align-items: center; gap: 67px; height: 324px; }
+    .story-row2 .story-img {
+      width: 783px; height: 324px; flex-shrink: 0;
+      background: #d4d4d4;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; color: #999; overflow: hidden;
+    }
+    .story-row2 .story-text { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+    .story-row2 .story-text p { font-size: 12px; color: #333; line-height: 24px; width: 401px; }
+
+    /* Row 3: text left (padding-left 202px), image right (783px) */
+    .story-row3 { display: flex; align-items: center; padding-left: 202px; gap: 48px; height: 324px; }
+    .story-row3 .story-text {
+      width: 407px; flex-shrink: 0;
+      font-size: 12px; color: #333; line-height: 22.2px;
+    }
+    .story-row3 .story-img {
+      flex: 1; height: 324px;
+      background: #d9d9d9;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: #999; letter-spacing: 0.22px;
+    }
+
+    /* ---- Scene section (利用シーン) ---- */
+    .scene-section {
+      width: 1440px;
+      padding: 120px 200px 0;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+    }
+    .scene-card { width: 500px; display: flex; flex-direction: column; gap: 11px; }
+    .scene-img {
+      flex: 1;
+      height: 265px;
+      background: #d4d4d4;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; color: #111; text-align: center; line-height: 24px;
+    }
+    .scene-desc { font-size: 12px; color: #444; line-height: 22.2px; }
+
+    /* ---- Greeting section ---- */
+    .greeting-section {
+      width: 1440px;
+      padding: 120px 200px 0;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      gap: 67px;
+    }
+    .greeting-img {
+      width: 440px; height: 473px; flex-shrink: 0;
+      background: #d9d9d9;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: #999; letter-spacing: 0.22px;
+    }
+    .greeting-text { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+    .greeting-text .sec-heading { font-size: 20px; font-weight: 400; color: #000; line-height: 22.2px; }
+    .greeting-text p { font-size: 12px; color: #333; line-height: 24px; }
+
+    /* ---- Company overview + History ---- */
+    .company-section {
+      width: 1440px;
+      padding: 120px 200px 80px;
+      box-sizing: border-box;
+      display: flex;
+      gap: 80px;
+      align-items: flex-start;
+    }
+    .company-block { flex: 1; }
+    .history-block { flex: 1; }
+    .company-section__heading {
+      font-size: 20px; font-weight: 400; color: #000;
+      line-height: 22.2px; margin-bottom: 24px;
+    }
+    .company-table { width: 100%; border-collapse: collapse; }
+    .company-table tr { border-bottom: 1px solid #e8e8e8; }
+    .company-table th {
+      font-size: 12px; font-weight: bold; color: #111;
+      line-height: 22px; padding: 10px 24px 10px 0;
+      vertical-align: middle; white-space: nowrap;
+      width: 120px; text-align: left;
+    }
+    .company-table td {
+      font-size: 12px; color: #333; line-height: 22px;
+      padding: 10px 0 10px 24px; vertical-align: middle;
+    }
+    .btn-map {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: #1a6fc4; color: #fff; font-size: 11px; line-height: 1;
+      padding: 4px 12px; border-radius: 3px; text-decoration: none;
+      margin-left: 16px; vertical-align: middle;
+    }
+
+    /* ---- Brand banners ---- */
+    .brand-banners {
+      width: 1440px;
+      padding: 0 200px 80px;
+      box-sizing: border-box;
+      display: flex; flex-direction: column; gap: 21px;
+    }
+    .brand-banner {
+      width: 100%; height: 242px; background: #d9d9d9;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: #999; letter-spacing: 0.22px; text-decoration: none;
+    }
+
+    /* ---- Footer ---- */
+    .site-footer { background: #111; height: 82px; display: flex; align-items: center; }
+    .site-footer__nav { display: flex; gap: 32px; margin-left: 200px; align-items: center; }
+    .site-footer__nav a {
+      font-size: 12px; color: #aaa; letter-spacing: 0.24px;
+      line-height: 24px; text-decoration: none;
+    }
+  </style>
+  <script src="auth.js"></script>
+</head>
+<body>
+
+  <!-- enative365R ブランドヘッダー -->
+  <header class="enative-header">
+    <a href="enative365r.html" class="enative-header__logo">
+      <img src="images/enative365r.png" alt="enative365R">
+    </a>
+    <nav class="enative-nav">
+      <a href="enative365r.html" class="enative-nav__item">TOP</a>
+      <a href="enative365r-about.html" class="enative-nav__item">ABOUT</a>
+      <a href="news.html" class="enative-nav__item">ニュース</a>
+      <a href="enative365r-shop.html" class="enative-nav__item">店舗情報</a>
+      <a href="enative365r-contact.html" class="enative-nav__item">お問い合わせ</a>
+      <a href="enative365r-sds.html" class="enative-nav__item">SDSダウンロード</a>
+      <a href="#" class="enative-nav__btn">ONLINE SHOP</a>
+    </nav>
+  </header>
+
+  <!-- Page intro -->
+  <div class="page-intro">
+    <p class="breadcrumb">TOP > <span>ABOUT</span></p>
+    <p class="page-title">ABOUT</p>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <p class="hero__ph">enative365Rオイル写真</p>
+    <p class="hero__catchcopy">刃物メーカーの知見を凝縮したオリジナルオイル</p>
+  </div>
+
+  <!-- Story section -->
+  <div class="story-section">
+
+    <!-- Row 1: text left, image right -->
+    <div class="story-row1">
+      <p class="story-text">enative365Rを開発した鈴木刃物工業株式会社は、1960年の創業以来、「切れ味」と「信頼」を追求し続け、今日まで歩んでまいりました。当社の刃物は、職人の手による伝統技術と最新の製造技術を融合させることで、常に高品質な製品をお届けしています。</p>
+      <div class="story-img">写真：開発ストーリー部分</div>
+    </div>
+
+    <!-- Row 2: image left, text right -->
+    <div class="story-row2">
+      <div class="story-img">写真：開発ストーリー部分</div>
+      <div class="story-text">
+        <p>鈴木刃物工業が60年以上にわたって刃物と向き合ってきた中で、私たちは一つの問いを持ち続けていました。「刃物を支えるオイルを、自分たちの手で作れないか」。</p>
+        <p>現場では、市販のオイルでは対応しきれない精密加工の課題が山積していました。塩素系添加剤の問題、機械への負荷、環境への影響——刃物メーカーとしての責任を感じるほど、その課題は切実でした。</p>
+      </div>
+    </div>
+
+    <!-- Row 3: text left (indented), image right -->
+    <div class="story-row3">
+      <p class="story-text">素材を知り、加工を知り、現場を知る私たちだからこそ作れるオイルがある。そう確信した私たちは、開発に3年以上の歳月を費やし、このオイルシリーズを完成させました。刃物メーカーとして培ってきた素材と加工への知見が、このオイルシリーズに凝縮されています。</p>
+      <div class="story-img">写真：開発ストーリー部分</div>
+    </div>
+
+  </div>
+
+  <!-- Scene section (利用シーン) -->
+  <div class="scene-section">
+    <div class="scene-card">
+      <div class="scene-img">車にenativeを利用している写真<br>【エンジンオイル注入シーン】</div>
+      <p class="scene-desc">乗用車・スポーツカーのエンジンオイルに添加。摩擦を極限まで低減し、燃費向上とエンジン保護を実現。レーシングカーから一般乗用車まで対応します。</p>
+    </div>
+    <div class="scene-card">
+      <div class="scene-img">バイクにenativeを利用している写真<br>【エンジン整備シーン】</div>
+      <p class="scene-desc">バイク・自転車のエンジンやギヤ部への添加使用。産業用機械や特殊車両まで、あらゆるモビリティの性能を最大限に引き出します。</p>
+    </div>
+  </div>
+
+  <!-- Greeting section -->
+  <div class="greeting-section">
+    <div class="greeting-img">代表取締役社長 鈴木 恵介</div>
+    <div class="greeting-text">
+      <p class="sec-heading">ごあいさつ</p>
+      <p>QZILLAは、刃物メーカーである鈴木刃物工業株式会社が生み出しました。「切れ味」と「信頼」を追求し続け、今日まで歩み続けた鈴木刃物工業株式会社がどのようにしてQZILLAを生み出したのか。ここではQZILLA完成までの開発ストーリーをご紹介します。QZILLAは、刃物メーカーである鈴木刃物工業株式会社が生み出しました。「切れ味」と「信頼」を追求し続け、今日まで歩み続けた鈴木刃物工業株式会社がどのようにしてQZILLAを生み出したのか。ここではQZILLA完成までの開発ストーリーをご紹介します。</p>
+    </div>
+  </div>
+
+  <!-- Company overview + History -->
+  <div class="company-section">
+
+    <!-- 会社概要 -->
+    <div class="company-block">
+      <p class="company-section__heading">会社概要</p>
+      <table class="company-table">
+        <tr>
+          <th>社名</th>
+          <td><a href="https://www.suzuki-co.com/" target="_blank" style="color:#333; text-decoration:underline;">鈴木刃物工業株式会社 / Suzuki Cutlery Co., Ltd</a></td>
+        </tr>
+        <tr>
+          <th>代表者</th>
+          <td>代表取締役会長　鈴木良春<br>代表取締役社長　鈴木恵介</td>
+        </tr>
+        <tr>
+          <th>本社所在地</th>
+          <td>〒501-3928<br>岐阜県関市西田原235番地<a href="#" class="btn-map">MAPへ</a></td>
+        </tr>
+        <tr>
+          <th>TEL</th>
+          <td>0575-24-3001（代表）</td>
+        </tr>
+        <tr>
+          <th>FAX</th>
+          <td>0575-24-3177</td>
+        </tr>
+        <tr>
+          <th>資本金</th>
+          <td>1,000万円</td>
+        </tr>
+        <tr>
+          <th>創業</th>
+          <td>1960年　昭和35年</td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td>1978年　昭和53年</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 沿革 -->
+    <div class="history-block">
+      <p class="company-section__heading">沿革</p>
+      <table class="company-table">
+        <tr>
+          <th>1960年</th>
+          <td>昭和35年創業、輸出用ハサミを現地にて製造</td>
+        </tr>
+        <tr>
+          <th>1978年</th>
+          <td>昭和53年　鈴木刃物工業株式会社設立</td>
+        </tr>
+        <tr>
+          <th>1997年</th>
+          <td>平成9年より海外にて生産開始</td>
+        </tr>
+        <tr>
+          <th>2006年</th>
+          <td>平成18年新潟工場設立</td>
+        </tr>
+        <tr>
+          <th>2018年</th>
+          <td>新工場設立</td>
+        </tr>
+        <tr>
+          <th>2020年</th>
+          <td>創業60年を迎える</td>
+        </tr>
+        <tr>
+          <th>2022年</th>
+          <td>鈴木良春　代表取締役会長　就任<br>鈴木恵介　代表取締役社長　就任</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Back to top -->
+  <div style="width:1440px; display:flex; justify-content:center; padding:0 0 120px;">
+    <a href="enative365r.html" style="width:326px; height:44px; background:#fff; border:1px solid #111; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:12px; color:#000; letter-spacing:0.96px;">TOPに戻る</a>
+  </div>
+
+  <!-- Brand banners -->
+  <div class="brand-banners">
+    <a href="qzilla.html" class="brand-banner">QZILLAバナー</a>
+    <a href="#" class="brand-banner">AREバナー</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <nav class="site-footer__nav">
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">ECサイト</a>
+      <a href="#">運営会社</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

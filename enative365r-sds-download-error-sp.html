@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>SP SDSダウンロード申請（入力エラー） — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ===== SP SDSダウンロード申請（入力エラー） (400px幅) ===== */
+
+    body {
+      width: 400px;
+      margin: 0;
+    }
+
+    /* ---- enative365R SP ヘッダー ---- */
+    .enative-header {
+      width: 400px; height: 56px; background: #000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 16px; box-sizing: border-box; position: relative;
+    }
+    .enative-header__logo img { height: 16px; display: block; }
+    .enative-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+    .enative-hamburger span { display: block; width: 22px; height: 2px; background: #fff; }
+    .enative-drawer {
+      display: none; position: fixed; top: 0; left: 0;
+      width: 400px; height: 100%; background: #000;
+      z-index: 100; padding: 56px 0 0; box-sizing: border-box;
+    }
+    .enative-drawer.is-open { display: block; }
+    .enative-drawer-nav { display: flex; flex-direction: column; }
+    .enative-drawer-nav__item {
+      font-size: 13px; color: #fff; text-decoration: none;
+      letter-spacing: 0.26px; line-height: 24px;
+      padding: 16px 24px; border-bottom: 1px solid #333;
+    }
+    .enative-drawer-nav__btn {
+      font-size: 12px; color: #fff; text-decoration: none;
+      letter-spacing: 0.24px; line-height: 24px;
+      padding: 16px 24px; border: 1px solid #fff;
+      margin: 24px; text-align: center; display: block;
+    }
+
+    /* === Inner override === */
+    .inner {
+      width: 352px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      box-sizing: border-box;
+    }
+
+    /* === Page BG === */
+    .page-bg {
+      padding-top: 0;
+    }
+
+    .breadcrumb {
+      margin-top: 8px;
+    }
+
+    .page-title {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .form-lead {
+      margin-bottom: 24px;
+    }
+
+    /* === Form container === */
+    .form-container {
+      width: 352px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 0;
+    }
+
+    .form-label {
+      margin-bottom: 0;
+    }
+
+    /* === Error input === */
+    .form-input--error {
+      border: 1px solid #ff1a1a;
+      background: #ffefef;
+    }
+
+    /* === Error select === */
+    .form-select--error {
+      border: 1px solid #ff1a1a;
+    }
+
+    /* === Error checkbox row === */
+    .checkbox-row--error {
+      border: 1px solid #ff1a1a;
+      background: #ffefef;
+    }
+    .checkbox-row--error .checkbox-box {
+      border-color: #ff1a1a;
+    }
+
+    /* === Field error message === */
+    .field-err-msg {
+      font-size: 11px;
+      color: #ff2a29;
+      line-height: 16.5px;
+      margin-top: 0;
+    }
+
+    /* Submit button */
+    .form-container .btn-dark {
+      width: 352px;
+      margin: 24px auto;
+    }
+
+    /* === Footer === */
+    .site-footer {
+      width: 400px;
+      background: #e8e8e8;
+      padding: 20px 24px;
+      box-sizing: border-box;
+      height: auto;
+    }
+    .site-footer p {
+      font-size: 12px;
+      color: #555;
+      margin-left: 0;
+    }
+  </style>
+  <script src="auth.js"></script>
+  <script>
+    function toggleDrawer() {
+      document.getElementById('enative-drawer').classList.toggle('is-open');
+    }
+  </script>
+</head>
+<body>
+
+  <header class="enative-header">
+    <a href="enative365r-sp.html" class="enative-header__logo">
+      <img src="images/enative365r.png" alt="enative365R">
+    </a>
+    <div class="enative-hamburger" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+  <div class="enative-drawer" id="enative-drawer">
+    <nav class="enative-drawer-nav">
+      <a href="enative365r-sp.html" class="enative-drawer-nav__item">TOP</a>
+      <a href="enative365r-about-sp.html" class="enative-drawer-nav__item">ABOUT</a>
+      <a href="news-sp.html" class="enative-drawer-nav__item">ニュース</a>
+      <a href="enative365r-shop-sp.html" class="enative-drawer-nav__item">店舗情報</a>
+      <a href="enative365r-contact-sp.html" class="enative-drawer-nav__item">お問い合わせ</a>
+      <a href="enative365r-sds-sp.html" class="enative-drawer-nav__item">SDSダウンロード</a>
+      <a href="#" class="enative-drawer-nav__btn">ONLINE SHOP</a>
+    </nav>
+  </div>
+
+  <!-- Page content -->
+  <div class="page-bg">
+    <div class="inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        TOP &gt; 製品情報 &gt; QZILLA &gt; <span>SDSダウンロード申請</span>
+      </div>
+
+      <!-- Page title -->
+      <h1 class="page-title">SDSダウンロード申請</h1>
+
+      <!-- Lead text -->
+      <p class="form-lead">
+        SDS（安全データシート）の提供および改訂時のご連絡のため、以下の情報をご入力ください。
+      </p>
+
+      <!-- Form -->
+      <div class="form-container">
+
+        <!-- 会社名 ERROR -->
+        <div class="form-field">
+          <div class="form-label">会社名 <span class="badge-required">*</span></div>
+          <div class="form-input form-input--error">会社名を入力</div>
+          <div class="field-err-msg">入力されていません</div>
+        </div>
+
+        <!-- 部署名 NORMAL -->
+        <div class="form-field">
+          <div class="form-label">部署名</div>
+          <div class="form-input">部署名を入力</div>
+        </div>
+
+        <!-- 氏名 ERROR -->
+        <div class="form-field">
+          <div class="form-label">氏名 <span class="badge-required">*</span></div>
+          <div class="form-input form-input--error">氏名を入力</div>
+          <div class="field-err-msg">入力されていません</div>
+        </div>
+
+        <!-- メールアドレス ERROR -->
+        <div class="form-field">
+          <div class="form-label">メールアドレス <span class="badge-required">*</span></div>
+          <div class="form-input form-input--error">example@company.com</div>
+          <div class="field-err-msg">入力されていません</div>
+        </div>
+
+        <!-- 国・地域 ERROR -->
+        <div class="form-field">
+          <div class="form-label">国・地域 <span class="badge-required">*</span></div>
+          <div class="form-select form-select--error">選択してください <span class="form-select__arrow">▼</span></div>
+          <div class="field-err-msg">選択されていません</div>
+        </div>
+
+        <!-- 業種 NORMAL -->
+        <div class="form-field">
+          <div class="form-label">業種</div>
+          <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
+        </div>
+
+        <!-- 使用用途 NORMAL -->
+        <div class="form-field">
+          <div class="form-label">使用用途</div>
+          <div class="form-select">選択してください <span class="form-select__arrow">▼</span></div>
+        </div>
+
+        <!-- 電話番号 NORMAL -->
+        <div class="form-field">
+          <div class="form-label">電話番号</div>
+          <div class="form-input">例：0575-24-3001</div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- SDS改訂通知オプトイン NORMAL -->
+        <div class="checkbox-row" style="margin-bottom:0;">
+          <div class="checkbox-box"></div>
+          <div class="checkbox-label">SDS改訂時の通知を受け取る</div>
+        </div>
+
+        <!-- 個人情報同意 ERROR -->
+        <div class="form-field" style="gap:3px;">
+          <div class="checkbox-row checkbox-row--error" style="margin-bottom:0;">
+            <div class="checkbox-box"></div>
+            <div class="checkbox-label">
+              <span class="checkbox-link">個人情報の取り扱い</span>に同意する（<span class="checkbox-link">プライバシーポリシー</span>）
+            </div>
+          </div>
+          <div class="field-err-msg">選択されていません</div>
+        </div>
+
+        <!-- 送信ボタン -->
+        <a href="enative365r-sds-download-sp.html" class="btn-dark" style="text-decoration: none;">SDSを受け取る</a>
+
+      </div><!-- /form-container -->
+    </div><!-- /inner -->
+  </div><!-- /page-bg -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>

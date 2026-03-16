@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>SP お問い合わせ — 鈴木刃物工業オリジナルオイルサイト</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ===== SP お問い合わせ (400px幅) ===== */
+
+    body {
+      width: 400px;
+      margin: 0;
+    }
+
+    /* ---- enative365R SP ヘッダー ---- */
+    .enative-header {
+      width: 400px; height: 56px; background: #000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 16px; box-sizing: border-box; position: relative;
+    }
+    .enative-header__logo img { height: 16px; display: block; }
+    .enative-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+    .enative-hamburger span { display: block; width: 22px; height: 2px; background: #fff; }
+    .enative-drawer {
+      display: none; position: fixed; top: 0; left: 0;
+      width: 400px; height: 100%; background: #000;
+      z-index: 100; padding: 56px 0 0; box-sizing: border-box;
+    }
+    .enative-drawer.is-open { display: block; }
+    .enative-drawer-nav { display: flex; flex-direction: column; }
+    .enative-drawer-nav__item {
+      font-size: 13px; color: #fff; text-decoration: none;
+      letter-spacing: 0.26px; line-height: 24px;
+      padding: 16px 24px; border-bottom: 1px solid #333;
+    }
+    .enative-drawer-nav__btn {
+      font-size: 12px; color: #fff; text-decoration: none;
+      letter-spacing: 0.24px; line-height: 24px;
+      padding: 16px 24px; border: 1px solid #fff;
+      margin: 24px; text-align: center; display: block;
+    }
+
+    /* === Inner override === */
+    .inner {
+      width: 352px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      box-sizing: border-box;
+    }
+
+    /* === Page BG === */
+    .page-bg {
+      padding-top: 0;
+    }
+
+    .breadcrumb {
+      margin-top: 8px;
+    }
+
+    .page-title {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .form-lead {
+      margin-bottom: 24px;
+    }
+
+    /* === Form container === */
+    .form-container {
+      width: 352px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 0;
+    }
+
+    .form-label {
+      margin-bottom: 0;
+    }
+
+    .form-textarea {
+      width: 100%;
+      height: 160px;
+      border: 1px solid #bbb;
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: -0.13px;
+      line-height: 26px;
+      box-sizing: border-box;
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    /* Submit button */
+    .form-container .btn-dark {
+      width: 352px;
+      margin: 24px auto;
+    }
+
+    /* カスタムドロップダウン */
+    .custom-select {
+      position: relative;
+    }
+    .custom-select__trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      padding: 0 12px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-size: 13px;
+      color: #999;
+      cursor: pointer;
+      user-select: none;
+    }
+    .custom-select__trigger.is-selected {
+      color: #111;
+    }
+    .custom-select__menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      border: 1px solid #ccc;
+      border-top: none;
+      background: #fff;
+      z-index: 100;
+    }
+    .custom-select.is-open .custom-select__menu {
+      display: block;
+    }
+    .custom-select.is-open .custom-select__arrow {
+      transform: rotate(180deg);
+    }
+    .custom-select__option {
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #111;
+      cursor: pointer;
+    }
+    .custom-select__option:hover {
+      background: #f5f5f5;
+    }
+    .custom-select__option + .custom-select__option {
+      border-top: 1px solid #eee;
+    }
+
+    /* 法人/個人 切り替え */
+    .customer-type {
+      display: flex;
+      gap: 0;
+    }
+    .customer-type__btn {
+      flex: 1;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      letter-spacing: 0.26px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #999;
+      user-select: none;
+    }
+    .customer-type__btn:first-child {
+      border-right: none;
+    }
+    .customer-type__btn.is-active {
+      background: #111;
+      border-color: #111;
+      color: #fff;
+    }
+
+    /* === Footer === */
+    .site-footer {
+      width: 400px;
+      background: #e8e8e8;
+      padding: 20px 24px;
+      box-sizing: border-box;
+      height: auto;
+    }
+    .site-footer p {
+      font-size: 12px;
+      color: #555;
+      margin-left: 0;
+    }
+  </style>
+  <script src="auth.js"></script>
+  <script>
+    function toggleSelect(id) {
+      var el = document.getElementById(id);
+      el.classList.toggle('is-open');
+    }
+    function selectOption(id, value) {
+      var el = document.getElementById(id);
+      el.querySelector('[id$="Selected"]').textContent = value;
+      el.querySelector('.custom-select__trigger').classList.add('is-selected');
+      el.classList.remove('is-open');
+    }
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('.custom-select.is-open').forEach(function(el) {
+        if (!el.contains(e.target)) el.classList.remove('is-open');
+      });
+    });
+
+    function setType(type) {
+      var isCorporate = type === 'corporate';
+      document.getElementById('btn-corporate').classList.toggle('is-active', isCorporate);
+      document.getElementById('btn-individual').classList.toggle('is-active', !isCorporate);
+      document.getElementById('field-company').style.display = isCorporate ? '' : 'none';
+      document.getElementById('field-department').style.display = isCorporate ? '' : 'none';
+    }
+  </script>
+  <script>
+    function toggleDrawer() {
+      document.getElementById('enative-drawer').classList.toggle('is-open');
+    }
+  </script>
+</head>
+<body>
+
+  <header class="enative-header">
+    <a href="enative365r-sp.html" class="enative-header__logo">
+      <img src="images/enative365r.png" alt="enative365R">
+    </a>
+    <div class="enative-hamburger" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+  <div class="enative-drawer" id="enative-drawer">
+    <nav class="enative-drawer-nav">
+      <a href="enative365r-sp.html" class="enative-drawer-nav__item">TOP</a>
+      <a href="enative365r-about-sp.html" class="enative-drawer-nav__item">ABOUT</a>
+      <a href="news-sp.html" class="enative-drawer-nav__item">ニュース</a>
+      <a href="enative365r-shop-sp.html" class="enative-drawer-nav__item">店舗情報</a>
+      <a href="enative365r-contact-sp.html" class="enative-drawer-nav__item">お問い合わせ</a>
+      <a href="enative365r-sds-sp.html" class="enative-drawer-nav__item">SDSダウンロード</a>
+      <a href="#" class="enative-drawer-nav__btn">ONLINE SHOP</a>
+    </nav>
+  </div>
+
+  <!-- Page content -->
+  <div class="page-bg">
+    <div class="inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        TOP &gt; <span>お問い合わせ</span>
+      </div>
+
+      <!-- Page title -->
+      <h1 class="page-title">お問い合わせ</h1>
+
+      <!-- Lead text -->
+      <p class="form-lead">
+        製品・OEM・販売店など、お気軽にお問い合わせください。内容を確認のうえ、担当者よりご連絡いたします。
+      </p>
+
+      <!-- Form -->
+      <div class="form-container">
+
+        <!-- 法人 / 個人 切り替え -->
+        <div class="customer-type">
+          <div class="customer-type__btn is-active" id="btn-corporate" onclick="setType('corporate')">法人</div>
+          <div class="customer-type__btn" id="btn-individual" onclick="setType('individual')">個人</div>
+        </div>
+
+        <!-- お問い合わせ種別 -->
+        <div class="form-field">
+          <div class="form-label">お問い合わせ種別 <span class="badge-required">*</span></div>
+          <div class="custom-select" id="inquirySelect">
+            <div class="custom-select__trigger" onclick="toggleSelect('inquirySelect')">
+              <span id="inquirySelected">選択してください</span>
+              <span class="custom-select__arrow">▼</span>
+            </div>
+            <div class="custom-select__menu">
+              <div class="custom-select__option" onclick="selectOption('inquirySelect', '製品・OEMについて')">製品・OEMについて</div>
+              <div class="custom-select__option" onclick="selectOption('inquirySelect', '販売店様のご紹介')">販売店様のご紹介</div>
+              <div class="custom-select__option" onclick="selectOption('inquirySelect', 'オイル潤滑・金属摺動についてのご相談・ご質問')">オイル潤滑・金属摺動についてのご相談・ご質問</div>
+              <div class="custom-select__option" onclick="selectOption('inquirySelect', 'その他')">その他</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 会社名（法人のみ） -->
+        <div class="form-field" id="field-company">
+          <div class="form-label">会社名 <span class="badge-required">*</span></div>
+          <div class="form-input">会社名を入力</div>
+        </div>
+
+        <!-- 部署名（法人のみ） -->
+        <div class="form-field" id="field-department">
+          <div class="form-label">部署名</div>
+          <div class="form-input">部署名を入力</div>
+        </div>
+
+        <!-- 氏名 -->
+        <div class="form-field">
+          <div class="form-label">氏名 <span class="badge-required">*</span></div>
+          <div class="form-input">氏名を入力</div>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="form-field">
+          <div class="form-label">メールアドレス <span class="badge-required">*</span></div>
+          <div class="form-input">example@company.com</div>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="form-field">
+          <div class="form-label">電話番号</div>
+          <div class="form-input">例：0575-24-3001</div>
+        </div>
+
+        <!-- お問い合わせ内容 -->
+        <div class="form-field">
+          <div class="form-label">お問い合わせ内容 <span class="badge-required">*</span></div>
+          <textarea class="form-textarea">お問い合わせ内容を入力してください</textarea>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 個人情報同意 -->
+        <div class="checkbox-row">
+          <div class="checkbox-box"></div>
+          <div class="checkbox-label">
+            <span class="checkbox-link">個人情報の取り扱い</span>に同意する（<span class="checkbox-link">プライバシーポリシー</span>）
+          </div>
+        </div>
+
+        <!-- 送信ボタン -->
+        <a href="enative365r-contact-error-sp.html" class="btn-dark" style="text-decoration: none;">送信する</a>
+
+      </div><!-- /form-container -->
+    </div><!-- /inner -->
+  </div><!-- /page-bg -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>プライバシーポリシー　ECサイト　運営会社</p>
+  </footer>
+
+</body>
+</html>
