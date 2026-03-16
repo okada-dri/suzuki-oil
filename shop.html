@@ -106,20 +106,6 @@
       gap: 10px;
       background: #fff;
     }
-    .store-card__tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .store-tag {
-      border: 1px solid #555;
-      padding: 3px 8px;
-      font-size: 11px;
-      color: #111;
-      line-height: normal;
-      font-family: 'Helvetica Neue', sans-serif;
-      white-space: nowrap;
-    }
     .store-card__name {
       font-size: 14px;
       font-weight: 700;
@@ -163,28 +149,8 @@
     }
 
     /* ---- Pagination ---- */
-    .pagination {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 48px;
-    }
-    .pagination__item {
-      font-size: 12px;
-      color: #111;
-      line-height: normal;
-      font-family: 'Helvetica Neue', sans-serif;
-      cursor: pointer;
-      min-width: 32px;
-      height: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .pagination__item--active {
-      border: 1px solid #111;
-    }
+
+
   </style>
   <script src="auth.js"></script>
 </head>
@@ -219,19 +185,10 @@
       <!-- Store list -->
       <div class="store-section">
 
-        <!-- Filters: brand + area -->
+        <!-- Filters: area -->
         <div class="store-filters">
           <div class="store-filter">
-            <span class="store-filter__label">ブランド</span>
-            <div class="store-filter__btns">
-              <div class="store-filter__btn store-filter__btn--active">すべて</div>
-              <div class="store-filter__btn">QZILLA</div>
-              <div class="store-filter__btn">enative365R</div>
-            </div>
-          </div>
-          <div class="store-filter">
-            <span class="store-filter__label">エリア</span>
-            <div class="store-filter__btns">
+<div class="store-filter__btns">
               <div class="store-filter__btn store-filter__btn--active">すべて</div>
               <div class="store-filter__btn">関東</div>
               <div class="store-filter__btn">中部</div>
@@ -246,10 +203,6 @@
         <div class="store-area-heading">関東</div>
         <div class="store-grid">
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">関東潤滑オイル販売株式会社</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -264,9 +217,6 @@
             <a class="store-card__map" href="#">▸ Googleマップで見る</a>
           </div>
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">カーショップ アクセル 横浜店</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -286,10 +236,6 @@
         <div class="store-area-heading">中部</div>
         <div class="store-grid">
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">山田機械工具株式会社</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -304,9 +250,6 @@
             <a class="store-card__map" href="#">▸ Googleマップで見る</a>
           </div>
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-            </div>
             <div class="store-card__name">東海オイル商事株式会社</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -321,9 +264,6 @@
             <a class="store-card__map" href="#">▸ Googleマップで見る</a>
           </div>
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">カーショップ フォース 名古屋北店</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -338,9 +278,6 @@
             <a class="store-card__map" href="#">▸ Googleマップで見る</a>
           </div>
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-            </div>
             <div class="store-card__name">中部産業機械株式会社</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -360,10 +297,6 @@
         <div class="store-area-heading">関西</div>
         <div class="store-grid">
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">大阪工業用品センター</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -378,9 +311,6 @@
             <a class="store-card__map" href="#">▸ Googleマップで見る</a>
           </div>
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">オートバックス 神戸垂水店</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -400,9 +330,6 @@
         <div class="store-area-heading">北陸・東海</div>
         <div class="store-grid">
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-            </div>
             <div class="store-card__name">北陸機械工具商会</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -422,9 +349,6 @@
         <div class="store-area-heading">九州・その他</div>
         <div class="store-grid">
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">ガレージ ファクトリー 福岡博多店</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -441,15 +365,6 @@
         </div>
       </div><!-- /store-section -->
 
-      <!-- Pagination -->
-      <div class="pagination">
-        <div class="pagination__item pagination__item--active">1</div>
-        <div class="pagination__item">2</div>
-        <div class="pagination__item">3</div>
-        <div class="pagination__item">…</div>
-        <div class="pagination__item">6</div>
-        <div class="pagination__item">&gt;</div>
-      </div>
 
       <!-- Back to TOP -->
       <div style="margin-top: 48px; display: flex; justify-content: center;">
