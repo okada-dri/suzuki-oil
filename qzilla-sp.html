@@ -3,49 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=400">
-  <title>SP QZILLA — 鈴木刃物工業オリジナルオイルサイト</title>
+  <title>QZILLA TOP SP — 産業・工業用極圧潤滑オイル</title>
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   <link rel="stylesheet" href="base.css">
   <style>
-    /* ===== SP QZILLA (400px幅) ===== */
+    /* ===== QZILLA SP (400px幅) ===== */
 
     body {
       width: 400px;
       margin: 0;
     }
 
-    /* === Header === */
-    .site-header {
+    /* ---- QZILLA SP ヘッダー ---- */
+    .qzilla-header {
       width: 400px;
       height: 56px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .qzilla-header__logo img {
+      height: 24px;
+      display: block;
+    }
+    .qzilla-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .qzilla-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
     }
 
-    /* === Hero === */
+    /* ---- QZILLA Drawer ---- */
+    .qzilla-drawer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 400px;
+      height: 100%;
+      background: #000;
+      z-index: 100;
+      padding: 56px 0 0;
+      box-sizing: border-box;
+    }
+    .qzilla-drawer.is-open {
+      display: block;
+    }
+    .qzilla-drawer-nav {
+      display: flex;
+      flex-direction: column;
+    }
+    .qzilla-drawer-nav__item {
+      font-size: 13px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.26px;
+      line-height: 24px;
+      padding: 16px 24px;
+      border-bottom: 1px solid #333;
+    }
+    .qzilla-drawer-nav__btn {
+      font-size: 12px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.24px;
+      line-height: 24px;
+      padding: 16px 24px;
+      border: 1px solid #fff;
+      margin: 24px;
+      text-align: center;
+      display: block;
+    }
+
+    /* ---- Hero ---- */
     .hero {
       width: 400px;
       height: 240px;
-      position: relative;
+      background: #e0e0e0;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
     }
-    .hero__bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .hero__logo {
-      position: relative;
-      z-index: 1;
-      width: 200px;
+    .hero__label {
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 0.22px;
+      line-height: 19.8px;
+      text-align: center;
     }
 
-    /* === Catch copy === */
+    /* ---- Content area ---- */
+    .content-area {
+      width: 400px;
+      padding: 40px 24px 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    /* ---- Section heading ---- */
+    .sec-heading {
+      font-size: 16px;
+      font-weight: 400;
+      color: #000;
+      line-height: 22.2px;
+      margin-bottom: 24px;
+    }
+    .sec-body {
+      font-size: 12px;
+      color: #333;
+      line-height: 22px;
+      margin-bottom: 24px;
+    }
+
+    /* ---- Catch copy ---- */
     .catch-section {
-      padding: 32px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -53,277 +137,408 @@
     }
     .catch-heading {
       font-size: 18px;
-      font-weight: bold;
+      font-weight: 400;
       color: #111;
-      line-height: 1.4;
+      line-height: 25.6px;
       letter-spacing: -0.16px;
       text-align: center;
     }
     .catch-body {
-      font-size: 13px;
-      color: #444;
-      line-height: 26px;
-      letter-spacing: -0.13px;
+      font-size: 12px;
+      color: #333;
+      line-height: 22px;
       text-align: center;
-      width: 352px;
     }
 
-    /* === Scene row (horizontal scroll) === */
-    .scene-row {
-      width: 400px;
+    /* ---- ABOUT ---- */
+    .about-text {
       display: flex;
-      gap: 2px;
-      overflow-x: auto;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 16px;
     }
-    .scene-item {
-      flex-shrink: 0;
-      width: 140px;
-      height: 80px;
+    .about-text__body {
+      font-size: 12px;
+      color: #333;
+      line-height: 22px;
+    }
+    .about-img {
+      width: 352px;
+      height: 200px;
       background: #d9d9d9;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
-      color: #888;
-      text-align: center;
-    }
-
-    /* === Content wrapper === */
-    .content-area {
-      width: 352px;
-      margin: 0 auto;
-      padding-top: 48px;
-      padding-bottom: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-    }
-
-    /* === Section intro === */
-    .sec-intro {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      margin-bottom: 24px;
-    }
-    .sec-body {
       font-size: 13px;
-      color: #444;
-      line-height: 26px;
-      letter-spacing: -0.13px;
+      color: #999;
+    }
+    .btn-outline {
+      width: 100%;
+      height: 44px;
+      background: #fff;
+      border: 1px solid #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 12px;
+      color: #000;
+      letter-spacing: 0.96px;
+      box-sizing: border-box;
+    }
+    .btn-fill {
+      width: 100%;
+      height: 44px;
+      background: #000;
+      border: 1px solid #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 12px;
+      color: #fff;
+      letter-spacing: 0.96px;
+      box-sizing: border-box;
     }
 
-    /* === Product banners === */
-    .banner-list {
+    /* ---- PRODUCTS ---- */
+    .products-banners {
       display: flex;
       flex-direction: column;
       gap: 16px;
+      margin-bottom: 24px;
     }
-    .banner-ph {
-      width: 100%;
-      height: 140px;
-      background: #d4d4d4;
+    .product-banner {
+      width: 352px;
+      height: 160px;
+      background: #d9d9d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #999;
+      text-decoration: none;
+    }
+
+    /* ---- FEATURE ---- */
+    .feature-video {
+      width: 352px;
+      height: 200px;
+      background: #e0e0e0;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 11px;
-      color: #888;
+      color: #999;
+      margin-bottom: 24px;
+    }
+    .feature-items {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .feature-item__title {
+      font-size: 14px;
+      color: #111;
+      line-height: normal;
+      margin-bottom: 8px;
+    }
+    .feature-item__body {
+      font-size: 12px;
+      color: #444;
+      line-height: 22px;
     }
 
-    /* === Case cards: 1-col === */
-    .case-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
+    /* ---- CASES ---- */
+    .case-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
     }
     .case-card {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
     }
     .case-img {
-      width: 100%;
+      width: 352px;
       height: 200px;
       background: #d4d4d4;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
-      color: #888;
+      font-size: 13px;
+      color: #111;
       text-align: center;
-      line-height: 17.6px;
-    }
-    .case-content {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
+      line-height: 22px;
     }
     .case-title {
       font-size: 14px;
-      font-weight: bold;
       color: #111;
-      line-height: normal;
+      line-height: 22px;
     }
     .case-desc {
       font-size: 12px;
-      color: #333;
-      line-height: 22.2px;
+      color: #444;
+      line-height: 22px;
     }
     .btn-view-more {
-      display: flex;
-      width: 352px;
-      height: 36px;
-      background: #111;
+      width: 152px;
+      height: 35px;
+      background: #fff;
       border: 1px solid #111;
-      color: #fff;
-      font-size: 12px;
+      display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #000;
+      letter-spacing: 0.96px;
+      align-self: flex-end;
     }
 
-    /* === Footer === */
-    .site-footer {
-      width: 400px;
-      background: #e8e8e8;
-      padding: 20px 24px;
-      box-sizing: border-box;
-      height: auto;
+    /* ---- NEWS ---- */
+    .news-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
-    .site-footer p {
+    .news-list {
+      border-top: 1px solid #e8e8e8;
+    }
+    .news-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 14px 0;
+      border-bottom: 1px solid #e8e8e8;
+    }
+    .news-item__date {
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 0.44px;
+      line-height: 22px;
+    }
+    .news-item__title {
+      font-size: 13px;
+      color: #333;
+      letter-spacing: -0.13px;
+      line-height: 22px;
+    }
+    .news-more {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ---- Contact Banner ---- */
+    .contact-wrapper {
+      width: 400px;
+      padding: 48px 24px;
+      box-sizing: border-box;
+    }
+    .contact-banner {
+      width: 352px;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 40px 16px;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+    .contact-banner__title {
+      font-size: 15px;
+      color: #fff;
+      text-align: center;
+      line-height: 22px;
+    }
+    .contact-banner__sub {
       font-size: 12px;
-      color: #555;
-      margin-left: 0;
+      color: #ccc;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    /* ---- Footer ---- */
+    .site-footer {
+      background: #111;
+      width: 400px;
+      height: auto;
+      padding: 20px 0;
+      box-sizing: border-box;
+    }
+    .site-footer__nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 0 24px;
+      align-items: center;
+    }
+    .site-footer__nav a {
+      font-size: 12px;
+      color: #aaa;
+      letter-spacing: 0.24px;
+      line-height: 24px;
+      text-decoration: none;
     }
   </style>
   <script src="auth.js"></script>
   <script>
-    function toggleSubnav(el) {
-    el.nextElementSibling.classList.toggle('is-open');
-  }
-  function toggleDrawer() {
-    document.getElementById('drawer').classList.toggle('is-open');
-  }
+    function toggleDrawer() {
+      document.getElementById('qzilla-drawer').classList.toggle('is-open');
+    }
   </script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <a href="top-sp.html" class="site-header__logo">鈴木刃物工業オリジナルオイルサイト</a>
-    <div class="hamburger" id="hamburger-btn" onclick="toggleDrawer()">
+  <!-- QZILLA SP ヘッダー -->
+  <header class="qzilla-header">
+    <a href="qzilla-sp.html" class="qzilla-header__logo">
+      <img src="images/qzilla.png" alt="QZILLA">
+    </a>
+    <div class="qzilla-hamburger" onclick="toggleDrawer()">
       <span></span><span></span><span></span>
     </div>
   </header>
-  <div class="drawer" id="drawer">
-    <nav class="drawer-nav">
-      <a href="top-sp.html" class="drawer-nav__item">TOP</a>
-      <a href="story-sp.html" class="drawer-nav__item">ABOUT</a>
-      <div class="drawer-nav__item drawer-nav__item--parent" onclick="toggleSubnav(this)">製品情報 ▾</div>
-      <div class="drawer-nav__subnav">
-        <a href="qzilla-sp.html" class="drawer-nav__subitem">QZILLA</a>
-        <a href="enative365r-sp.html" class="drawer-nav__subitem">enative365R</a>
-        <a href="#" class="drawer-nav__subitem">ARE</a>
-      </div>
-      <div class="drawer-nav__item drawer-nav__item--parent" onclick="toggleSubnav(this)">導入事例 ▾</div>
-      <div class="drawer-nav__subnav">
-        <a href="qzilla-cases-maintenance-sp.html" class="drawer-nav__subitem">QZILLA（保全）</a>
-        <a href="qzilla-cases-processing-sp.html" class="drawer-nav__subitem">QZILLA（加工）</a>
-      </div>
-      <a href="news-sp.html" class="drawer-nav__item">お知らせ</a>
-      <a href="contact-sp.html" class="drawer-nav__item">お問い合わせ</a>
-      <a href="#" class="drawer-nav__btn">ONLINE SHOP</a>
+  <div class="qzilla-drawer" id="qzilla-drawer">
+    <nav class="qzilla-drawer-nav">
+      <a href="top-sp.html" class="qzilla-drawer-nav__item">TOP</a>
+      <a href="#" class="qzilla-drawer-nav__item">ABOUT</a>
+      <a href="qzilla-oil-sp.html" class="qzilla-drawer-nav__item">原液</a>
+      <a href="qzilla-spray-sp.html" class="qzilla-drawer-nav__item">スプレー</a>
+      <a href="news-sp.html" class="qzilla-drawer-nav__item">ニュース</a>
+      <a href="contact-sp.html" class="qzilla-drawer-nav__item">お問い合わせ</a>
+      <a href="#" class="qzilla-drawer-nav__btn">ONLINE SHOP</a>
     </nav>
-  </div>
-
-  <!-- Breadcrumb -->
-  <div style="width: 352px; margin: 0 auto; padding-top: 8px;">
-    <div class="breadcrumb">TOP &gt; 製品情報 &gt; <span>QZILLA</span></div>
   </div>
 
   <!-- Hero -->
   <div class="hero">
-    <img src="images/qzilla_kv.png" alt="" class="hero__bg">
-    <div class="hero__logo">
-      <img src="images/qzilla.png" alt="QZILLA" style="width: 100%;">
-    </div>
-  </div>
-
-  <!-- Catch copy -->
-  <div class="catch-section">
-    <p class="catch-heading">圧倒的な極圧性と信頼の潤滑力！</p>
-    <p class="catch-body">QZILLAは、最新技術で環境と安全面に配慮し開発された高性能極圧潤滑オイルです。<br>
-      塩素系・固体潤滑不使用の微臭タイプで、工業設備から産業機械まであらゆる用途に対応。<br>
-      PRTR法・RoHS3指令・PFAS規則・REACH規則等に対応した環境・安全面クリア製品です。</p>
-  </div>
-
-  <!-- Usage scene row -->
-  <div class="scene-row">
-    <div class="scene-item">利用シーン01</div>
-    <div class="scene-item">利用シーン02</div>
-    <div class="scene-item">利用シーン03</div>
-    <div class="scene-item">利用シーン04</div>
-    <div class="scene-item">利用シーン05</div>
-    <div class="scene-item">利用シーン06</div>
+    <p class="hero__label">メインビジュアル</p>
   </div>
 
   <!-- Content area -->
   <div class="content-area">
 
-    <!-- 製品タイプ -->
+    <!-- Catch copy -->
+    <div class="catch-section">
+      <p class="catch-heading">圧倒的な極圧性と信頼の潤滑力！</p>
+      <p class="catch-body">QZILLAは、最新技術で環境と安全面に配慮し開発された高性能極圧潤滑オイルです。<br>
+        塩素系・固体潤滑不使用の微臭タイプで、工業設備から産業機械まであらゆる用途に対応。<br>
+        PRTR法・RoHS3指令・PFAS規則・REACH規則等に対応した環境・安全面クリア製品です。</p>
+    </div>
+
+    <!-- ABOUT -->
     <div>
-      <div class="sec-intro">
-        <p class="sec-heading">製品タイプ</p>
-        <p class="sec-body">QZILLAは、原液とスプレー2種の製品をご用意しています。</p>
+      <p class="sec-heading">ABOUT / QZILLAについて</p>
+      <div class="about-text">
+        <p class="about-text__body">QZILLAは、刃物メーカーである鈴木刃物工業株式会社が生み出しました。「切れ味」と「信頼」を追求し続け、今日まで歩み続けた鈴木刃物工業株式会社がどのようにしてQZILLAを生み出したのか。ここではQZILLA完成までの開発ストーリーをご紹介します。</p>
+        <a href="#" class="btn-outline">QZILLAについて知る</a>
       </div>
-      <div class="banner-list">
-        <a href="https://okada-dri.github.io/suzuki-oil/qzilla-oil-sp.html" class="banner-ph" style="text-decoration: none; color: inherit; cursor: pointer;">原液シリーズバナー</a>
-        <a href="https://okada-dri.github.io/suzuki-oil/qzilla-spray-sp.html" class="banner-ph" style="text-decoration: none; color: inherit; cursor: pointer;">スプレーシリーズバナー</a>
+      <div class="about-img">写真（オイル商品）</div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div>
+      <p class="sec-heading">PRODUCTS / 商品</p>
+      <div class="products-banners">
+        <a href="qzilla-oil-sp.html" class="product-banner">原液シリーズバナー</a>
+        <a href="qzilla-spray-sp.html" class="product-banner">スプレーバナー</a>
+      </div>
+      <a href="#" class="btn-fill">ご購入はこちら</a>
+    </div>
+
+    <!-- FEATURE -->
+    <div>
+      <p class="sec-heading">FEATURE / オイルの特徴</p>
+      <p class="sec-body">QZILLAは、最新技術で環境と安全面に配慮し開発された高性能極圧潤滑オイルです。 塩素系・固体潤滑不使用の微臭タイプで、工業設備から産業機械まであらゆる用途に対応。 PRTR法・RoHS3指令・PFAS規則・REACH規則等に対応した環境・安全面クリア製品です。</p>
+      <div class="feature-video">動画（製品使用シーン）</div>
+      <div class="feature-items">
+        <div>
+          <p class="feature-item__title">持続する効果</p>
+          <p class="feature-item__body">不純物を徹底排除することで、金属表面への均一な浸透を実現し、長期間にわたる防錆効果を発揮します。</p>
+        </div>
+        <div>
+          <p class="feature-item__title">丁寧な製法</p>
+          <p class="feature-item__body">機械的な大量生産ではなく、品質を重視した丁寧な製法を守り続けています。</p>
+        </div>
+        <div>
+          <p class="feature-item__title">様々なテストをクリアした高品質</p>
+          <p class="feature-item__body">一貫した品質基準をクリアした製品のみをお届けすることで、現場での信頼に応えています。</p>
+        </div>
       </div>
     </div>
 
-    <!-- 導入事例 -->
+    <!-- CASES -->
     <div>
-      <div class="sec-intro">
-        <p class="sec-heading">導入事例</p>
-        <p class="sec-body">QZILLA製品を利用した導入事例です。</p>
-      </div>
-      <div class="case-grid">
+      <p class="sec-heading">CASES / 導入事例</p>
+      <div class="case-list">
 
-        <!-- 事例1 -->
         <div class="case-card">
-          <div class="case-content">
-            <div class="case-img">保全事例イメージ<br>（設備機械・ギヤ・ベアリングの写真）</div>
-            <div>
-              <p class="case-title">設備機械の保全・メンテナンス改善事例</p>
-              <p class="case-desc" style="margin-top: 11px;">設備機械の摩耗・異音・焼付きを抑制し、メンテナンスコストと突発停止を大幅に削減した導入事例。</p>
-            </div>
-          </div>
-          <a href="https://okada-dri.github.io/suzuki-oil/qzilla-cases-maintenance-sp.html" class="btn-view-more">VIEW MORE</a>
+          <div class="case-img">保全事例イメージ<br>（設備機械・ギヤ・ベアリングの写真）</div>
+          <p class="case-title">設備機械の保全・メンテナンス改善事例</p>
+          <p class="case-desc">設備機械の摩耗・異音・焼付きを抑制し、メンテナンスコストと突発停止を大幅に削減した導入事例。</p>
+          <a href="qzilla-cases-maintenance-sp.html" class="btn-view-more">VIEW MORE</a>
         </div>
 
-        <!-- 事例2 -->
         <div class="case-card">
-          <div class="case-content">
-            <div class="case-img">加工事例イメージ<br>（切削工具・プレス機・金型の写真）</div>
-            <div>
-              <p class="case-title">切削工具・加工工具類の改善・効果事例</p>
-              <p class="case-desc" style="margin-top: 11px;">切削工具・プレス金型の寿命延長と加工品質の安定化を実現した導入事例。工具寿命が最大2.3倍に向上。</p>
-            </div>
-          </div>
-          <a href="https://okada-dri.github.io/suzuki-oil/qzilla-cases-processing-sp.html" class="btn-view-more">VIEW MORE</a>
+          <div class="case-img">加工事例イメージ<br>（切削工具・プレス機・金型の写真）</div>
+          <p class="case-title">切削工具・加工工具類の改善・効果事例</p>
+          <p class="case-desc">切削工具・プレス金型の寿命延長と加工品質の安定化を実現した導入事例。工具寿命が最大2.3倍に向上。</p>
+          <a href="qzilla-cases-processing-sp.html" class="btn-view-more">VIEW MORE</a>
         </div>
 
       </div>
     </div>
 
-  </div><!-- /content-area -->
+    <!-- NEWS -->
+    <div>
+      <div class="news-inner">
+        <p class="sec-heading" style="margin-bottom:0;">NEWS / お知らせ</p>
+        <div class="news-list">
+          <div class="news-item">
+            <span class="news-item__date">2026.02.17</span>
+            <span class="news-item__title">QZILLA新製品「QZ-SP500」を発売しました。</span>
+          </div>
+          <div class="news-item">
+            <span class="news-item__date">2026.01.15</span>
+            <span class="news-item__title">QZILLA製品導入効果事例集を公開しました。</span>
+          </div>
+          <div class="news-item">
+            <span class="news-item__date">2025.11.07</span>
+            <span class="news-item__title">SDS安全データシートダウンロードページを開設しました。</span>
+          </div>
+          <div class="news-item">
+            <span class="news-item__date">2025.10.19</span>
+            <span class="news-item__title">QZILLA公式サイトをリニューアルしました。</span>
+          </div>
+        </div>
+        <div class="news-more">
+          <a href="news-sp.html" class="btn-outline">お知らせ一覧へ</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Contact Banner -->
+  <div class="contact-wrapper">
+    <a href="contact-sp.html" class="contact-banner">
+      <p class="contact-banner__title">お問い合わせ</p>
+      <p class="contact-banner__sub">製品・OEMについて / 販売店様からのご相談 /<br>オイル濃度・金属組成についてのご相談・ご質問</p>
+    </a>
+  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p>プライバシーポリシー　ECサイト　運営会社</p>
+    <nav class="site-footer__nav">
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">ECサイト</a>
+      <a href="#">運営会社</a>
+    </nav>
   </footer>
 
 </body>

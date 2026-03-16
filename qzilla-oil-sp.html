@@ -14,10 +14,97 @@
       margin: 0;
     }
 
-    /* === Header === */
-    .site-header {
+    /* ---- QZILLA SP ヘッダー ---- */
+    .qzilla-header {
       width: 400px;
       height: 56px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .qzilla-header__logo img {
+      height: 24px;
+      display: block;
+    }
+    .qzilla-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .qzilla-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
+    }
+    .qzilla-drawer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 400px;
+      height: 100%;
+      background: #000;
+      z-index: 100;
+      padding: 56px 0 0;
+      box-sizing: border-box;
+    }
+    .qzilla-drawer.is-open {
+      display: block;
+    }
+    .qzilla-drawer-nav {
+      display: flex;
+      flex-direction: column;
+    }
+    .qzilla-drawer-nav__item {
+      font-size: 13px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.26px;
+      line-height: 24px;
+      padding: 16px 24px;
+      border-bottom: 1px solid #333;
+    }
+    .qzilla-drawer-nav__btn {
+      font-size: 12px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.24px;
+      line-height: 24px;
+      padding: 16px 24px;
+      border: 1px solid #fff;
+      margin: 24px;
+      text-align: center;
+      display: block;
+    }
+
+    /* Footer override */
+    .site-footer {
+      background: #111;
+      width: 400px;
+      height: auto;
+      padding: 20px 0;
+      box-sizing: border-box;
+    }
+    .site-footer__nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 0 24px;
+      align-items: center;
+    }
+    .site-footer__nav a {
+      font-size: 12px;
+      color: #aaa;
+      letter-spacing: 0.24px;
+      line-height: 24px;
+      text-decoration: none;
     }
 
     /* === Page heading === */
@@ -251,57 +338,34 @@
       text-decoration: none;
     }
 
-    /* === Footer === */
-    .site-footer {
-      width: 400px;
-      background: #e8e8e8;
-      padding: 20px 24px;
-      box-sizing: border-box;
-      height: auto;
-    }
-    .site-footer p {
-      font-size: 12px;
-      color: #555;
-      margin-left: 0;
-    }
   </style>
   <script src="auth.js"></script>
   <script>
-    function toggleSubnav(el) {
-    el.nextElementSibling.classList.toggle('is-open');
-  }
-  function toggleDrawer() {
-    document.getElementById('drawer').classList.toggle('is-open');
-  }
+    function toggleDrawer() {
+      document.getElementById('qzilla-drawer').classList.toggle('is-open');
+    }
   </script>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="site-header">
-    <a href="top-sp.html" class="site-header__logo">鈴木刃物工業オリジナルオイルサイト</a>
-    <div class="hamburger" id="hamburger-btn" onclick="toggleDrawer()">
+  <header class="qzilla-header">
+    <a href="qzilla-sp.html" class="qzilla-header__logo">
+      <img src="images/qzilla.png" alt="QZILLA">
+    </a>
+    <div class="qzilla-hamburger" onclick="toggleDrawer()">
       <span></span><span></span><span></span>
     </div>
   </header>
-  <div class="drawer" id="drawer">
-    <nav class="drawer-nav">
-      <a href="top-sp.html" class="drawer-nav__item">TOP</a>
-      <a href="story-sp.html" class="drawer-nav__item">ABOUT</a>
-      <div class="drawer-nav__item drawer-nav__item--parent" onclick="toggleSubnav(this)">製品情報 ▾</div>
-      <div class="drawer-nav__subnav">
-        <a href="qzilla-sp.html" class="drawer-nav__subitem">QZILLA</a>
-        <a href="enative365r-sp.html" class="drawer-nav__subitem">enative365R</a>
-        <a href="#" class="drawer-nav__subitem">ARE</a>
-      </div>
-      <div class="drawer-nav__item drawer-nav__item--parent" onclick="toggleSubnav(this)">導入事例 ▾</div>
-      <div class="drawer-nav__subnav">
-        <a href="qzilla-cases-maintenance-sp.html" class="drawer-nav__subitem">QZILLA（保全）</a>
-        <a href="qzilla-cases-processing-sp.html" class="drawer-nav__subitem">QZILLA（加工）</a>
-      </div>
-      <a href="news-sp.html" class="drawer-nav__item">お知らせ</a>
-      <a href="contact-sp.html" class="drawer-nav__item">お問い合わせ</a>
-      <a href="#" class="drawer-nav__btn">ONLINE SHOP</a>
+  <div class="qzilla-drawer" id="qzilla-drawer">
+    <nav class="qzilla-drawer-nav">
+      <a href="top-sp.html" class="qzilla-drawer-nav__item">TOP</a>
+      <a href="#" class="qzilla-drawer-nav__item">ABOUT</a>
+      <a href="#" class="qzilla-drawer-nav__item">製品情報</a>
+      <a href="#" class="qzilla-drawer-nav__item">導入事例</a>
+      <a href="news-sp.html" class="qzilla-drawer-nav__item">ニュース</a>
+      <a href="contact-sp.html" class="qzilla-drawer-nav__item">お問い合わせ</a>
+      <a href="#" class="qzilla-drawer-nav__btn">ONLINE SHOP</a>
     </nav>
   </div>
 
@@ -439,7 +503,11 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p>プライバシーポリシー　ECサイト　運営会社</p>
+    <nav class="site-footer__nav">
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">ECサイト</a>
+      <a href="#">運営会社</a>
+    </nav>
   </footer>
 
 </body>
