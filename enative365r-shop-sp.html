@@ -3,16 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=400">
-  <title>SP 販売店一覧 — 鈴木刃物工業オリジナルオイルサイト</title>
+  <title>販売店一覧 SP — 鈴木刃物工業オリジナルオイルサイト</title>
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   <link rel="stylesheet" href="base.css">
   <style>
-    /* ===== SP 販売店一覧 (400px幅) ===== */
-
-    body {
-      width: 400px;
-      margin: 0;
-    }
+    body { width: 400px; margin: 0; }
 
     /* ---- enative365R SP ヘッダー ---- */
     .enative-header {
@@ -43,199 +38,63 @@
     }
 
     /* === Inner override === */
-    .inner {
-      width: 352px !important;
-      margin: 0 auto !important;
-      padding: 0 !important;
-      box-sizing: border-box;
-    }
+    .inner { width: 352px !important; margin: 0 auto !important; padding: 0 !important; box-sizing: border-box; }
 
     /* === Page BG === */
-    .page-bg {
-      padding-top: 0;
-    }
-
-    .breadcrumb {
-      margin-top: 8px;
-    }
-
-    .page-title {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+    .page-bg { padding-top: 0; padding-bottom: 48px; }
+    .breadcrumb { margin-top: 8px; }
+    .page-title { border-bottom: none; padding-bottom: 0; }
 
     /* === Store list === */
-    .store-section {
-      margin-top: 24px;
-    }
+    .store-section { margin-top: 24px; }
 
     /* Filter block */
     .store-filters {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 24px;
-      padding: 14px 16px;
-      background: #f8f8f8;
-      border: 1px solid #e8e8e8;
+      display: flex; flex-direction: column; gap: 10px;
+      margin-bottom: 24px; padding: 12px 16px;
+      background: #f8f8f8; border: 1px solid #e8e8e8;
     }
-    .store-filter {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .store-filter__label {
-      font-size: 11px;
-      color: #999;
-      font-family: 'Helvetica Neue', sans-serif;
-      letter-spacing: 0.04em;
-    }
-    .store-filter__btns {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
+    .store-filter { display: flex; align-items: flex-start; gap: 10px; }
+    .store-filter__btns { display: flex; gap: 6px; flex-wrap: wrap; }
     .store-filter__btn {
-      border: 1px solid #bbb;
-      padding: 5px 12px;
-      font-size: 12px;
-      color: #555;
-      line-height: normal;
-      letter-spacing: 0.04em;
-      font-family: 'Helvetica Neue', sans-serif;
-      cursor: pointer;
+      border: 1px solid #bbb; padding: 5px 12px; font-size: 12px;
+      color: #555; line-height: normal; letter-spacing: 0.04em;
+      font-family: 'Helvetica Neue', sans-serif; cursor: pointer;
     }
-    .store-filter__btn--active {
-      background: #111;
-      border-color: #111;
-      color: #fff;
-    }
+    .store-filter__btn--active { background: #111; border-color: #111; color: #fff; }
 
     /* Area heading */
     .store-area-heading {
-      font-size: 11px;
-      font-weight: 700;
-      color: #999;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #e8e8e8;
-      margin-bottom: 16px;
-      margin-top: 32px;
+      font-size: 11px; font-weight: 700; color: #999;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding-bottom: 8px; border-bottom: 1px solid #e8e8e8;
+      margin-bottom: 12px; margin-top: 32px;
     }
-    .store-area-heading:first-child {
-      margin-top: 0;
-    }
+    .store-area-heading:first-child { margin-top: 0; }
 
     /* Grid: 1 column */
-    .store-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
+    .store-grid { display: flex; flex-direction: column; gap: 16px; }
 
     /* Store card */
     .store-card {
-      border: 1px solid #ddd;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      background: #fff;
+      border: 1px solid #ddd; padding: 16px;
+      display: flex; flex-direction: column; gap: 8px; background: #fff;
     }
-    .store-card__tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .store-tag {
-      border: 1px solid #555;
-      padding: 3px 8px;
-      font-size: 11px;
-      color: #111;
-      line-height: normal;
-      font-family: 'Helvetica Neue', sans-serif;
-      white-space: nowrap;
-    }
-    .store-card__name {
-      font-size: 13px;
-      font-weight: 700;
-      color: #111;
-      line-height: 1.4;
-      font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
-    }
-    .store-card__info {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .store-card__row {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-    }
-    .store-card__label {
-      font-size: 11px;
-      color: #999;
-      line-height: 20px;
-      width: 40px;
-      flex-shrink: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-    }
-    .store-card__value {
-      font-size: 12px;
-      color: #333;
-      line-height: 20px;
-      font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
-    }
+    .store-card__name { font-size: 13px; font-weight: 700; color: #111; line-height: 1.4; font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif; }
+    .store-card__info { display: flex; flex-direction: column; gap: 4px; }
+    .store-card__row { display: flex; gap: 8px; align-items: flex-start; }
+    .store-card__label { font-size: 11px; color: #999; line-height: 20px; width: 44px; flex-shrink: 0; font-family: 'Helvetica Neue', sans-serif; }
+    .store-card__value { font-size: 12px; color: #333; line-height: 20px; font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif; }
     .store-card__map {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 12px;
-      color: #111;
-      text-decoration: underline;
-      font-family: 'Helvetica Neue', sans-serif;
-      margin-top: 4px;
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 12px; color: #111; text-decoration: underline;
+      font-family: 'Helvetica Neue', sans-serif; margin-top: 2px;
     }
 
-    /* === Pagination === */
-    .pagination {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 32px;
-    }
-    .pagination__item {
-      font-size: 12px;
-      color: #111;
-      line-height: normal;
-      font-family: 'Helvetica Neue', sans-serif;
-      cursor: pointer;
-      min-width: 32px;
-      height: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .pagination__item--active {
-      border: 1px solid #111;
-    }
-
-    /* === Footer === */
-    .site-footer {
-      width: 400px;
-      background: #e8e8e8;
-      padding: 20px 24px;
-      box-sizing: border-box;
-      height: auto;
-    }
-    .site-footer p {
-      font-size: 12px;
-      color: #555;
-      margin-left: 0;
-    }
+    /* ---- Footer ---- */
+    .site-footer { background: #111; width: 400px; padding: 20px 0; box-sizing: border-box; }
+    .site-footer__nav { display: flex; flex-wrap: wrap; gap: 16px; padding: 0 24px; align-items: center; }
+    .site-footer__nav a { font-size: 12px; color: #aaa; letter-spacing: 0.24px; line-height: 24px; text-decoration: none; }
   </style>
   <script src="auth.js"></script>
   <script>
@@ -281,18 +140,9 @@
       <!-- Store list -->
       <div class="store-section">
 
-        <!-- Filters: brand + area -->
+        <!-- Filters: area -->
         <div class="store-filters">
           <div class="store-filter">
-            <span class="store-filter__label">ブランド</span>
-            <div class="store-filter__btns">
-              <div class="store-filter__btn store-filter__btn--active">すべて</div>
-              <div class="store-filter__btn">QZILLA</div>
-              <div class="store-filter__btn">enative365R</div>
-            </div>
-          </div>
-          <div class="store-filter">
-            <span class="store-filter__label">エリア</span>
             <div class="store-filter__btns">
               <div class="store-filter__btn store-filter__btn--active">すべて</div>
               <div class="store-filter__btn">関東</div>
@@ -308,10 +158,6 @@
         <div class="store-area-heading">関東</div>
         <div class="store-grid">
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">関東潤滑オイル販売株式会社</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -326,9 +172,6 @@
             <a class="store-card__map" href="#">▸ Googleマップで見る</a>
           </div>
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">カーショップ アクセル 横浜店</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -348,10 +191,6 @@
         <div class="store-area-heading">中部</div>
         <div class="store-grid">
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">山田機械工具株式会社</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -366,9 +205,6 @@
             <a class="store-card__map" href="#">▸ Googleマップで見る</a>
           </div>
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-            </div>
             <div class="store-card__name">東海オイル商事株式会社</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -383,9 +219,6 @@
             <a class="store-card__map" href="#">▸ Googleマップで見る</a>
           </div>
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">カーショップ フォース 名古屋北店</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -400,9 +233,6 @@
             <a class="store-card__map" href="#">▸ Googleマップで見る</a>
           </div>
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-            </div>
             <div class="store-card__name">中部産業機械株式会社</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -422,10 +252,6 @@
         <div class="store-area-heading">関西</div>
         <div class="store-grid">
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">大阪工業用品センター</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -440,9 +266,6 @@
             <a class="store-card__map" href="#">▸ Googleマップで見る</a>
           </div>
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">オートバックス 神戸垂水店</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -462,9 +285,6 @@
         <div class="store-area-heading">北陸・東海</div>
         <div class="store-grid">
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">QZILLA</span>
-            </div>
             <div class="store-card__name">北陸機械工具商会</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -484,9 +304,6 @@
         <div class="store-area-heading">九州・その他</div>
         <div class="store-grid">
           <div class="store-card">
-            <div class="store-card__tags">
-              <span class="store-tag">enative365R</span>
-            </div>
             <div class="store-card__name">ガレージ ファクトリー 福岡博多店</div>
             <div class="store-card__info">
               <div class="store-card__row">
@@ -503,19 +320,9 @@
         </div>
       </div><!-- /store-section -->
 
-      <!-- Pagination -->
-      <div class="pagination">
-        <div class="pagination__item pagination__item--active">1</div>
-        <div class="pagination__item">2</div>
-        <div class="pagination__item">3</div>
-        <div class="pagination__item">…</div>
-        <div class="pagination__item">6</div>
-        <div class="pagination__item">&gt;</div>
-      </div>
-
       <!-- Back to TOP -->
-      <div style="margin-top: 32px; display: flex; justify-content: center; padding-bottom: 48px;">
-        <a href="enative365r-sp.html" class="btn-ghost" style="width: 180px; text-decoration: none;">TOPに戻る</a>
+      <div style="margin-top: 40px; display: flex; justify-content: center;">
+        <a href="enative365r-sp.html" class="btn-ghost" style="width: 200px; text-decoration: none;">TOPに戻る</a>
       </div>
 
     </div><!-- /inner -->
@@ -523,7 +330,11 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p>プライバシーポリシー　ECサイト　運営会社</p>
+    <nav class="site-footer__nav">
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">ECサイト</a>
+      <a href="#">運営会社</a>
+    </nav>
   </footer>
 
 </body>
